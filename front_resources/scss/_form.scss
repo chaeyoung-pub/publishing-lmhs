@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+/* 폼 */
+// 공통
+.text,
+.select {
+  font-size: $font-size-default;
+
+  &:disabled,
+  &.disabled {
+    background-color: $bg-gray;
+    pointer-events: none;
+  }
+
+  &.full {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+// input
+.text {
+  appearance: none;
+  height: 48px;
+  padding: 0 14px;
+  box-sizing: border-box;
+  border: 1px solid $form-border;
+  border-radius: 4px;
+  color: $black;
+
+  &::placeholder {
+    color: $placeholder;
+  }
+
+  &::-ms-clear {
+    display: none;
+  }
+
+  &.readonly {
+    background: $bg-gray !important;
+    pointer-events: none;
+  }
+
+  &:read-only,
+  &:disabled {
+    background: $bg-gray !important;
+    pointer-events: none;
+  }
+}
+
+// select
+.select {
+  display: inline-block;
+  height: 72px;
+  line-height: 72px;
+  padding: 0 55px 0 20px;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  background: url(../img/common/ico_select.png) no-repeat right center;
+  background-size: 37px auto;
+  font-size: 17px;
+  font-weight: bold;
+  appearance: none;
+  background-color: $white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  + .select {
+    margin-left: 4px;
+  }
+}
+
+/* 폼영역 */
+.inp-area {
+  display: flex;
+  font-size: 0;
+
+  .text {
+    flex: 1;
+    border-radius: 0;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    font-size: 13px;
+    margin: 0;
+
+    + [class^="btn-"] {
+      border-radius: 0;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+  }
+}

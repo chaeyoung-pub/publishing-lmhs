@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+/* 레이아웃 */
+.content-wrap {
+  position: relative;
+  min-height: 100vh;
+  padding: 0 32px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+
+  > .btn-area:last-child {
+    margin: 50px 0 30px;
+  }
+
+  > h1 + .list-t1 {
+    margin-top: 30px;
+  }
+}

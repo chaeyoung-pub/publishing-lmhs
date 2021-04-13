@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>클래스 - 홈트레이닝 - 등록/수정</title>
+    <script src="../../../resources/js/include.js"></script>
+  </head>
+
+  <body>
+    <div class="admin-wrap">
+      <header class="admin-header"></header>
+
+      <nav class="admin-lnb"></nav>
+
+      <div class="admin-content">
+        <div class="area-path"></div>
+
+        <h2 class="content-title">홈트레이닝</h2>
+
+        <div class="tbl-type1">
+          <table>
+            <caption>
+              상세
+            </caption>
+            <colgroup>
+              <col style="width: 140px" />
+              <col style="width: 500ox" />
+              <col style="width: 140px" />
+              <col />
+              <col style="width: 140px" />
+              <col style="width: 190px" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">등록자</th>
+                <td>홍길동</td>
+                <th scope="row">등록일자</th>
+                <td>0000-00-00</td>
+                <th scope="row">조회수</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  공개일자<span class="required">필수입력</span>
+                </th>
+                <td colspan="3">
+                  <div class="datepicker">
+                    <input
+                      type="text"
+                      class="text date"
+                      id="datepicker_single"
+                    />
+                  </div>
+                  <!-- <div class="select-unit">
+                    <select name="" id="" class="select">
+                      <option value="">00</option>
+                    </select>
+                    <span class="unit">:</span>
+                    <select name="" id="" class="select">
+                      <option value="">00</option>
+                    </select>
+                  </div> -->
+                </td>
+                <th scope="row">
+                  공개여부<span class="required">필수입력</span>
+                </th>
+                <td>
+                  <label class="chk-label">
+                    <input type="radio" name="radioA" id="radioA-1" checked />
+                    <span>공개</span>
+                  </label>
+                  <label class="chk-label">
+                    <input type="radio" name="radioA" id="radioA-2" />
+                    <span>비공개</span>
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  영상구분<span class="required">필수입력</span>
+                </th>
+                <td colspan="3">
+                  <label class="chk-label">
+                    <input type="radio" name="radioB" id="radioB-1" checked />
+                    <span>소개</span>
+                  </label>
+                  <label class="chk-label">
+                    <input type="radio" name="radioB" id="radioB-2" />
+                    <span>에피소드</span>
+                  </label>
+                </td>
+                <th scope="row">
+                  강사선택<span class="required">필수입력</span>
+                </th>
+                <td>
+                  <select class="select">
+                    <option value="" hidden>선택해주세요</option>
+                    <option value="">홍길동</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">제목<span class="required">필수입력</span></th>
+                <td colspan="5"><input type="text" class="text" /></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  영상 URL 등록<span class="required">필수입력</span>
+                </th>
+                <td colspan="5">
+                  <div class="input-area">
+                    <input type="text" class="text readonly" readonly />
+                    <button type="button" class="btn-type3 btn-bg4">
+                      콘텐츠 찾기
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">설명건너뛰기</th>
+                <td colspan="5">
+                  <div class="select-unit">
+                    <label for="">시작 </label>
+                    <select name="" id="" class="select">
+                      <option value="">00</option>
+                    </select>
+                    <span class="unit">:</span>
+                    <select name="" id="" class="select">
+                      <option value="">00</option>
+                    </select>
+                    <span class="unit">:</span>
+                    <select name="" id="" class="select">
+                      <option value="">00</option>
+                    </select>
+                    <span class="unit">~</span>
+                    <label for="">종료 </label>
+                    <select name="" id="" class="select">
+                      <option value="">00</option>
+                    </select>
+                    <span class="unit">:</span>
+                    <select name="" id="" class="select">
+                      <option value="">00</option>
+                    </select>
+                    <span class="unit">:</span>
+                    <select name="" id="" class="select">
+                      <option value="">00</option>
+                    </select>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  썸네일1<span class="required">필수입력</span>
+                </th>
+                <td colspan="5">
+                  <div class="input-file">
+                    <input type="text" class="text readonly" readonly />
+                    <button type="button" class="btn-icon-delete-type3">
+                      <i>삭제</i>
+                    </button>
+                    <button type="button">찾아보기</button>
+                  </div>
+                  <!-- case1 : 영상구분 소개 선택했을 경우 -->
+                  <p class="txt-type3 co-type3">
+                    981*450px 사이즈, jpg파일로 등록할 수 있습니다.
+                  </p>
+                  <!-- // -->
+                  <!-- case2 : 영상구분 에피소드 선택했을 경우 -->
+                  <p class="txt-type3 co-type3">
+                    750*490px 사이즈, jpg파일로 등록할 수 있습니다.
+                  </p>
+                  <!-- // -->
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">썸네일2</th>
+                <td colspan="5">
+                  <div class="input-file">
+                    <input type="text" class="text readonly" readonly />
+                    <button type="button" class="btn-icon-delete-type3">
+                      <i>삭제</i>
+                    </button>
+                    <button type="button">찾아보기</button>
+                  </div>
+                  <!-- case1 : 영상구분 소개 선택했을 경우 -->
+                  <p class="txt-type3 co-type3">
+                    981*450px 사이즈, jpg파일로 등록할 수 있습니다.
+                  </p>
+                  <!-- // -->
+                  <!-- case2 : 영상구분 에피소드 선택했을 경우 -->
+                  <p class="txt-type3 co-type3">
+                    750*490px 사이즈, jpg파일로 등록할 수 있습니다.
+                  </p>
+                  <!-- // -->
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">썸네일3</th>
+                <td colspan="5">
+                  <div class="input-file">
+                    <input type="text" class="text readonly" readonly />
+                    <button type="button" class="btn-icon-delete-type3">
+                      <i>삭제</i>
+                    </button>
+                    <button type="button">찾아보기</button>
+                  </div>
+                  <!-- case1 : 영상구분 소개 선택했을 경우 -->
+                  <p class="txt-type3 co-type3">
+                    981*450px 사이즈, jpg파일로 등록할 수 있습니다.
+                  </p>
+                  <!-- // -->
+                  <!-- case2 : 영상구분 에피소드 선택했을 경우 -->
+                  <p class="txt-type3 co-type3">
+                    750*490px 사이즈, jpg파일로 등록할 수 있습니다.
+                  </p>
+                  <!-- // -->
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">태그<span class="required">필수입력</span></th>
+                <td colspan="5">
+                  <div class="input-area">
+                    <input type="text" class="text readonly" readonly />
+                    <button type="button" class="btn-type3 btn-bg4">
+                      태그 코드 찾기
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  감정선택<span class="required">필수입력</span>
+                </th>
+                <td colspan="5">
+                  <label class="chk-label">
+                    <input type="checkbox" name="chkA" id="chkA-1" checked />
+                    <span>기대돼요</span>
+                  </label>
+                  <label class="chk-label">
+                    <input type="checkbox" name="chkA" id="chkA-2" />
+                    <span>뿌듯해요</span>
+                  </label>
+                  <label class="chk-label">
+                    <input type="checkbox" name="chkA" id="chkA-3" />
+                    <span>즐거워요</span>
+                  </label>
+                  <label class="chk-label">
+                    <input type="checkbox" name="chkA" id="chkA-4" />
+                    <span>편안해요</span>
+                  </label>
+                  <label class="chk-label">
+                    <input type="checkbox" name="chkA" id="chkA-5" />
+                    <span>불안해요</span>
+                  </label>
+                  <label class="chk-label">
+                    <input type="checkbox" name="chkA" id="chkA-6" />
+                    <span>짜증나요</span>
+                  </label>
+                  <label class="chk-label">
+                    <input type="checkbox" name="chkA" id="chkA-7" />
+                    <span>무기력해요</span>
+                  </label>
+                  <label class="chk-label">
+                    <input type="checkbox" name="chkA" id="chkA-8" />
+                    <span>공허해요</span>
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  난이도<span class="required">필수입력</span>
+                </th>
+                <td colspan="5">
+                  <label class="chk-label">
+                    <input type="radio" name="radioC" id="radioC-1" checked />
+                    <span>상</span>
+                  </label>
+                  <label class="chk-label">
+                    <input type="radio" name="radioC" id="radioC-2" />
+                    <span>중</span>
+                  </label>
+                  <label class="chk-label">
+                    <input type="radio" name="radioC" id="radioC-3" />
+                    <span>하</span>
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  연관 콘텐츠<span class="required">필수입력</span>
+                </th>
+                <td colspan="5">
+                  <div class="toggle-wrap">
+                    <label class="chk-label">
+                      <input type="radio" name="radioD" id="radioD-1" checked />
+                      <span>비설정</span>
+                    </label>
+                    <label class="chk-label">
+                      <input
+                        type="radio"
+                        name="radioD"
+                        id="radioD-2"
+                        data-toggle-trigger="toggle1"
+                      />
+                      <span>설정</span>
+                    </label>
+                    <div class="toggle-content" id="toggle1">
+                      <button type="button" class="btn-type3 btn-bg4">
+                        연관 콘텐츠 찾기
+                      </button>
+
+                      <div class="list-type2">
+                        <ul>
+                          <li>
+                            연관 콘텐츠제목<button class="btn-icon-delete">
+                              <i>삭제</i>
+                            </button>
+                          </li>
+                          <li>
+                            연관 콘텐츠제목연관 콘텐츠제목연관 콘텐츠제목<button
+                              class="btn-icon-delete"
+                            >
+                              <i>삭제</i>
+                            </button>
+                          </li>
+                          <li>
+                            연관 콘텐츠제목연관 콘텐츠제목<button
+                              class="btn-icon-delete"
+                            >
+                              <i>삭제</i>
+                            </button>
+                          </li>
+                          <li>
+                            연관 콘텐츠제목<button class="btn-icon-delete">
+                              <i>삭제</i>
+                            </button>
+                          </li>
+                          <li>
+                            연관 콘텐츠제목<button class="btn-icon-delete">
+                              <i>삭제</i>
+                            </button>
+                          </li>
+                          <li>
+                            연관 콘텐츠제목연관 콘텐츠제목연관 콘텐츠제목<button
+                              class="btn-icon-delete"
+                            >
+                              <i>삭제</i>
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">소개<span class="required">필수입력</span></th>
+                <td colspan="5">
+                  <article class="editor-wrap">에디터영역</article>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">커리큘럼</th>
+                <td colspan="5">
+                  <article class="editor-wrap">에디터영역</article>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="btn-area ta-right">
+          <button class="btn-type2">등록</button>
+          <a href="#" class="btn-type2 btn-bg4">목록</a>
+        </div>
+      </div>
+
+      <footer class="admin-footer"></footer>
+    </div>
+  </body>
+</html>

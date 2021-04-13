@@ -1,0 +1,450 @@
+@charset "utf-8";
+
+/* 레이아웃 */
+.admin-wrap:not(.admin-login):not(.admin-error) {
+  padding: 0 40px;
+  display: grid;
+  grid-template-rows: 70px 1fr 80px;
+  grid-template-columns: 260px 1fr;
+  min-width: 1580px;
+  min-height: 880px;
+  box-sizing: border-box;
+
+  .admin-header {
+    grid-column: span 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+  }
+
+  .admin-lnb {
+    margin-top: 40px;
+    grid-row-start: 2;
+    grid-row-end: span 2;
+    margin-bottom: 60px;
+  }
+
+  .admin-content {
+    margin: 40px 0 0 60px;
+    padding-bottom: 180px;
+    grid-row: 2;
+    grid-column: 2;
+    position: relative;
+    min-width: 1200px;
+  }
+
+  .admin-footer {
+    margin-left: 60px;
+    grid-row: 3;
+    grid-column: 2;
+  }
+}
+
+.admin-wrap.error {
+  .admin-lnb + .admin-content {
+    grid-row: 2 span !important;
+    grid-row-start: 2 !important;
+    grid-row-end: span 4 !important;
+    grid-column: 2 span !important;
+    grid-column-start: 2 !important;
+    grid-column-end: span 3 !important;
+  }
+
+  .admin-header + .admin-content {
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: calc(880px - 70px);
+    grid-row: 2 span !important;
+    grid-row-start: 2 !important;
+    grid-row-end: span 4 !important;
+    grid-column: 1 span !important;
+    grid-column-start: 1 !important;
+    grid-column-end: span 3 !important;
+  }
+}
+
+@media screen and(max-width:1580px) {
+  .admin-wrap:not(.admin-login):not(.admin-error) {
+    grid-template-columns: 240px 1fr;
+
+    .lnb-content {
+      width: 240px;
+    }
+  }
+}
+
+.admin-login {
+  .admin-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(880px - 150px);
+    height: calc(100vh - 151px);
+  }
+
+  .login-area {
+    width: 700px;
+    margin: 0 auto;
+    padding: 53px 60px 48px;
+    box-sizing: border-box;
+    border: 1px solid #eaeef1;
+    border-radius: 6px;
+    box-shadow: 0px 23px 46px 0px rgba(188, 199, 205, 0.75);
+
+    .content-title {
+      margin: 0 0 29px;
+    }
+
+    .btn-txt {
+      position: relative;
+      padding-bottom: 3px;
+      font-size: 13px;
+      color: $gray;
+      border-bottom: 1px solid $gray;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .login-form {
+    width: 364px;
+    margin: 0 auto;
+
+    .btn-area {
+      margin: 30px 0 0;
+    }
+
+    .text {
+      height: 56px;
+      line-height: 55px;
+      padding: 0;
+      border: 0;
+      border-bottom: 1px solid $form-border;
+      border-radius: 0;
+      font-size: 16px;
+      font-weight: bold;
+
+      &:focus {
+        outline: none;
+        border-color: $key-color;
+      }
+
+      + .text {
+        margin-top: 2px;
+      }
+    }
+
+    .input-code {
+      .text {
+        padding-right: 136px;
+      }
+
+      .btn-type3 {
+        right: 0;
+      }
+
+      .unit {
+        right: 84px;
+      }
+    }
+  }
+
+  .login-bottom {
+    margin-top: 35px;
+    text-align: center;
+    @include clearfix;
+
+    p {
+      display: inline-block;
+      line-height: 32px;
+      vertical-align: top;
+    }
+
+    .btn-area {
+      display: inline-block;
+      margin: 0 0 0 30px;
+    }
+
+    .btn-bg3 {
+      background-color: transparent !important;
+      color: $gray !important;
+    }
+  }
+
+  .admin-footer {
+    padding: 0 50px;
+  }
+}
+
+.admin-header {
+  padding: 0 40px 0 50px;
+  height: 70px;
+  box-sizing: border-box;
+  background: $bg-gray2;
+  border-bottom: 1px solid #eaeef1;
+  font-size: 0;
+
+  .logo {
+    line-height: 70px;
+    display: inline-block;
+    font-family: "LifeplusB";
+    font-size: 15px;
+  }
+
+  > strong {
+    position: relative;
+    line-height: 70px;
+    font-family: "LifeplusM";
+    font-size: 15px;
+    padding-left: 40px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 10px;
+      background: #aeaeae;
+    }
+
+    span {
+      color: $key-color;
+    }
+  }
+
+  .info {
+    float: right;
+    margin-top: 18px;
+    font-size: 0;
+
+    span {
+      font-size: $font-size-default;
+      line-height: 30px;
+
+      &:first-child {
+        font-weight: bold;
+        color: #282728;
+      }
+
+      &:nth-child(2) {
+        color: $gray;
+      }
+
+      ~ span {
+        position: relative;
+        margin-left: 14px;
+        padding-left: 16px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 12px;
+          background: #cacaca;
+        }
+      }
+    }
+  }
+
+  .btn-area {
+    vertical-align: top;
+    display: inline-block;
+    margin: 0 0 0 24px;
+  }
+
+  .btn-bg3 {
+    background-color: transparent !important;
+    color: $gray !important;
+  }
+}
+
+.admin-lnb {
+  box-sizing: border-box;
+  background: $white;
+
+  .lnb-content {
+    box-sizing: border-box;
+    padding: 43px 40px;
+    border: 1px solid #eaeef1;
+    border-radius: 10px;
+    background: $white;
+    box-shadow: 0px 13px 46px 0px rgba(188, 199, 205, 0.35);
+
+    strong {
+      display: block;
+      padding-bottom: 23px;
+      margin-bottom: 24px;
+      line-height: 1;
+      font-family: "LifeplusB";
+      font-size: 19px;
+      border-bottom: 1px solid $dark-gray;
+    }
+  }
+}
+
+.admin-menu {
+  > li {
+    > a {
+      position: relative;
+      display: block;
+      padding: 12px 7px;
+      font-family: "LifeplusM";
+      font-size: 16px;
+
+      &:not(:only-child) {
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 7px;
+          transform: translateY(-50%) rotate(45deg);
+          width: 6px;
+          height: 6px;
+          border-bottom: 2px solid #b2b2b2;
+          border-right: 2px solid #b2b2b2;
+          transition: transform 0.2s ease;
+        }
+
+        &:hover {
+          &::before {
+            border-color: $key-color;
+          }
+        }
+      }
+
+      &:active,
+      &:hover,
+      &.active,
+      &.toggle {
+        color: $key-color;
+      }
+    }
+
+    &.toggle {
+      margin: 0 0 18px;
+      > a {
+        &::before {
+          transform: translateY(-50%) rotate(-135deg);
+        }
+
+        &.active::before {
+          border-color: $key-color;
+        }
+
+        + ul {
+          display: block;
+        }
+      }
+    }
+
+    > ul {
+      display: none;
+
+      li ~ li {
+        margin-top: 2px;
+      }
+
+      a {
+        display: block;
+        padding: 4px 7px 3px;
+        font-size: $font-size-default;
+        color: $gray;
+
+        &:active,
+        &:hover,
+        &.active,
+        &.toggle {
+          background: $key-color;
+          border-radius: 2px;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.area-path {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  font-size: 0;
+
+  ol {
+    li {
+      position: relative;
+      display: inline-block;
+      font-size: 13px;
+      color: #999;
+
+      ~ li {
+        margin-left: 10px;
+        padding-left: 15px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%) rotate(45deg);
+          width: 3px;
+          height: 3px;
+          border-top: 1px solid #999;
+          border-right: 1px solid #999;
+        }
+      }
+
+      &:last-child {
+        color: $black;
+      }
+
+      a {
+        cursor: text;
+      }
+    }
+  }
+}
+
+.content-title {
+  margin-top: 40px;
+  line-height: 1;
+  font-size: 21px;
+  font-family: "LifeplusM";
+  padding-bottom: 25px;
+  border-bottom: 1px solid $dark-gray;
+  margin-bottom: 40px;
+  height: 47px;
+  box-sizing: border-box;
+
+  + .btn-area.right {
+    margin: -48px 0 20px;
+  }
+}
+
+.admin-footer {
+  height: 80px;
+  text-align: right;
+  font-size: 0;
+  border-top: 1px solid #d8d8d8;
+  box-sizing: border-box;
+
+  .copyright {
+    display: inline-block;
+    line-height: 80px;
+    font-size: 11px;
+    color: #999;
+  }
+
+  img {
+    margin-left: 10px;
+  }
+}

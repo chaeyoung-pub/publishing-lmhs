@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>공지/이벤트 - 공지사항 - 등록/수정</title>
+    <script src="../../../resources/js/include.js"></script>
+  </head>
+
+  <body>
+    <div class="admin-wrap">
+      <header class="admin-header"></header>
+
+      <nav class="admin-lnb"></nav>
+
+      <div class="admin-content">
+        <div class="area-path"></div>
+
+        <h2 class="content-title">공지사항</h2>
+
+        <div class="tbl-type1">
+          <table>
+            <caption>
+              공지사항 등록/수정
+            </caption>
+            <colgroup>
+              <col style="width: 130px" />
+              <col style="width: 500px" />
+              <col style="width: 130px" />
+              <col />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  노출여부<span class="required">필수입력</span>
+                </th>
+                <td>
+                  <label class="chk-label">
+                    <input type="radio" name="radio-1" id="radio-1-1" checked />
+                    <span>노출</span>
+                  </label>
+                  <label class="chk-label">
+                    <input type="radio" name="radio-1" id="radio-1-2" />
+                    <span>비노출</span>
+                  </label>
+                </td>
+                <th scope="row">작성자</th>
+                <td>홍길동</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  게시일자<span class="required">필수입력</span>
+                </th>
+                <td>
+                  <div class="datepicker">
+                    <input
+                      type="text"
+                      class="text date"
+                      id="datepicker_single"
+                    />
+                  </div>
+                  <!-- <div class="select-unit">
+                    <select name="" id="" class="select">
+                      <option value="">00</option>
+                    </select>
+                    <span class="unit">:</span>
+                    <select name="" id="" class="select">
+                      <option value="">00</option>
+                    </select>
+                  </div> -->
+                </td>
+                <th scope="row">등록일자</th>
+                <td>0000-00-00</td>
+              </tr>
+              <tr>
+                <th scope="row">제목<span class="required">필수입력</span></th>
+                <td colspan="3">
+                  <input type="text" class="text" />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">첨부파일</th>
+                <td colspan="3">
+                  <div class="input-file">
+                    <input type="text" class="text readonly" readonly />
+                    <button type="button" class="btn-icon-delete-type3">
+                      <i>삭제</i>
+                    </button>
+                    <button type="button">찾아보기</button>
+                  </div>
+                  <p class="txt-type3 co-type3">
+                    jpg, jpeg, png, bmp, gif, xlxs, pptx, docx, pdf 파일을
+                    등록할 수 있습니다.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  공개설정<span class="required">필수입력</span>
+                </th>
+                <td>
+                  <div class="toggle-wrap">
+                    <label class="chk-label">
+                      <input
+                        type="radio"
+                        name="radio-4"
+                        id="radio-4-1"
+                        checked
+                      />
+                      <span>전체공개</span>
+                    </label>
+                    <label class="chk-label">
+                      <input
+                        type="radio"
+                        name="radio-4"
+                        id="radio-4-2"
+                        data-toggle-trigger="toggle1"
+                      />
+                      <span>선택공개</span>
+                    </label>
+                    <div class="toggle-content dp-inline-block" id="toggle1">
+                      <button type="button" class="btn-type3 btn-bg4">
+                        회사 찾기
+                      </button>
+                    </div>
+                  </div>
+                </td>
+                <th scope="row">관리</th>
+                <td>HR/시스템</td>
+              </tr>
+              <tr>
+                <th scope="row">회사</th>
+                <td colspan="3">회사명, 회사명, 회사명</td>
+              </tr>
+              <!-- 수정화면에서만 노출 -->
+              <tr>
+                <th scope="row">일련번호</th>
+                <td colspan="3">0000</td>
+              </tr>
+              <!-- // -->
+              <tr>
+                <th scope="row">내용<span class="required">필수입력</span></th>
+                <td colspan="3">
+                  <article class="editor-wrap">에디터영역</article>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="btn-area ta-right">
+          <button class="btn-type2">등록</button>
+          <button class="btn-type2 btn-bg2">다시 쓰기</button>
+          <a href="#" class="btn-type2 btn-bg4">목록</a>
+        </div>
+      </div>
+
+      <footer class="admin-footer"></footer>
+    </div>
+  </body>
+</html>

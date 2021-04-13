@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+/* 게시판 상세 */
+.board-detail {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 30px;
+
+  .tit-area {
+    position: relative;
+    display: inline;
+
+    h2 {
+      display: inline;
+      font-size: 20px;
+      font-weight: bold;
+      padding-right: 7px;
+    }
+
+    .icon-new {
+      position: absolute;
+      right: auto;
+      bottom: 20px;
+    }
+  }
+
+  > .sub {
+    margin-top: 14px;
+    display: block;
+    color: $gray;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .content-area {
+    padding: 40px 0;
+
+    table {
+      width: 100% !important;
+    }
+
+    * {
+      white-space: normal !important;
+    }
+
+    img {
+      max-width: 100%;
+      width: auto !important;
+      height: auto !important;
+    }
+  }
+
+  .sub-area {
+    display: flex;
+    border-top: 1px dotted #d7d7d7;
+    padding: 25px 0 37px;
+    line-height: 24px;
+    margin-top: auto;
+    line-height: 30px;
+
+    > strong {
+      margin-right: 10px;
+      font-size: 15px;
+      font-weight: bold;
+      color: black;
+    }
+
+    .file-item {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      color: #5187f0;
+      line-height: 30px;
+      font-size: 0;
+
+      .btn-ico-download {
+        vertical-align: bottom;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      .info {
+        width: calc(100% - 43px);
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 14px;
+
+        .text-ellipsis {
+          vertical-align: bottom;
+          display: inline-block;
+          max-width: calc(100% - 45px);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
+    + .bottom-area {
+      margin-top: 0;
+    }
+  }
+
+  .bottom-area {
+    margin-top: auto;
+    position: relative;
+    padding: 30px 0 40px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -32px;
+      right: -32px;
+      bottom: 0;
+      background: $bg-gray;
+      z-index: -1;
+    }
+
+    > span {
+      position: relative;
+      color: $black;
+      padding-left: 30px;
+      font-size: 14px;
+      font-weight: $medium;
+      line-height: 20px;
+
+      &::before {
+        content: "";
+        width: 22px;
+        height: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url(../img/common/ico_reply.png);
+        background-size: 100%;
+      }
+    }
+
+    .inp-area {
+      margin-top: 14px;
+    }
+
+    .list-t2 {
+      margin-top: 8px;
+      word-break: break-all;
+    }
+  }
+}
+
+.nodata {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  [class^="icon-"] {
+    display: block;
+    margin: 0 auto 15px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 18px;
+    font-weight: $medium;
+    color: $black;
+  }
+}

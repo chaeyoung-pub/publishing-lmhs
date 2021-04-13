@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>App 버전관리 - 등록/수정</title>
+    <script src="../../../resources/js/include.js"></script>
+  </head>
+
+  <body>
+    <div class="admin-wrap">
+      <header class="admin-header"></header>
+
+      <nav class="admin-lnb"></nav>
+
+      <div class="admin-content">
+        <div class="area-path"></div>
+
+        <h2 class="content-title">App 버전관리</h2>
+
+        <div class="tbl-type1">
+          <table>
+            <caption>
+              App버전 등록/수정
+            </caption>
+            <colgroup>
+              <col style="width: 130px" />
+              <col style="width: 330px" />
+              <col style="width: 160px" />
+              <col />
+              <col style="width: 130px" />
+              <col />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">OS</th>
+                <td>iOS</td>
+                <th scope="row">최종 수정자</th>
+                <td>홍길동</td>
+                <th scope="row">최종 수정일자</th>
+                <td>0000-00-00</td>
+              </tr>
+              <tr>
+                <th scope="row">최종 버전</th>
+                <td>
+                  <div class="input-version">
+                    <input type="text" class="text" />
+                    <span class="unit">.</span>
+                    <input type="text" class="text" />
+                    <span class="unit"> . </span>
+                    <input type="text" class="text" />
+                  </div>
+                </td>
+                <th scope="row">APP shield 우회여부</th>
+                <td colspan="3">
+                  <label class="chk-label">
+                    <input type="radio" name="radio-1" id="radio-1-1" checked />
+                    <span>예</span>
+                  </label>
+                  <label class="chk-label">
+                    <input type="radio" name="radio-1" id="radio-1-2" />
+                    <span>아니오</span>
+                  </label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="btn-area ta-right">
+          <button class="btn-type2">수정</button>
+          <a href="#" class="btn-type2 btn-bg4">목록</a>
+        </div>
+
+        <div class="tbl-type2">
+          <table>
+            <caption>
+              관리 이력
+            </caption>
+            <colgroup>
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">버전</th>
+                <th scope="col">등록자</th>
+                <th scope="col">등록일자</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0.00.000</td>
+                <td>홍길동</td>
+                <td>0000-00-00</td>
+              </tr>
+              <tr>
+                <td>0.00.000</td>
+                <td>홍길동</td>
+                <td>0000-00-00</td>
+              </tr>
+              <tr>
+                <td>0.00.000</td>
+                <td>홍길동</td>
+                <td>0000-00-00</td>
+              </tr>
+              <tr>
+                <td>0.00.000</td>
+                <td>홍길동</td>
+                <td>0000-00-00</td>
+              </tr>
+              <tr>
+                <td>0.00.000</td>
+                <td>홍길동</td>
+                <td>0000-00-00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <a href="#" class="btn-icon-first"><i>처음으로</i></a>
+          <a href="#" class="btn-icon-prev"><i>이전</i></a>
+          <ol class="paging">
+            <li><a href="#">1</a></li>
+            <li><a href="#" class="active">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+          </ol>
+          <a href="#" class="btn-icon-next"><i>다음으로</i></a>
+          <a href="#" class="btn-icon-last"><i>마지막으로</i></a>
+        </div>
+      </div>
+
+      <footer class="admin-footer"></footer>
+    </div>
+  </body>
+</html>

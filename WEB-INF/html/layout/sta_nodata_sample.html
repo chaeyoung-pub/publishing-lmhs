@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>통계관리 - 데이터가 없는 경우</title>
+    <script src="../../../resources/js/include.js"></script>
+  </head>
+
+  <body>
+    <div class="admin-wrap">
+      <header class="admin-header"></header>
+
+      <nav class="admin-lnb"></nav>
+
+      <div class="admin-content">
+        <div class="area-path"></div>
+
+        <h2 class="content-title">통계관리 - 데이터가 없는 경우</h2>
+
+        <div class="box-type1">
+          <ul class="search-area">
+            <li>
+              <label for="">회사</label>
+              <select class="select">
+                <option value="">전체</option>
+              </select>
+            </li>
+            <li>
+              <label for="">구간</label>
+              <select class="select">
+                <option value="">일별</option>
+                <option value="">주별</option>
+                <option value="">월별</option>
+              </select>
+            </li>
+            <li>
+              <label for="">연월</label>
+              <select class="select">
+                <option value="">2020년</option>
+              </select>
+              <select class="select">
+                <option value="">11월</option>
+              </select>
+            </li>
+            <li>
+              <label for="">구분</label>
+              <select class="select" disabled>
+                <option value="">회원</option>
+              </select>
+            </li>
+          </ul>
+          <button class="btn-type4 btn-bg2">검색</button>
+        </div>
+
+        <div class="chart-area">
+          <div class="sort-area">
+            <select class="select">
+              <option value="">전체 성별</option>
+              <option value="">남자</option>
+              <option value="">여자</option>
+            </select>
+            <select class="select">
+              <option value="">전체 연령대</option>
+              <option value="">20대</option>
+              <option value="">30대</option>
+              <option value="">40대</option>
+              <option value="">50대</option>
+              <option value="">60대 이상</option>
+            </select>
+          </div>
+
+          <!-- case1 ) 데이터가 있는 경우 -->
+          <!-- <div class="canvas-wrap">
+            <canvas id="canvasBar"></canvas>
+          </div> -->
+
+          <!-- case2 ) 데이터가 없는 경우 : 아래 테이블 노출되지않음 -->
+          <div class="nodata">
+            <p>조회된 데이터가 없습니다.</p>
+          </div>
+        </div>
+
+        <!-- case1-1 ) 데이터가 있는 경우 -->
+        <!-- <div class="tbl-sub">
+          <div class="btn-area ta-right">
+            <a href="#" class="btn-type3 btn-bg4" download=""
+              >엑셀 다운로드<i class="icon-excel"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="tbl-wrap fd-row">
+          <div class="tbl-type2 tbl-fixed">
+            <table>
+              <caption>
+                통계 구분
+              </caption>
+              <colgroup>
+                <col style="width: 180px" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">구분</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>보험가입수</td>
+                </tr>
+                <tr>
+                  <td>서비스 가입자</td>
+                </tr>
+                <tr>
+                  <td>서비스가입자비율</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-type2 tbl-scroll-x">
+            <table>
+              <caption>
+                통계 (일별)
+              </caption>
+              <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">1</th>
+                  <th scope="col">2</th>
+                  <th scope="col">3</th>
+                  <th scope="col">4</th>
+                  <th scope="col">5</th>
+                  <th scope="col">6</th>
+                  <th scope="col">7</th>
+                  <th scope="col">8</th>
+                  <th scope="col">9</th>
+                  <th scope="col">10</th>
+                  <th scope="col">11</th>
+                  <th scope="col">12</th>
+                  <th scope="col">13</th>
+                  <th scope="col">14</th>
+                  <th scope="col">15</th>
+                  <th scope="col">16</th>
+                  <th scope="col">17</th>
+                  <th scope="col">18</th>
+                  <th scope="col">19</th>
+                  <th scope="col">20</th>
+                  <th scope="col">21</th>
+                  <th scope="col">22</th>
+                  <th scope="col">23</th>
+                  <th scope="col">24</th>
+                  <th scope="col">25</th>
+                  <th scope="col">26</th>
+                  <th scope="col">27</th>
+                  <th scope="col">28</th>
+                  <th scope="col">29</th>
+                  <th scope="col">30</th>
+                  <th scope="col">31</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="tbl-wrap fd-row">
+          <div class="tbl-type2 tbl-fixed">
+            <table>
+              <caption>
+                통계 구분
+              </caption>
+              <colgroup>
+                <col style="width: 180px" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">구분</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>보험가입수</td>
+                </tr>
+                <tr>
+                  <td>서비스 가입자</td>
+                </tr>
+                <tr>
+                  <td>서비스가입자비율</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-type2 tbl-scroll-x">
+            <table>
+              <caption>
+                통계 (월별)
+              </caption>
+              <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">1월</th>
+                  <th scope="col">2월</th>
+                  <th scope="col">3월</th>
+                  <th scope="col">4월</th>
+                  <th scope="col">5월</th>
+                  <th scope="col">6월</th>
+                  <th scope="col">7월</th>
+                  <th scope="col">8월</th>
+                  <th scope="col">9월</th>
+                  <th scope="col">10월</th>
+                  <th scope="col">11월</th>
+                  <th scope="col">12월</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="tbl-wrap fd-row">
+          <div class="tbl-type2 tbl-fixed">
+            <table>
+              <caption>
+                통계 구분
+              </caption>
+              <colgroup>
+                <col style="width: 180px" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">구분</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>보험가입수</td>
+                </tr>
+                <tr>
+                  <td>서비스 가입자</td>
+                </tr>
+                <tr>
+                  <td>서비스가입자비율</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-type2 tbl-scroll-x">
+            <table>
+              <caption>
+                통계 (주별)
+              </caption>
+              <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">1</th>
+                  <th scope="col">2</th>
+                  <th scope="col">3</th>
+                  <th scope="col">4</th>
+                  <th scope="col">5</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div> -->
+        <!-- // -->
+      </div>
+
+      <footer class="admin-footer"></footer>
+    </div>
+
+    <script>
+      // 데이터 임시처리
+      function getRandomArbitrary() {
+        return Math.round(Math.random() * 100);
+      }
+
+      var date = [];
+      for (var i = 0; i < 30; i += 1) {
+        date.push(i + 1);
+      }
+
+      var dataRange = function () {
+        var result = [];
+        for (var i = 0; i < 30; i += 1) {
+          result.push(getRandomArbitrary());
+        }
+        return result;
+      };
+
+      // 데이터 설정
+      var dataBar = {
+        labels: date, //  x 축 레이블: 데이트 1 ~ 30일
+        datasets: [
+          {
+            label: "보험가입자수",
+            barPercentage: 0.7,
+            backgroundColor: window.chartColors.red,
+            data: dataRange(),
+          },
+          {
+            label: "서비스 가입자",
+            barPercentage: 0.7,
+            backgroundColor: window.chartColors.orange,
+            data: dataRange(),
+          },
+        ],
+      };
+
+      // 차트 설정
+      var configBar = {
+        type: "bar",
+        data: dataBar,
+        options: {
+          layout: {
+            padding: 0,
+          },
+          legend: {
+            display: true,
+            position: "bottom",
+            align: "center",
+          },
+          tooltips: {
+            mode: "index",
+            intersect: false,
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+        },
+      };
+
+      window.onload = function () {
+        // 차트 생성
+        var ctx = document.getElementById("canvasBar").getContext("2d");
+        window.myBar = new Chart(ctx, configBar);
+
+        // 최신날짜 파이차트 생성
+        // var dataPie = myBar.data.datasets.map(function (bar) {
+        //   // console.log(myBar.data.datasets);
+        //   return bar.data[bar.data.length - 1];
+        // });
+
+        // var configPie = {
+        //   type: "pie",
+        //   data: {
+        //     labels: ["보험가입자수", "서비스미가입자수"],
+        //     datasets: [
+        //       {
+        //         data: dataPie,
+        //         backgroundColor: [
+        //           window.chartColors.red,
+        //           window.chartColors.green,
+        //         ],
+        //       },
+        //     ],
+        //   },
+        //   options: {
+        //     layout: {
+        //       padding: 0,
+        //     },
+        //     title: {
+        //       display: true,
+        //       text: "서비스 가입자 비율",
+        //     },
+        //     legend: {
+        //       display: true,
+        //       position: "right",
+        //       align: "center",
+        //     },
+        //     responsive: true,
+        //     maintainAspectRatio: false,
+        //   },
+        // };
+
+        // var ctx2 = document.getElementById("canvasPie").getContext("2d");
+        // window.myPie = new Chart(ctx2, configPie);
+
+        // console.log(myBar);
+        // $("#canvasBar").trigger("click", function () {
+        //   var activePoint = myBar.getElementAtEvent(event);
+        //   console.log(myBar);
+        // });
+
+        // $("#canvasBar").trigger("click");
+
+        // 막대 클릭 시 파이차트 생성
+        // document.getElementById("canvasBar").onclick = function (evt) {
+        //   // 이전 파이차트 삭제
+        //   var containerPie = document.querySelector("#containerPie");
+        //   containerPie.innerHTML = '<canvas id="canvasPie"></canvas>';
+
+        //   var activePoint = myBar.getElementAtEvent(event);
+        //   if (activePoint.length > 0) {
+        //     // var clickedDatasetIndex = activePoint[0]._datasetIndex;
+        //     // var clickedElementIndex = activePoint[0]._index;
+        //     // var label = myBar.data.labels[clickedElementIndex];
+
+        //     dataPie = [getRandomArbitrary(), getRandomArbitrary()];
+
+        //     var configPie = {
+        //       type: "pie",
+        //       data: {
+        //         labels: ["보험가입자수", "서비스미가입자수"],
+        //         datasets: [
+        //           {
+        //             data: [getRandomArbitrary(), getRandomArbitrary()],
+        //             backgroundColor: [
+        //               window.chartColors.red,
+        //               window.chartColors.green,
+        //             ],
+        //           },
+        //         ],
+        //       },
+        //       options: {
+        //         layout: {
+        //           padding: 0,
+        //         },
+        //         title: {
+        //           display: true,
+        //           text: "서비스 가입자 비율",
+        //         },
+        //         legend: {
+        //           display: true,
+        //           position: "right",
+        //           align: "center",
+        //         },
+        //         responsive: true,
+        //         maintainAspectRatio: false,
+        //       },
+        //     };
+
+        //     var ctx2 = document.getElementById("canvasPie").getContext("2d");
+        //     window.myPie = new Chart(ctx2, configPie);
+        //   }
+        // };
+      };
+
+      // $("#canvasBar").bind("click", function () {
+      //   console.log(myBar);
+      // });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,283 @@
+@charset "utf-8";
+
+/* 토글 */
+.toggle-wrap {
+  font-size: 0;
+
+  .btn-icon-toggle {
+    font-size: $font-size-default;
+  }
+
+  .toggle-content {
+    &:not(.dp-inline-block) {
+      margin-top: 10px;
+    }
+
+    &.dp-inline-block {
+      margin-left: 10px;
+    }
+  }
+
+  &.active {
+    .icon-toggle::before {
+      top: calc(50% + 2px);
+      transform: translateY(-50%) rotate(-225deg);
+    }
+  }
+}
+
+.toggle-content {
+  display: none !important;
+
+  &.active {
+    display: block !important;
+
+    &.dp-inline-block {
+      display: inline-block !important;
+    }
+  }
+}
+
+/* 컨텐츠 */
+/* 댓글 */
+.reply-wrap {
+  font-size: 0;
+
+  > li {
+    margin-top: 10px;
+  }
+
+  span {
+    font-size: $font-size-default;
+
+    ~ span {
+      padding-right: 10px;
+    }
+
+    &:first-child {
+      position: relative;
+      padding-right: 20px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        width: 1px;
+        height: 10px;
+        background: $border-gray;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+/* 검색영역 */
+.search-area {
+  display: flex;
+
+  label {
+    margin-right: 15px;
+    font-size: $font-size-default;
+  }
+
+  li {
+    margin: 4px 0 0 25px;
+  }
+
+  .select {
+    + .input-search {
+      margin-left: 4px;
+    }
+  }
+
+  + .sort-area {
+    margin-top: -40px;
+  }
+}
+
+.box-type1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  margin-bottom: 40px;
+  background: $bg-gray2;
+
+  .search-area {
+    margin: -4px 0 0 -25px;
+
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 0;
+
+    .select {
+      max-width: 118px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+/* 정렬 */
+.sort-area {
+  text-align: right;
+}
+
+/* 에디터영역 */
+.editor-wrap {
+  min-height: 300px;
+}
+
+/* 취합보고서 */
+.report {
+  font-size: 0;
+  > div {
+    @include clearfix;
+
+    &:nth-child(1) {
+      display: inline-block;
+      width: 28%;
+    }
+
+    &:nth-child(2) {
+      display: inline-block;
+      width: calc(72% - 40px);
+      margin-left: 40px;
+
+      .canvas-wrap:nth-child(1) {
+        float: left;
+        width: 30%;
+      }
+
+      .canvas-wrap:nth-child(2) {
+        float: right;
+        width: calc(70% - 40px);
+      }
+    }
+
+    &:nth-child(3) {
+      .canvas-wrap:nth-child(1) {
+        float: left;
+        width: calc(50% - 20px);
+      }
+
+      .canvas-wrap:nth-child(2) {
+        float: right;
+        width: calc(50% - 20px);
+      }
+    }
+
+    &:nth-child(4) {
+      .canvas-wrap:nth-child(1) {
+        float: left;
+        width: 28%;
+      }
+
+      .canvas-wrap:nth-child(2) {
+        float: right;
+        width: calc(72% - 40px);
+      }
+    }
+
+    &:nth-child(5) {
+      .canvas-wrap:nth-child(1) {
+        float: left;
+        width: 20%;
+        margin-right: 40px;
+      }
+
+      .canvas-wrap:nth-child(2) {
+        float: left;
+        width: calc(30% - 40px);
+      }
+
+      .canvas-wrap:nth-child(3) {
+        float: right;
+        width: calc(50% - 40px);
+      }
+    }
+  }
+}
+
+/* 간격 */
+.input-search + .collapse,
+.btn-area + .collapse {
+  margin-top: 20px;
+}
+
+td .radio-area + .toggle-content {
+  margin-top: 10px;
+}
+
+.toggle-wrap + .tbl-type1 {
+  margin-top: 60px;
+}
+
+// 개발용
+form + [class^="txt-bul"],
+form + .toggle-wrap,
+form + .txt-type2 {
+  margin-top: 20px;
+}
+
+.content-title + form + .tbl-sub {
+  margin-top: 25px;
+}
+
+/* 에러페이지 */
+.error-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  strong {
+    display: block;
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
+    color: $black;
+    padding-top: 100px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 78px;
+      height: 78px;
+      background: url(../img/common/ico_error.png);
+      background-size: 100%;
+    }
+
+    + p {
+      margin-top: 6px;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    color: $gray;
+  }
+
+  .btn-area {
+    margin-top: 50px;
+  }
+}
+
+/* 데이터없는 경우 */
+.nodata {
+  height: 300px;
+  box-sizing: border-box;
+  text-align: center;
+
+  &:not(td) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

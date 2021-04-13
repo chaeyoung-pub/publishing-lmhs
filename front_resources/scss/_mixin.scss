@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+    overflow: hidden;
+  }
+}
+
+@mixin hide {
+  overflow: hidden;
+  border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+}
+
+// common color
+$white: #fff;
+$black: #000;
+$red: #fa3636;
+$blue: #669aff;
+$gray: #9e9e9e;
+$gray2: #bdbdbd;
+$dark-gray: #616161;
+
+// background
+$bg-gray: #f5f7fa; //목록, 달력, form
+
+// form color
+$form-border: #e0e0e0;
+$placeholder: $dark-gray;
+$disabled: #e0e0e0;
+
+// table color
+$tbl-border-top: $black;
+$tbl-border-bottom: #eee;
+$tbl-border-inner: #eee;
+$tbl-bg: #fafafa;
+$th-color: $dark-gray;
+$th-bg: #444;
+
+// border color
+$border-gray: #eee;
+
+// font
+$font-size-default: 15px;
+$line-height-default: 1.5;
+$bold: 700;
+$medium: 700;
+$light: 300;
+
+// icon
+$icon-gray: $gray;
+
+// animation
+@keyframes aniOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

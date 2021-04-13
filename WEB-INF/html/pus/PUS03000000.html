@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>푸시관리 - 등록/수정</title>
+    <script src="../../../resources/js/include.js"></script>
+  </head>
+
+  <body>
+    <div class="admin-wrap">
+      <header class="admin-header"></header>
+
+      <nav class="admin-lnb"></nav>
+
+      <div class="admin-content">
+        <div class="area-path"></div>
+
+        <h2 class="content-title">푸시관리</h2>
+
+        <div class="tbl-type1">
+          <table>
+            <caption>
+              푸시 등록/수정
+            </caption>
+            <colgroup>
+              <col style="width: 130px" />
+              <col />
+              <col style="width: 130px" />
+              <col style="width: 200px" />
+              <col style="width: 130px" />
+              <col style="width: 200px" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  발송시점<span class="required">필수입력</span>
+                </th>
+                <td colspan="5">
+                  <label class="chk-label">
+                    <input type="radio" name="radioA" id="radioA-1" checked />
+                    <span>즉시발송</span>
+                  </label>
+                  <label class="chk-label">
+                    <input type="radio" name="radioA" id="radioA-2" />
+                    <span>예약발송</span>
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  예약발송일자<span class="required">필수입력</span>
+                </th>
+                <td colspan="5">
+                  <div class="datepicker">
+                    <input
+                      type="text"
+                      class="text date"
+                      id="datepicker_singleB"
+                    />
+                  </div>
+                  <div class="select-unit">
+                    <select name="" id="" class="select">
+                      <option value="">00</option>
+                    </select>
+                    <span class="unit">시</span>
+                    <!-- <select name="" id="" class="select">
+                      <option value="">00</option>
+                    </select>
+                    <span class="unit">분</span> -->
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">등록일자</th>
+                <td>0000-00-00</td>
+                <th scope="row">작성자</th>
+                <td colspan="3">홍길동</td>
+              </tr>
+              <tr>
+                <th scope="row">제목<span class="required">필수입력</span></th>
+                <td colspan="5">
+                  <input type="text" class="text" />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  발송대상<span class="required">필수입력</span>
+                </th>
+                <td>
+                  <div class="toggle-wrap">
+                    <label class="chk-label">
+                      <input
+                        type="radio"
+                        name="radio-4"
+                        id="radio-4-1"
+                        checked
+                      />
+                      <span>전체발송</span>
+                    </label>
+                    <label class="chk-label">
+                      <input
+                        type="radio"
+                        name="radio-4"
+                        id="radio-4-2"
+                        data-toggle-trigger="toggle1"
+                      />
+                      <span>선택발송</span>
+                    </label>
+                    <div class="toggle-content dp-inline-block" id="toggle1">
+                      <button type="button" class="btn-type3 btn-bg4">
+                        회사 찾기
+                      </button>
+                    </div>
+                  </div>
+                </td>
+                <th scope="row">관리</th>
+                <td>HR/시스템</td>
+                <th scope="row">
+                  알림 유형<span class="required">필수입력</span>
+                </th>
+                <td>
+                  <label class="chk-label">
+                    <input
+                      type="radio"
+                      name="radioC"
+                      id="radioC-1"
+                      checked=""
+                    />
+                    <span>정보성</span>
+                  </label>
+                  <label class="chk-label">
+                    <input type="radio" name="radioC" id="radioC-2" />
+                    <span>광고성</span>
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">회사</th>
+                <td colspan="5">회사명, 회사명, 회사명</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  링크설정<span class="required">필수입력</span>
+                </th>
+                <td colspan="5">
+                  <div class="input-area">
+                    <input
+                      type="text"
+                      class="text readonly"
+                      placeholder="메뉴를 선택해 주세요."
+                      readonly
+                    />
+                    <button type="button" class="btn-type3 btn-bg4">
+                      메뉴 찾기
+                    </button>
+                  </div>
+                  <!-- 선택한 메뉴가 이벤트/공지사항일 경우에만 노출 -->
+                  <input
+                    type="text"
+                    class="text"
+                    placeholder="일련번호를 입력해 주세요."
+                    style="min-width: 208px"
+                  />
+                  <!-- // -->
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">내용<span class="required">필수입력</span></th>
+                <td colspan="5">
+                  <article class="editor-wrap">에디터영역</article>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="btn-area ta-right">
+          <button class="btn-type2">등록</button>
+          <button class="btn-type2 btn-bg2">다시 쓰기</button>
+          <a href="#" class="btn-type2 btn-bg4">목록</a>
+        </div>
+      </div>
+
+      <footer class="admin-footer"></footer>
+    </div>
+  </body>
+</html>

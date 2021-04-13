@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+/* 리스트 */
+.list-type1 {
+  padding: 20px;
+  border: 1px solid $border-gray;
+  border-radius: 10px;
+  font-size: 0;
+
+  > ul {
+    margin: -10px 0 0 -20px;
+
+    > li {
+      display: inline-block;
+      margin: 10px 0 0 20px;
+      font-size: $font-size-default;
+    }
+  }
+}
+
+.list-type2 {
+  margin-top: 10px;
+
+  > ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px 0 0 -10px;
+
+    > li {
+      position: relative;
+      max-width: 20%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 10px 0 0 10px;
+      text-align: left;
+      font-size: $font-size-default;
+      max-width: 20%;
+      padding: 0 44px 0 10px;
+
+      .btn-icon-delete {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

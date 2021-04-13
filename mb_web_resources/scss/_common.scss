@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+body {
+  font-family: $font-family-default;
+  font-size: $font-size-default;
+  font-weight: normal;
+  line-height: $line-height-default;
+  color: $black;
+  word-break: keep-all;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 공통 클래스 */
+.hide {
+  @include hide;
+}
+
+.ov-hidden {
+  overflow: hidden !important;
+}
+
+.dp-none {
+  display: none !important;
+}
+
+.dp-block {
+  display: block !important;
+}
+
+.dp-inline-block {
+  display: inline-block !important;
+}
+
+.ta-center {
+  text-align: center !important;
+}
+
+.ta-left {
+  text-align: left !important;
+}
+
+.ta-right {
+  text-align: right !important;
+}

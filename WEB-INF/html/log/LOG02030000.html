@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>System 관리자 신청</title>
+    <script src="../../../resources/js/include.js"></script>
+  </head>
+
+  <body>
+    <div class="admin-wrap">
+      <header class="admin-header"></header>
+
+      <nav class="admin-lnb"></nav>
+
+      <div class="admin-content">
+        <div class="area-path"></div>
+
+        <h2 class="content-title">팝업</h2>
+
+        <button type="button" class="btn-type1" data-ly-pop-trigger="pop1">
+          System 관리자 신청
+        </button>
+      </div>
+
+      <footer class="admin-footer"></footer>
+    </div>
+
+    <div class="ly-pop sm" id="pop1">
+      <div class="ly-pop-header">
+        <strong>System 관리자 신청</strong>
+        <button type="button" class="btn-icon-close" data-pop-close>
+          <i>닫기</i>
+        </button>
+      </div>
+
+      <div class="ly-pop-content">
+        <div class="tbl-type1">
+          <table>
+            <caption>
+              System 관리자 신청정보입력
+            </caption>
+            <colgroup>
+              <col style="width: 130px" />
+              <col />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">아이디</th>
+                <td>
+                  <div class="input-area">
+                    <input type="text" class="text" />
+                    <button class="btn-type3 btn-bg4">중복확인</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">이름</th>
+                <td>
+                  <input type="text" class="text" />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">휴대폰</th>
+                <td>
+                  <div class="input-phone">
+                    <select name="" id="" class="select">
+                      <option value="">010</option>
+                    </select>
+                    <span class="unit">-</span>
+                    <input type="text" class="text" />
+                    <span class="unit">-</span>
+                    <input type="text" class="text" />
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">이메일</th>
+                <td>
+                  <div class="input-email">
+                    <input type="text" class="text" />
+                    <span class="unit">@</span>
+                    <input type="text" class="text" />
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">회사</th>
+                <td>
+                  <select name="" id="" class="select">
+                    <option value="" hidden>선택해주세요</option>
+                    <option value="">회사명</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">회사</th>
+                <td>
+                  <div class="toggle-wrap">
+                    <label class="chk-label">
+                      <input
+                        type="radio"
+                        name="radio-14-1"
+                        id="radio-14-1-1"
+                        checked
+                      />
+                      <span>자사</span>
+                    </label>
+                    <label class="chk-label">
+                      <input
+                        type="radio"
+                        name="radio-14-1"
+                        id="radio-14-1-2"
+                        data-toggle-trigger="toggle1"
+                      />
+                      <span>외주사</span>
+                    </label>
+                    <div class="toggle-content" id="toggle1">
+                      <input type="text" class="text full" />
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="txt-type2 co-type3">
+          <span class="co-type2">* 필독</span><br />관리자 신청 후 빠른 승인을
+          원하시면
+          <a href="mailto:lifeplus.maum@gmail.com"
+            ><b>lifeplus.maum@gmail.com</b></a
+          >으로<br />
+          연락해 주세요.
+        </p>
+
+        <div class="btn-area ta-right">
+          <button class="btn-type2">신청</button>
+          <button type="button" class="btn-type2 btn-bg3" data-pop-close>
+            취소
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $("document").ready(function () {
+        $("[data-ly-pop-trigger]").trigger("click");
+      });
+    </script>
+  </body>
+</html>

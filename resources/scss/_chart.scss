@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* 차트 */
+.chart-area {
+  position: relative;
+  overflow: hidden;
+  padding: 30px 0;
+  border-bottom: 1px solid $border-bottom;
+  border-top: 1px solid$border-top;
+
+  + .tbl-sub {
+    margin-top: 25px;
+  }
+
+  .sort-area {
+    margin-bottom: 30px;
+  }
+
+  .chart-inner {
+    display: none;
+    @include clearfix;
+
+    .canvas-wrap {
+      height: 200px;
+      float: left;
+      width: 33.33%;
+    }
+  }
+
+  canvas {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    &:only-child {
+      display: none;
+    }
+  }
+
+  .canvas-layout {
+    @include clearfix;
+
+    .canvas-wrap {
+      float: left;
+      width: 70%;
+
+      + .canvas-wrap {
+        display: none;
+        float: right;
+        width: 30%;
+        height: 250px;
+      }
+
+      &.active {
+        + .canvas-wrap {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .canvas-wrap {
+    height: 300px;
+  }
+}

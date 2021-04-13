@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+/* 버튼 */
+// 버튼영역
+.btn-area {
+  font-size: 0;
+  @include clearfix;
+
+  + .btn-area {
+    margin-top: 20px;
+  }
+
+  [class^="btn-"] {
+    + [class^="btn-"] {
+      margin-left: 6px;
+    }
+  }
+}
+
+// 기본형
+[class^="btn-"] {
+  &.disabled,
+  &:disabled {
+    background: $disabled;
+  }
+}
+
+.btn-t1 {
+  display: inline-block;
+  height: 48px;
+  padding: 0 14px;
+  line-height: 48px;
+  background: $black;
+  color: $white;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 5px;
+  box-sizing: border-box;
+
+  &.full {
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+/* 아이콘형 */
+[class*="btn-ico-"] {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+
+  i {
+    position: static;
+    font-size: 0;
+    color: transparent;
+  }
+}
+
+.btn-ico-del {
+  width: 20px;
+  height: 20px;
+
+  i {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 14px;
+      height: 1px;
+      background: $black;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}
+
+.btn-ico-download {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 13px;
+    background: url(../img/common/ico_download.png);
+    background-size: 100%;
+  }
+
+  i {
+    position: static;
+    font-size: 0;
+    color: transparent;
+  }
+}
+
+.swiper-pagination {
+  .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    background-color: $form-border;
+    opacity: 1;
+    margin: 0 3px !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 16px;
+    border-radius: 4px;
+    background-color: $black;
+    transition: 300ms;
+  }
+}

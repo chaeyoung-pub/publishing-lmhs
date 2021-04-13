@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>루틴관리 - 등록/수정</title>
+    <script src="../../../resources/js/include.js"></script>
+  </head>
+
+  <body>
+    <div class="admin-wrap">
+      <header class="admin-header"></header>
+
+      <nav class="admin-lnb"></nav>
+
+      <div class="admin-content">
+        <div class="area-path"></div>
+
+        <h2 class="content-title">루틴관리</h2>
+
+        <h3 class="tit-type1">기본정보</h3>
+
+        <div class="tbl-type1">
+          <table>
+            <caption>
+              기본정보
+            </caption>
+            <colgroup>
+              <col style="width: 130px" />
+              <col />
+              <col style="width: 130px" />
+              <col />
+              <col style="width: 130px" />
+              <col />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  게시여부<span class="required">필수입력</span>
+                </th>
+                <td>
+                  <label class="chk-label">
+                    <input type="radio" name="radio-1" id="raido-1-1" />
+                    <span>게시</span>
+                  </label>
+                  <label class="chk-label">
+                    <input type="radio" name="radio-1" id="raido-1-2" />
+                    <span>비게시</span>
+                  </label>
+                </td>
+                <th scope="row">등록자</th>
+                <td>홍길동</td>
+                <th scope="row">등록일자</th>
+                <td>0000-00-00</td>
+              </tr>
+              <tr>
+                <th scope="row">제목<span class="required">필수입력</span></th>
+                <td colspan="5"><input type="text" class="text" /></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  배너이미지<span class="required">필수입력</span>
+                </th>
+                <td colspan="5">
+                  <div class="input-file">
+                    <input type="text" class="text readonly" readonly />
+                    <button type="button" class="btn-icon-delete-type3">
+                      <i>삭제</i>
+                    </button>
+                    <button type="button">찾아보기</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="tit-type1">아침 루틴</h3>
+
+        <h4 class="tit-type2">콘텐츠 정보</h4>
+        <div class="tit-sub">
+          <button type="button" class="btn-type3 btn-bg3">콘텐츠 등록 +</button>
+        </div>
+
+        <!-- 콘텐츠 등록 후 노출 -->
+        <div class="tbl-type2">
+          <table>
+            <caption>
+              아침 루틴 정보
+            </caption>
+            <colgroup>
+              <col style="width: 80px" />
+              <col style="width: 13%" />
+              <col />
+              <col />
+              <col style="width: 10%" />
+              <col style="width: 80px" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">카테고리</th>
+                <th scope="col">제목</th>
+                <th scope="col">소개</th>
+                <th scope="col">난이도</th>
+                <th scope="col">삭제</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>홈트레이닝</td>
+                <td class="ellipsis ta-left">제목명</td>
+                <td class="ellipsis ta-left">소개내용</td>
+                <td>1단계</td>
+                <td>
+                  <button class="btn-icon-delete-type2"><i>삭제</i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>사운드테라피 믹스</td>
+                <td class="ellipsis ta-left">제목명</td>
+                <td class="ellipsis ta-left">소개내용</td>
+                <td>1단계</td>
+                <td>
+                  <button class="btn-icon-delete-type2"><i>삭제</i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- // -->
+
+        <h3 class="tit-type1">점심 루틴</h3>
+
+        <h4 class="tit-type2">콘텐츠 정보</h4>
+        <div class="tit-sub">
+          <button type="button" class="btn-type3 btn-bg3">콘텐츠 등록 +</button>
+        </div>
+
+        <!-- 콘텐츠 등록 후 노출 -->
+        <div class="tbl-type2">
+          <table>
+            <caption>
+              점심 루틴 정보
+            </caption>
+            <colgroup>
+              <col style="width: 80px" />
+              <col style="width: 13%" />
+              <col />
+              <col />
+              <col style="width: 10%" />
+              <col style="width: 80px" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">카테고리</th>
+                <th scope="col">제목</th>
+                <th scope="col">소개</th>
+                <th scope="col">난이도</th>
+                <th scope="col">삭제</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>홈트레이닝</td>
+                <td class="ellipsis ta-left">제목명</td>
+                <td class="ellipsis ta-left">소개내용</td>
+                <td>1단계</td>
+                <td>
+                  <button class="btn-icon-delete-type2"><i>삭제</i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>홈트레이닝</td>
+                <td class="ellipsis ta-left">제목명</td>
+                <td class="ellipsis ta-left">소개내용</td>
+                <td>1단계</td>
+                <td>
+                  <button class="btn-icon-delete-type2"><i>삭제</i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- // -->
+
+        <h3 class="tit-type1">저녁 루틴</h3>
+
+        <h4 class="tit-type2">콘텐츠 정보</h4>
+        <div class="tit-sub">
+          <button type="button" class="btn-type3 btn-bg3">콘텐츠 등록 +</button>
+        </div>
+
+        <!-- 콘텐츠 등록 후 노출 -->
+        <div class="tbl-type2">
+          <table>
+            <caption>
+              저녁 루틴 정보
+            </caption>
+            <colgroup>
+              <col style="width: 80px" />
+              <col style="width: 13%" />
+              <col />
+              <col />
+              <col style="width: 10%" />
+              <col style="width: 80px" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">카테고리</th>
+                <th scope="col">제목</th>
+                <th scope="col">소개</th>
+                <th scope="col">난이도</th>
+                <th scope="col">삭제</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>홈트레이닝</td>
+                <td class="ellipsis ta-left">제목명</td>
+                <td class="ellipsis ta-left">소개내용</td>
+                <td>1단계</td>
+                <td>
+                  <button class="btn-icon-delete-type2"><i>삭제</i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>홈트레이닝</td>
+                <td class="ellipsis ta-left">제목명</td>
+                <td class="ellipsis ta-left">소개내용</td>
+                <td>1단계</td>
+                <td>
+                  <button class="btn-icon-delete-type2"><i>삭제</i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- // -->
+
+        <div class="btn-area ta-right">
+          <button class="btn-type2">등록</button>
+          <a href="#" class="btn-type2 btn-bg4">목록</a>
+        </div>
+      </div>
+
+      <footer class="admin-footer"></footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>태그 코드 찾기</title>
+    <script src="../../../resources/js/include.js"></script>
+  </head>
+
+  <body>
+    <div class="admin-wrap">
+      <header class="admin-header"></header>
+
+      <nav class="admin-lnb"></nav>
+
+      <div class="admin-content">
+        <div class="area-path"></div>
+
+        <h2 class="content-title">팝업</h2>
+
+        <button type="button" class="btn-type1" data-ly-pop-trigger="pop1">
+          태그 코드 찾기
+        </button>
+      </div>
+
+      <footer class="admin-footer"></footer>
+    </div>
+
+    <div class="ly-pop sm" id="pop1">
+      <div class="ly-pop-header">
+        <strong>태그 코드 찾기</strong>
+        <button type="button" class="btn-icon-close" data-pop-close>
+          <i>닫기</i>
+        </button>
+      </div>
+
+      <div class="ly-pop-content">
+        <div class="tbl-wrap fd-column" data-checkbox-all>
+          <div class="tbl-type2 tbl-fixed">
+            <table>
+              <caption>
+                구분
+              </caption>
+              <colgroup>
+                <col style="width: 58px" />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <label class="chk-label">
+                      <input
+                        type="checkbox"
+                        name="chkA1"
+                        id="chkA1-1"
+                        data-checkbox-trigger
+                      />
+                      <span></span>
+                    </label>
+                  </th>
+                  <th scope="col">태그 코드</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="tbl-type2 tbl-scroll-y" style="max-height: 300px">
+            <table>
+              <caption>
+                태그목록
+              </caption>
+              <colgroup>
+                <col style="width: 58px" />
+                <col />
+              </colgroup>
+              <tbody>
+                <!-- case1) 데이터가 있는 경우 -->
+                <tr>
+                  <td>
+                    <label class="chk-label">
+                      <input type="checkbox" name="chkA1" id="chkA1-2" />
+                      <span></span>
+                    </label>
+                  </td>
+                  <td>#불안</td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="chk-label">
+                      <input type="checkbox" name="chkA1" id="chkA1-3" />
+                      <span></span>
+                    </label>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="chk-label">
+                      <input type="checkbox" name="chkA1" id="chkA1-4" />
+                      <span></span>
+                    </label>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="chk-label">
+                      <input type="checkbox" name="chkA1" id="chkA1-5" />
+                      <span></span>
+                    </label>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="chk-label">
+                      <input type="checkbox" name="chkA1" id="chkA1-6" />
+                      <span></span>
+                    </label>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="chk-label">
+                      <input type="checkbox" name="chkA1" id="chkA1-7" />
+                      <span></span>
+                    </label>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="chk-label">
+                      <input type="checkbox" name="chkA1" id="chkA1-8" />
+                      <span></span>
+                    </label>
+                  </td>
+                  <td></td>
+                </tr>
+                <!-- // -->
+
+                <!-- case2 ) 데이터가 없는 경우 -->
+                <tr>
+                  <td colspan="2" class="nodata">조회된 데이터가 없습니다.</td>
+                </tr>
+                <!-- // -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="btn-area ta-right">
+          <button class="btn-type2">등록하기</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $("document").ready(function () {
+        $("[data-ly-pop-trigger]").trigger("click");
+      });
+    </script>
+  </body>
+</html>

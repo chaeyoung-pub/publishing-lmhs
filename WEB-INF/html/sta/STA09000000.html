@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>통계관리 - 취합보고서</title>
+    <script src="../../../resources/js/include.js"></script>
+  </head>
+
+  <body>
+    <div class="admin-wrap">
+      <header class="admin-header"></header>
+
+      <nav class="admin-lnb"></nav>
+
+      <div class="admin-content">
+        <div class="area-path"></div>
+
+        <h2 class="content-title">취합보고서</h2>
+
+        <div class="box-type1">
+          <ul class="search-area">
+            <li>
+              <label for="">조회연월</label>
+              <select class="select">
+                <option value="">2020년</option>
+              </select>
+              <select class="select">
+                <option value="">11월</option>
+              </select>
+            </li>
+          </ul>
+          <button class="btn-type4 btn-bg2">검색</button>
+        </div>
+
+        <!-- case1 ) 데이터가 있는 경우 -->
+        <div class="report">
+          <div>
+            <h3 class="tit-type1">서비스 가입자 현황</h3>
+            <div class="chart-area">
+              <div class="canvas-wrap">
+                <canvas id="canvasBar1"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="tit-type1">챌린지 현황</h3>
+            <div class="chart-area">
+              <div class="canvas-wrap">
+                <canvas id="canvasBar2"></canvas>
+              </div>
+              <div class="canvas-wrap">
+                <canvas id="canvasBar3"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="tit-type1">클래스 현황</h3>
+            <div class="chart-area">
+              <div class="canvas-wrap">
+                <canvas id="canvasBar4"></canvas>
+              </div>
+              <div class="canvas-wrap">
+                <canvas id="canvasBar5"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="tit-type1">감정캘린더 현황</h3>
+            <div class="chart-area">
+              <div class="canvas-wrap">
+                <canvas id="canvasBar6"></canvas>
+              </div>
+              <div class="canvas-wrap">
+                <canvas id="canvasBar7"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="tit-type1">간편문진 현황</h3>
+            <div class="chart-area">
+              <div class="canvas-wrap">
+                <canvas id="canvasBar8"></canvas>
+              </div>
+              <div class="canvas-wrap">
+                <canvas id="canvasBar9"></canvas>
+              </div>
+              <div class="canvas-wrap">
+                <canvas id="canvasBar10"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="tit-type1">마음건강검진 현황</h3>
+            <div class="chart-area">
+              <div class="canvas-wrap">
+                <canvas id="canvasBar11"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- // -->
+
+        <!-- case2 ) 데이터가 없는 경우 -->
+        <div class="nodata">
+          <p>조회된 데이터가 없습니다.</p>
+        </div>
+        <!-- // -->
+      </div>
+
+      <footer class="admin-footer"></footer>
+    </div>
+
+    <script>
+      // 데이터 임시처리
+      let date = [];
+      for (let i = 0; i < 30; i += 1) {
+        date.push(i + 1);
+      }
+
+      function getRandomArbitrary() {
+        return Math.round(Math.random() * (10000 - 0) + 0);
+      }
+
+      const dataRange = function () {
+        let result = [];
+        for (let i = 0; i < date.length; i += 1) {
+          result.push(getRandomArbitrary());
+        }
+        return result;
+      };
+      console.log(dataRange());
+
+      const dataPercent = function () {
+        function getRandomArbitrary() {
+          return Math.round(Math.random() * (100 - 0) + 0);
+        }
+
+        let result = [];
+        for (let i = 0; i < date.length; i += 1) {
+          result.push(getRandomArbitrary());
+        }
+        return result;
+      };
+
+      //데이터 설정
+      var configBar1 = {
+        type: "bar",
+        data: {
+          labels: ["서비스 가입자"],
+          datasets: [
+            {
+              label: "10월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.red,
+              data: [0],
+            },
+            {
+              label: "11월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.orange,
+              data: [2],
+            },
+          ],
+        },
+        options: {
+          layout: {
+            padding: 0,
+          },
+          legend: {
+            display: true,
+            position: "bottom",
+            align: "center",
+          },
+          tooltips: {
+            mode: "index",
+            intersect: false,
+            callbacks: {
+              label: function (tooltipItem, data) {
+                return (
+                  data.datasets[tooltipItem.datasetIndex].label +
+                  ":" +
+                  tooltipItem.yLabel
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                );
+              },
+            },
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  // 데이터가 정수로만 나오는 경우 (beginAtZero, stepSize, maxTicksLimit 설정)
+                  beginAtZero: true,
+                  stepSize: 1,
+                  maxTicksLimit: 11,
+                  callback: function (value, index, values) {
+                    return value
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  },
+                },
+              },
+            ],
+          },
+        },
+      };
+
+      var configBar2 = {
+        type: "bar",
+        data: {
+          labels: ["10월", "11월"],
+          datasets: [
+            {
+              label: "전체 인원",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.red,
+              data: dataRange(),
+            },
+            {
+              label: "챌린지 달성 인원",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.orange,
+              data: dataRange(),
+            },
+          ],
+        },
+        options: {
+          layout: {
+            padding: 0,
+          },
+          title: {
+            display: true,
+            text: "챌린지 달성 인원",
+          },
+          legend: {
+            display: true,
+            position: "bottom",
+            align: "center",
+          },
+          tooltips: {
+            mode: "index",
+            intersect: false,
+            callbacks: {
+              label: function (tooltipItem, data) {
+                return (
+                  data.datasets[tooltipItem.datasetIndex].label +
+                  ":" +
+                  tooltipItem.yLabel
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                );
+              },
+            },
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  callback: function (value, index, values) {
+                    return value
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  },
+                },
+              },
+            ],
+          },
+        },
+      };
+
+      var configBar3 = {
+        type: "bar",
+        data: {
+          labels: [
+            ["1개 이상~5개 미만", "획득 인원"],
+            ["5개 이상~10개 미만", " 획득 인원"],
+            ["10개 이상~20개 미만", " 획득 인원"],
+            ["20개 이상~30개 미만", " 획득 인원"],
+            ["30개 이상", " 획득 인원"],
+          ],
+          datasets: [
+            {
+              label: "10월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.red,
+              data: dataRange(),
+            },
+            {
+              label: "11월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.orange,
+              data: dataRange(),
+            },
+          ],
+        },
+        options: {
+          layout: {
+            padding: 0,
+          },
+          title: {
+            display: true,
+            text: "구간별 스탬프 획득 인원",
+          },
+          legend: {
+            display: true,
+            position: "bottom",
+            align: "center",
+          },
+          tooltips: {
+            mode: "index",
+            intersect: false,
+            callbacks: {
+              label: function (tooltipItem, data) {
+                return (
+                  data.datasets[tooltipItem.datasetIndex].label +
+                  ":" +
+                  tooltipItem.yLabel
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                );
+              },
+            },
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  callback: function (value, index, values) {
+                    return value
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  },
+                },
+              },
+            ],
+          },
+        },
+      };
+
+      var configBar4 = {
+        type: "bar",
+        data: {
+          labels: [
+            "홈트레이닝",
+            "요가&명상",
+            "댄스카디오",
+            "북테라피",
+            "사운드테라피",
+          ],
+          datasets: [
+            {
+              label: "10월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.red,
+              data: dataRange(),
+            },
+            {
+              label: "11월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.orange,
+              data: dataRange(),
+            },
+          ],
+        },
+        options: {
+          layout: {
+            padding: 0,
+          },
+          title: {
+            display: true,
+            text: "카테고리 별 클래스 조회수",
+          },
+          legend: {
+            display: true,
+            position: "bottom",
+            align: "center",
+          },
+          tooltips: {
+            mode: "index",
+            intersect: false,
+            callbacks: {
+              label: function (tooltipItem, data) {
+                return (
+                  data.datasets[tooltipItem.datasetIndex].label +
+                  ":" +
+                  tooltipItem.yLabel
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                );
+              },
+            },
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  callback: function (value, index, values) {
+                    return value
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  },
+                },
+              },
+            ],
+          },
+        },
+      };
+
+      var configBar5 = {
+        type: "bar",
+        data: {
+          labels: [
+            "홈트레이닝",
+            "요가&명상",
+            "댄스카디오",
+            "북테라피",
+            "사운드테라피",
+          ],
+          datasets: [
+            {
+              label: "10월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.red,
+              data: dataRange(),
+            },
+            {
+              label: "11월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.orange,
+              data: dataRange(),
+            },
+          ],
+        },
+        options: {
+          layout: {
+            padding: 0,
+          },
+          title: {
+            display: true,
+            text: "카테고리 별 클래스 누적 플레이 시간",
+          },
+          legend: {
+            display: true,
+            position: "bottom",
+            align: "center",
+          },
+          tooltips: {
+            mode: "index",
+            intersect: false,
+            callbacks: {
+              label: function (tooltipItem, data) {
+                return (
+                  data.datasets[tooltipItem.datasetIndex].label +
+                  ":" +
+                  tooltipItem.yLabel
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                );
+              },
+            },
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  callback: function (value, index, values) {
+                    return value
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  },
+                },
+              },
+            ],
+          },
+        },
+      };
+
+      var configBar6 = {
+        type: "bar",
+        data: {
+          labels: ["감정캘린더 작성 횟수"],
+          datasets: [
+            {
+              label: "10월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.red,
+              data: dataRange(),
+            },
+            {
+              label: "11월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.orange,
+              data: dataRange(),
+            },
+          ],
+        },
+        options: {
+          layout: {
+            padding: 0,
+          },
+          legend: {
+            display: true,
+            position: "bottom",
+            align: "center",
+          },
+          tooltips: {
+            mode: "index",
+            intersect: false,
+            callbacks: {
+              label: function (tooltipItem, data) {
+                return (
+                  data.datasets[tooltipItem.datasetIndex].label +
+                  ":" +
+                  tooltipItem.yLabel
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                );
+              },
+            },
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  callback: function (value, index, values) {
+                    return value
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  },
+                },
+              },
+            ],
+          },
+        },
+      };
+
+      var configBar7 = {
+        type: "bar",
+        data: {
+          labels: [
+            "즐거워요",
+            "뿌듯해요",
+            "기대돼요",
+            "편안해요",
+            "불안해요",
+            "공허해요",
+            "무기력해요",
+            "짜증나요",
+          ],
+          datasets: [
+            {
+              label: "10월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.red,
+              data: dataRange(),
+            },
+            {
+              label: "11월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.orange,
+              data: dataRange(),
+            },
+          ],
+        },
+        options: {
+          layout: {
+            padding: 0,
+          },
+          title: {
+            display: true,
+            text: "감정 별 강도 분포",
+          },
+          legend: {
+            display: true,
+            position: "bottom",
+            align: "center",
+          },
+          tooltips: {
+            mode: "index",
+            intersect: false,
+            callbacks: {
+              label: function (tooltipItem, data) {
+                return (
+                  data.datasets[tooltipItem.datasetIndex].label +
+                  ":" +
+                  tooltipItem.yLabel
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                );
+              },
+            },
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  callback: function (value, index, values) {
+                    return value
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  },
+                },
+              },
+            ],
+          },
+        },
+      };
+
+      var configBar8 = {
+        type: "bar",
+        data: {
+          // labels: ["진단건수"],
+          datasets: [
+            {
+              label: "10월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.red,
+              data: dataRange(),
+            },
+            {
+              label: "11월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.orange,
+              data: dataRange(),
+            },
+          ],
+        },
+        options: {
+          layout: {
+            padding: 0,
+          },
+          title: {
+            display: true,
+            text: "문진건수 비교",
+          },
+          legend: {
+            display: true,
+            position: "bottom",
+            align: "center",
+          },
+          tooltips: {
+            mode: "index",
+            intersect: false,
+            callbacks: {
+              label: function (tooltipItem, data) {
+                return (
+                  data.datasets[tooltipItem.datasetIndex].label +
+                  ":" +
+                  tooltipItem.yLabel
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                );
+              },
+            },
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  callback: function (value, index, values) {
+                    return value
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  },
+                },
+              },
+            ],
+          },
+        },
+      };
+
+      var configBar9 = {
+        type: "bar",
+        data: {
+          labels: ["우울/불안", "우울", "불안"],
+          datasets: [
+            {
+              label: "10월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.red,
+              data: dataRange(),
+            },
+            {
+              label: "11월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.orange,
+              data: dataRange(),
+            },
+          ],
+        },
+        options: {
+          layout: {
+            padding: 0,
+          },
+          title: {
+            display: true,
+            text: "진행한 문진유형 비교",
+          },
+          legend: {
+            display: true,
+            position: "bottom",
+            align: "center",
+          },
+          tooltips: {
+            mode: "index",
+            intersect: false,
+            callbacks: {
+              label: function (tooltipItem, data) {
+                return (
+                  data.datasets[tooltipItem.datasetIndex].label +
+                  ":" +
+                  tooltipItem.yLabel
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                );
+              },
+            },
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  callback: function (value, index, values) {
+                    return value
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  },
+                },
+              },
+            ],
+          },
+        },
+      };
+
+      var configBar10 = {
+        type: "bar",
+        data: {
+          labels: ["건강해요", "주의가 필요해요", "위험해요", "심각해요"],
+          datasets: [
+            {
+              label: "10월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.red,
+              data: dataRange(),
+            },
+            {
+              label: "11월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.orange,
+              data: dataRange(),
+            },
+          ],
+        },
+        options: {
+          layout: {
+            padding: 0,
+          },
+          title: {
+            display: true,
+            text: "문진결과 분포",
+          },
+          legend: {
+            display: true,
+            position: "bottom",
+            align: "center",
+          },
+          tooltips: {
+            mode: "index",
+            intersect: false,
+            callbacks: {
+              label: function (tooltipItem, data) {
+                return (
+                  data.datasets[tooltipItem.datasetIndex].label +
+                  ":" +
+                  tooltipItem.yLabel
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                );
+              },
+            },
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  callback: function (value, index, values) {
+                    return value
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  },
+                },
+              },
+            ],
+          },
+        },
+      };
+
+      var configBar11 = {
+        type: "bar",
+        data: {
+          labels: [
+            "우울증",
+            "스트레스",
+            "수면장애",
+            "공황장애",
+            "범불안장애",
+            "사회 불안 장애",
+            "ADHD",
+            "조울증",
+            "강박장애",
+            "식이장애",
+            "알코올 사용 장애",
+            "인터넷 게임 장애",
+            "PTSD",
+          ],
+          datasets: [
+            {
+              label: "10월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.red,
+              data: dataRange(),
+            },
+            {
+              label: "11월",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.orange,
+              data: dataRange(),
+            },
+          ],
+        },
+        options: {
+          layout: {
+            padding: 0,
+          },
+          title: {
+            display: true,
+            text: "마음건강검진 검진 질환 비교",
+          },
+          legend: {
+            display: true,
+            position: "bottom",
+            align: "center",
+          },
+          tooltips: {
+            mode: "index",
+            intersect: false,
+            callbacks: {
+              label: function (tooltipItem, data) {
+                return (
+                  data.datasets[tooltipItem.datasetIndex].label +
+                  ":" +
+                  tooltipItem.yLabel
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                );
+              },
+            },
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  callback: function (value, index, values) {
+                    return value
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  },
+                },
+              },
+            ],
+          },
+        },
+      };
+
+      window.onload = function () {
+        [
+          { id: "canvasBar1", config: configBar1 },
+          { id: "canvasBar2", config: configBar2 },
+          { id: "canvasBar3", config: configBar3 },
+          { id: "canvasBar4", config: configBar4 },
+          { id: "canvasBar5", config: configBar5 },
+          { id: "canvasBar6", config: configBar6 },
+          { id: "canvasBar7", config: configBar7 },
+          { id: "canvasBar8", config: configBar8 },
+          { id: "canvasBar9", config: configBar9 },
+          { id: "canvasBar10", config: configBar10 },
+          { id: "canvasBar11", config: configBar11 },
+        ].forEach(function (details) {
+          var ctx = document.getElementById(details.id).getContext("2d");
+          new Chart(ctx, details.config);
+        });
+      };
+    </script>
+  </body>
+</html>

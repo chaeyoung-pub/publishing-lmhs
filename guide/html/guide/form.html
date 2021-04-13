@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+    <link rel="stylesheet" href="../../css/guide.css" />
+    <link rel="stylesheet" href="../../../resources/css/common.css" />
+    <script src="../../../resources/js/library/jquery-3.4.1.min.js"></script>
+    <script src="../../../resources/js/library/jquery-ui.min.js"></script>
+    <script src="../../../resources/js/common.js"></script>
+    <script src="../../js/guide.js"></script>
+  </head>
+
+  <body>
+    <div class="guide-wrap">
+      <nav class="guide-lnb"></nav>
+
+      <section class="guide">
+        <h1 class="hide">form</h1>
+        <article>
+          <h2>input</h2>
+          <div>
+            <!-- code -->
+            <p class="desc">input.text</p>
+            <input type="text" class="text" />
+            <p class="txt-error">에러메세지</p>
+
+            <p class="desc">input.text.full</p>
+            <input type="text" class="text full" />
+
+            <p class="desc">input.text.readonly:readonly</p>
+            <input type="text" class="text readonly" readonly />
+
+            <p class="desc">input.text:disabled</p>
+            <input type="text" class="text" disabled />
+
+            <p class="desc">.input-file</p>
+            <!-- 파일찾기 전-->
+            <div class="input-file">
+              <input type="text" class="text readonly" readonly />
+              <button type="button" class="btn-icon-delete-type3">
+                <i>삭제</i>
+              </button>
+              <button type="button">찾아보기</button>
+            </div>
+            <!-- 파일찾기 후-->
+            <div class="input-file">
+              <input type="text" class="text readonly" value="11" readonly />
+              <button type="button" class="btn-icon-delete-type3">
+                <i>삭제</i>
+              </button>
+              <button type="button">찾아보기</button>
+            </div>
+
+            <p class="desc">.input-email</p>
+            <div class="input-email">
+              <input type="text" class="text" />
+              <span class="unit">@</span>
+              <input type="text" class="text" />
+            </div>
+
+            <p class="desc">.input-phone</p>
+            <div class="input-phone">
+              <select name="" id="" class="select">
+                <option value="">010</option>
+              </select>
+              <span class="unit">-</span>
+              <input type="text" class="text" />
+              <span class="unit">-</span>
+              <input type="text" class="text" />
+            </div>
+
+            <p class="desc">.input-version</p>
+            <div class="input-version">
+              <input type="text" class="text" />
+              <span class="unit">.</span>
+              <input type="text" class="text" />
+              <span class="unit"> . </span>
+              <input type="text" class="text" />
+            </div>
+
+            <p class="desc">.input-code</p>
+            <div class="input-code">
+              <input
+                type="text"
+                class="text full"
+                placeholder="인증번호를 입력하세요"
+              />
+              <span class="unit">00:00</span>
+            </div>
+
+            <p class="desc">.input-search</p>
+            <div class="input-search">
+              <input
+                type="text"
+                class="text"
+                placeholder="검색어를 입력하세요."
+              />
+              <button class="btn-icon-search">
+                <i>검색</i>
+              </button>
+            </div>
+
+            <p class="desc">.input-search.full</p>
+            <div class="input-search full">
+              <input
+                type="text"
+                class="text"
+                placeholder="검색어를 입력하세요."
+              />
+              <button class="btn-icon-search">
+                <i>검색</i>
+              </button>
+            </div>
+
+            <p class="desc">.input-area (input + button)</p>
+            <div class="input-area">
+              <input type="text" class="text" />
+              <button class="btn-type3 btn-bg4">버튼</button>
+            </div>
+
+            <div class="input-area">
+              <div class="input-code">
+                <input
+                  type="text"
+                  class="text full"
+                  placeholder="인증번호를 입력하세요"
+                />
+                <span class="unit">00:00</span>
+              </div>
+              <button class="btn-type3 btn-bg3">재 요청</button>
+            </div>
+
+            <div class="input-area">
+              <div class="input-phone">
+                <select name="" id="" class="select">
+                  <option value="">010</option>
+                </select>
+                <span class="unit">-</span>
+                <input type="text" class="text" />
+                <span class="unit">-</span>
+                <input type="text" class="text" />
+              </div>
+              <button class="btn-type3">인증번호 요청</button>
+            </div>
+
+            <p class="desc">textarea.textarea</p>
+            <textarea class="textarea"></textarea>
+            <!-- // code -->
+          </div>
+        </article>
+
+        <article>
+          <h2>select</h2>
+          <div>
+            <!-- code -->
+            <p class="desc">select.select</p>
+            <select class="select">
+              <option value="">전체</option>
+            </select>
+
+            <p class="desc">select.select:disabled</p>
+            <select class="select" disabled>
+              <option value="">전체</option>
+            </select>
+
+            <p class="desc">select.select.full</p>
+            <select class="select full">
+              <option value="">전체</option>
+            </select>
+            <!-- // code -->
+
+            <p class="desc">.select-unit</p>
+            <div class="select-unit">
+              <select name="" id="" class="select">
+                <option value="">00</option>
+              </select>
+              <span class="unit">:</span>
+              <select name="" id="" class="select">
+                <option value="">00</option>
+              </select>
+              <span class="unit">:</span>
+              <select name="" id="" class="select">
+                <option value="">00</option>
+              </select>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <h2>datepicker</h2>
+          <div>
+            <!-- code -->
+            <p class="desc">.datepicker (일자)</p>
+            <div class="datepicker">
+              <input type="text" class="text date" id="datepicker_single" />
+            </div>
+
+            <p class="desc">.datepicker (기간)</p>
+            <div class="datepicker">
+              <input type="text" class="text date" id="datepicker_start" />
+              <span class="unit">~</span>
+              <input type="text" class="text date" id="datepicker_end" />
+            </div>
+
+            <p class="desc">.datepicker (기간, 시간)</p>
+            <div class="datepicker">
+              <input type="text" class="text date" id="datepicker_start2" />
+              <div class="select-unit">
+                <select name="" id="" class="select">
+                  <option value="">00</option>
+                </select>
+                <span class="unit">:</span>
+                <select name="" id="" class="select">
+                  <option value="">00</option>
+                </select>
+              </div>
+              <span class="unit">~</span>
+              <input type="text" class="text date" id="datepicker_end2" />
+              <div class="select-unit">
+                <select name="" id="" class="select">
+                  <option value="">00</option>
+                </select>
+                <span class="unit">:</span>
+                <select name="" id="" class="select">
+                  <option value="">00</option>
+                </select>
+              </div>
+            </div>
+            <!-- // code -->
+          </div>
+        </article>
+
+        <article>
+          <h2>radio</h2>
+          <div>
+            <!-- code -->
+            <p class="desc">label.chk-label input[type="radio"]</p>
+            <label class="chk-label">
+              <input type="radio" name="radioA" id="radioA-1" checked />
+              <span>라디오 1</span>
+            </label>
+            <label class="chk-label">
+              <input type="radio" name="radioA" id="radioA-2" />
+              <span>라디오 2</span>
+            </label>
+
+            <p class="desc">
+              label.chk-label.disabled input[type="radio"]:disabled (비활성화)
+            </p>
+            <label class="chk-label disabled">
+              <input
+                type="radio"
+                name="radioB"
+                id="radioB-1"
+                checked
+                disabled
+              />
+              <span>라디오 1</span>
+            </label>
+            <label class="chk-label disabled">
+              <input type="radio" name="radioB" id="radioB-2" disabled />
+              <span>라디오 2</span>
+            </label>
+
+            <p class="desc">
+              .toggle-wrap
+              input[type="radio"][data-toggle-trigger="toggleContentID"],
+              .toggle-content#toggleContentID" (라디오 선택 시 토글)
+            </p>
+            <div class="toggle-wrap">
+              <label class="chk-label">
+                <input type="radio" name="radioC" id="raidoC-1" checked />
+                <span>라디오1</span>
+              </label>
+              <label class="chk-label">
+                <input
+                  type="radio"
+                  name="radioC"
+                  id="raidoC-2"
+                  data-toggle-trigger="toggleContentID"
+                  checked
+                />
+                <span>선택 시 내용보기</span>
+              </label>
+              <div class="toggle-content" id="toggleContentID">
+                <p class="txt-type1">내용</p>
+              </div>
+            </div>
+            <!-- // code -->
+          </div>
+        </article>
+
+        <article>
+          <h2>checkbox</h2>
+          <div>
+            <!-- code -->
+            <p class="desc">label.chk-label input[type="checkbox"]</p>
+            <label class="chk-label">
+              <input type="checkbox" name="chkA" id="chkA-1" checked />
+              <span></span>
+            </label>
+            <label class="chk-label">
+              <input type="checkbox" name="chkB" id="chkB-1" checked />
+              <span>체크박스 1</span>
+            </label>
+            <label class="chk-label">
+              <input type="checkbox" name="chkB" id="chkB-2" />
+              <span>체크박스 2</span>
+            </label>
+
+            <p class="desc">
+              label.chk-label.disabled input[type="checkbox"]:disabled
+              (비활성화)
+            </p>
+            <label class="chk-label disabled">
+              <input type="checkbox" name="chkC" id="chkC-1" checked disabled />
+              <span>체크박스 1</span>
+            </label>
+            <label class="chk-label disabled">
+              <input type="checkbox" name="chkC" id="chkC-2" disabled />
+              <span>체크박스 2</span>
+            </label>
+
+            <p class="desc">
+              [data-checkbox-all] [data-checkbox-trigger] (전체동의)
+            </p>
+            <div data-checkbox-all>
+              <label class="chk-label">
+                <input
+                  type="checkbox"
+                  name="chkD"
+                  id="chkD-1"
+                  data-checkbox-trigger
+                />
+                <span>전체동의</span>
+              </label>
+              <label class="chk-label">
+                <input type="checkbox" name="chkD" id="chkD-2" />
+                <span>동의1</span>
+              </label>
+              <label class="chk-label disabled">
+                <input type="checkbox" name="chkD" id="chkD-3" disabled />
+                <span>동의2</span>
+              </label>
+              <label class="chk-label">
+                <input type="checkbox" name="chkD" id="chkD-4" />
+                <span>동의3</span>
+              </label>
+            </div>
+            <!-- // code -->
+          </div>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>

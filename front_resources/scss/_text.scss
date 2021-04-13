@@ -1,0 +1,201 @@
+@charset "utf-8";
+
+/* 타이틀 */
+.tit-t1 {
+  &:not(:first-child) {
+    margin-top: 50px;
+  }
+
+  margin: 32px 0 26px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.tit-t2 {
+  &:not(:first-child) {
+    margin-top: 45px;
+  }
+
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: $bold;
+}
+
+.tit-t3 {
+  font-size: 14px;
+  font-weight: $bold;
+  margin: 38px 0 11px;
+}
+
+/* 텍스트 */
+.txt-t1 {
+  font-size: 20px;
+  font-weight: bold;
+
+  + .txt-t2 {
+    margin-top: 10px;
+  }
+}
+
+.txt-t2 {
+  font-size: 14px;
+}
+
+.txt-t3 {
+  font-size: 16px;
+}
+
+/* 불릿형 텍스트 */
+[class*="txt-bul"],
+[class*="txt-num"] {
+  &:not(ul):not(ol),
+  > li {
+    position: relative;
+
+    &.co-blue {
+      &::before {
+        background-color: $blue;
+      }
+    }
+
+    &.co-gray {
+      &::before {
+        background-color: $dark-gray;
+      }
+    }
+
+    [class^="txt-bul"],
+    [class^="txt-num"] {
+      margin-top: 4px;
+    }
+
+    ~ li {
+      margin-top: 4px;
+    }
+  }
+}
+
+// hyphen
+.txt-bul2 {
+  &:not(ul):not(ol),
+  > li {
+    position: relative;
+    padding-left: 8px;
+
+    &::before {
+      content: "-";
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+// dot
+.txt-bul3 {
+  &:not(ul):not(ol),
+  > li {
+    padding-left: 16px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 7px;
+      width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      background: $black;
+    }
+
+    ~ li {
+      margin-top: 16px;
+    }
+
+    > .txt-bul4 {
+      margin-top: 11px;
+    }
+  }
+}
+
+// 당구장
+.txt-bul4 {
+  &:not(ul):not(ol),
+  > li {
+    padding-left: 16px;
+
+    &::before {
+      content: "※";
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+// *
+.txt-bul5 {
+  &:not(ul):not(ol),
+  > li {
+    padding-left: 16px;
+
+    &::before {
+      content: "*";
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.txt-num {
+  counter-reset: number;
+
+  > li {
+    position: relative;
+    padding-left: 22px;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      counter-increment: number;
+      content: counter(number) ".";
+    }
+  }
+}
+
+.txt-num2 {
+  counter-reset: number;
+
+  > li {
+    position: relative;
+    padding-left: 28px;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      counter-increment: number;
+      content: "(" counter(number) ")";
+    }
+  }
+}
+
+.txt-bul {
+  > li {
+    padding-left: 20px;
+
+    > .bul {
+      margin-right: 4px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+// 이미지형 텍스트
+.img-txt {
+  height: 12px;
+}

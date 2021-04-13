@@ -1,0 +1,639 @@
+@charset "utf-8";
+
+/* 폼 */
+// 공통
+.text,
+.select,
+.textarea {
+  font-family: $font-family-default;
+  font-size: $font-size-default;
+
+  &::placeholder {
+    color: $placeholder;
+  }
+
+  &:focus {
+    border-color: $form-focus;
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $bg-gray;
+    pointer-events: none;
+  }
+
+  &.full {
+    width: 100%;
+    min-width: auto;
+
+    + .full,
+    + .input-code {
+      margin-top: 10px;
+    }
+  }
+}
+
+// input
+.text {
+  min-width: 180px;
+  height: 40px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border: 1px solid $form-border;
+  border-radius: 4px;
+  color: $black;
+
+  &::-ms-clear {
+    display: none;
+  }
+
+  &.readonly {
+    background: $bg-gray !important;
+    pointer-events: none;
+  }
+
+  &:read-only,
+  &:disabled {
+    background: $bg-gray !important;
+    pointer-events: none;
+  }
+
+  + [class^="txt-"] {
+    margin-top: 10px;
+  }
+}
+
+// textarea
+.textarea {
+  width: 100%;
+  height: 200px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border: 1px solid $form-border;
+  border-radius: 4px;
+  color: $black;
+  resize: none;
+  overflow-y: auto;
+  @include scroll;
+}
+
+// select
+.select {
+  display: inline-block;
+  height: 40px;
+  padding: 10px 40px 10px 12px;
+  border: 1px solid $form-border;
+  border-radius: 4px;
+  background: url("../img/common/ico_select.png") no-repeat right center;
+  font-size: $font-size-default;
+  appearance: none;
+  background-color: $white;
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  + .select {
+    margin-left: 4px;
+  }
+}
+
+.select-unit {
+  display: inline-block;
+  font-size: 0;
+
+  label {
+    font-size: $font-size-default;
+  }
+
+  .unit {
+    display: inline-block;
+    font-size: $font-size-default;
+    margin: 0 10px;
+  }
+}
+
+// 라디오, 체크박스
+
+// 체크폼 영역
+.chk-label {
+  display: inline-block;
+  position: relative;
+
+  &.disabled {
+    cursor: default;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+
+    + span {
+      display: inline-block;
+
+      &:empty {
+        padding-left: 18px;
+      }
+    }
+
+    &:disabled {
+      pointer-events: none;
+
+      + span::before {
+        background: $disabled;
+      }
+
+      &:checked + span {
+        &::before {
+          background: $disabled;
+          border-color: $chk-border;
+        }
+
+        &::after {
+          border-color: $chk-border;
+        }
+      }
+    }
+  }
+
+  // 라디오
+  input[type="radio"] {
+    + span {
+      padding-left: 28px;
+      font-size: $font-size-default;
+      color: $black;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        border: 1px solid $chk-border;
+        border-radius: 50%;
+        box-sizing: border-box;
+      }
+    }
+
+    &:checked {
+      + span {
+        &::before {
+          border-color: $checked;
+          background: $checked;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 5px;
+          top: 7px;
+          width: 8px;
+          height: 8px;
+          background: $white;
+          border-radius: 50%;
+          box-sizing: border-box;
+        }
+      }
+
+      &:disabled + span:after {
+        background-color: $chk-border;
+      }
+    }
+  }
+
+  // 체크박스
+  input[type="checkbox"] {
+    + span {
+      padding-left: 28px;
+      font-size: $font-size-default;
+      color: $black;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        background: $white;
+        border: 1px solid $chk-border;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+    }
+
+    &:checked {
+      + span {
+        &::before {
+          border-color: $checked;
+          background: $checked;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 5px;
+          top: 7px;
+          width: 8px;
+          height: 6px;
+          border-left: 2px solid $white;
+          border-bottom: 2px solid $white;
+          box-sizing: border-box;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  + .chk-label {
+    margin-left: 20px;
+  }
+}
+
+// 달력
+.datepicker {
+  display: inline-block;
+  position: relative;
+
+  .date {
+    background: $bg-gray;
+    width: 180px;
+
+    + .ui-datepicker-trigger {
+      margin: 0 10px 0 -33px;
+      vertical-align: middle;
+      cursor: pointer;
+
+      + .unit {
+        ~ .ui-datepicker-trigger {
+          left: 465px;
+        }
+      }
+    }
+  }
+
+  + .btn-type1 {
+    margin-left: 36px;
+  }
+}
+
+.ui-datepicker {
+  display: none;
+  width: 320px;
+  height: 384px;
+  padding: 36px 20px;
+  border: 1px solid $form-border;
+  background: $white;
+  box-shadow: 4px 4px 20px $form-border;
+  z-index: 10 !important;
+  box-sizing: border-box;
+
+  &-title {
+    padding: 0 10px;
+    margin-bottom: 24px;
+
+    > select {
+      border: none;
+      appearance: none;
+      width: 80px;
+      height: 22px;
+      font-size: 18px;
+      font-weight: bold;
+      background: url("../img/common/ico_select.png") no-repeat right 50%;
+
+      &::-ms-expand {
+        display: none;
+      }
+
+      + select {
+        margin-left: 24px;
+        background-position-x: 45px;
+      }
+    }
+  }
+
+  &-calendar {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 20px;
+      height: 40px;
+      background: $bg-gray;
+    }
+
+    &::before {
+      left: -20px;
+    }
+
+    &::after {
+      right: -20px;
+    }
+
+    tr {
+      th,
+      td {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        vertical-align: middle;
+
+        &:first-child {
+          color: $red;
+        }
+
+        &:last-child {
+          color: $blue;
+        }
+      }
+    }
+
+    thead {
+      background: $bg-gray;
+
+      tr {
+        th {
+          font-size: 13px;
+          font-weight: normal;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          font-size: 12px;
+
+          &.ui-state-disabled {
+            opacity: 0.5;
+          }
+
+          .ui-state-active {
+            background: rgba($key-color, 0.2) !important;
+          }
+
+          .ui-state-highlight {
+            background: #f5f5f5;
+          }
+
+          a {
+            display: inline-block;
+            width: 30px;
+            padding: 6px 0;
+            border-radius: 50%;
+          }
+
+          span {
+            display: inline-block;
+            width: 30px;
+            padding: 9px 0;
+          }
+        }
+      }
+    }
+  }
+
+  &-buttonpane {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    width: 14px;
+    height: 14px;
+
+    .ui-datepicker-current {
+      display: none;
+    }
+
+    .ui-datepicker-close {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      color: transparent;
+      font-size: 0;
+      text-indent: -9999px;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: -1px;
+        width: 16px;
+        height: 2px;
+        background: $black;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+// 파일업로드
+.input-file {
+  position: relative;
+  display: flex;
+
+  .text {
+    width: calc(100% - 114px);
+    border-radius: 4px 0 0 4px;
+    z-index: 1;
+    padding-right: 60px;
+  }
+
+  .btn-icon-delete-type3 {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 135px;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  button:not(.btn-icon-delete-type3) {
+    margin-left: -1px;
+    width: 114px;
+    border: 1px solid $form-border;
+    border-radius: 0 4px 4px 0;
+    text-align: center;
+    font-size: $font-size-default;
+    color: $key-color;
+  }
+}
+
+// 이메일
+.input-email {
+  .text {
+    min-width: auto;
+    width: 150px;
+  }
+}
+
+// 휴대폰
+.input-phone {
+  .text {
+    min-width: auto;
+    width: 72px;
+  }
+
+  + .btn-type1 {
+    margin-left: 10px;
+  }
+}
+
+//버전
+.input-version {
+  .text {
+    min-width: auto;
+    width: 72px;
+  }
+
+  .unit {
+    vertical-align: bottom;
+  }
+}
+
+// 검색
+.input-search {
+  position: relative;
+  width: 360px;
+
+  &.full {
+    width: 100%;
+
+    .text {
+      width: 100%;
+    }
+  }
+
+  .text {
+    width: 100%;
+    padding-right: 50px;
+  }
+
+  .btn-icon-search {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+// 인증번호
+.input-code {
+  position: relative;
+
+  .text {
+    padding-right: 70px;
+  }
+
+  .unit {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    color: $gray;
+    transform: translateY(-50%);
+    color: $key-color;
+  }
+
+  + [class^="txt-"] {
+    margin-top: 6px;
+  }
+
+  + .btn-type1 {
+    margin-left: 10px;
+
+    ~ .btn-type1 {
+      margin-left: 4px;
+    }
+  }
+
+  .btn-type3 {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    min-width: auto;
+  }
+}
+
+// label, text, button 혼합형
+.input-area {
+  display: flex;
+  align-items: center;
+
+  *:first-child {
+    flex: 1;
+
+    + [class^="btn-type"] {
+      margin-left: 12px;
+    }
+  }
+
+  .input-phone {
+    flex: none;
+  }
+
+  > *:not(:first-child) {
+    margin-left: 4px;
+  }
+
+  + .input-area {
+    margin-top: 10px;
+  }
+
+  + .text {
+    margin-top: 4px;
+  }
+}
+
+// 간격
+.input-area + .select-unit,
+.text + [class^="input-"],
+[class^="input-"] + .input-code {
+  margin-top: 10px;
+}
+
+// 유효성검사메세지
+.txt-error {
+  position: relative;
+  display: block;
+  margin-top: 15px;
+  padding-left: 22px;
+  font-size: 13px;
+  color: $red;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: $red;
+  }
+
+  &::after {
+    content: "!";
+    position: absolute;
+    top: -1px;
+    left: 0.5px;
+    width: 14px;
+    height: 14px;
+    color: $white;
+    text-align: center;
+  }
+}

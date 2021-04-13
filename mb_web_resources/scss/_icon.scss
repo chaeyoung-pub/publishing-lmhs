@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+/* 아이콘 */
+.icon-ios {
+  display: inline-block;
+  width: 16px;
+  height: 18px;
+  background: url(../img/common/icon_ios.png) no-repeat;
+  background-size: 100% auto;
+}
+
+.icon-android {
+  display: inline-block;
+  width: 25px;
+  height: 14px;
+  background: url(../img/common/icon_android.png) no-repeat;
+  background-size: 100% auto;
+}

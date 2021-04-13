@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>루틴관리 - 목록</title>
+    <script src="../../../resources/js/include.js"></script>
+  </head>
+
+  <body>
+    <div class="admin-wrap">
+      <header class="admin-header"></header>
+
+      <nav class="admin-lnb"></nav>
+
+      <div class="admin-content">
+        <div class="area-path"></div>
+
+        <h2 class="content-title">루틴관리</h2>
+
+        <div class="tbl-sub">
+          <div class="search-area">
+            <select class="select">
+              <option value="">전체</option>
+            </select>
+            <div class="input-search">
+              <input
+                type="text"
+                class="text"
+                placeholder="검색어를 입력하세요."
+              />
+              <button class="btn-icon-search">
+                <i>검색</i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tbl-type2">
+          <table>
+            <caption>
+              조회 목록
+            </caption>
+            <colgroup>
+              <col style="width: 80px" />
+              <col style="width: 170px" />
+              <col />
+              <col style="width: 10%" />
+              <col style="width: 10%" />
+              <col style="width: 10%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">배너이미지</th>
+                <th scope="col">제목</th>
+                <th scope="col">등록일자</th>
+                <th scope="col">등록자</th>
+                <th scope="col">게시여부</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- case1 ) 데이터가 있는 경우 -->
+              <tr>
+                <td>1</td>
+                <td>
+                  <img
+                    src="../../../resources/img/temp/img_temp_01.jpg"
+                    alt=""
+                  />
+                </td>
+                <td class="ta-left"><a href="#">제목</a></td>
+                <td>0000-00-00</td>
+                <td>홍길동</td>
+                <td>게시/비게시</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>
+                  <img
+                    src="../../../resources/img/temp/img_temp_01.jpg"
+                    alt=""
+                  />
+                </td>
+                <td class="ta-left"><a href="#">제목</a></td>
+                <td>0000-00-00</td>
+                <td>홍길동</td>
+                <td>게시/비게시</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>
+                  <img
+                    src="../../../resources/img/temp/img_temp_01.jpg"
+                    alt=""
+                  />
+                </td>
+                <td class="ta-left"><a href="#">제목</a></td>
+                <td>0000-00-00</td>
+                <td>홍길동</td>
+                <td>게시/비게시</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>
+                  <img
+                    src="../../../resources/img/temp/img_temp_01.jpg"
+                    alt=""
+                  />
+                </td>
+                <td class="ta-left"><a href="#">제목</a></td>
+                <td>0000-00-00</td>
+                <td>홍길동</td>
+                <td>게시/비게시</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>
+                  <img
+                    src="../../../resources/img/temp/img_temp_01.jpg"
+                    alt=""
+                  />
+                </td>
+                <td class="ta-left"><a href="#">제목</a></td>
+                <td>0000-00-00</td>
+                <td>홍길동</td>
+                <td>게시/비게시</td>
+              </tr>
+              <!-- // -->
+
+              <!-- case2 ) 데이터가 없는 경우 -->
+              <tr>
+                <td colspan="6" class="nodata">조회된 데이터가 없습니다.</td>
+              </tr>
+              <!-- // -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <a href="#" class="btn-icon-first"><i>처음으로</i></a>
+          <a href="#" class="btn-icon-prev"><i>이전</i></a>
+          <ol class="paging">
+            <li><a href="#">1</a></li>
+            <li><a href="#" class="active">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+          </ol>
+          <a href="#" class="btn-icon-next"><i>다음으로</i></a>
+          <a href="#" class="btn-icon-last"><i>마지막으로</i></a>
+        </div>
+
+        <div class="btn-area ta-right">
+          <a href="#" class="btn-type1">등록</a>
+        </div>
+      </div>
+
+      <footer class="admin-footer"></footer>
+    </div>
+  </body>
+</html>

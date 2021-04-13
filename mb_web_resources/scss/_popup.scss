@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+/* 팝업 */
+.pop-wrap {
+  display: none;
+  background: $white;
+  border-radius: 14px;
+
+  &.active {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 30px;
+    right: 30px;
+    transform: translateY(-50%);
+    z-index: 50;
+  }
+
+  .pop-tit-area {
+    color: $black;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 35px;
+    padding-bottom: 4px;
+  }
+
+  .pop-content-area {
+    padding: 0 30px;
+    font-size: 13px;
+    color: $gray;
+    text-align: center;
+    overflow-y: auto;
+
+    &:not(:last-child) {
+      padding-top: 17px;
+    }
+
+    &:last-child {
+      max-height: calc(100vh - 182px);
+      border-bottom-left-radius: 14px;
+      border-bottom-right-radius: 14px;
+    }
+
+    .btn-area {
+      margin-top: 23px;
+    }
+  }
+
+  .pop-footer-area {
+    margin-top: 30px;
+    border-top: 1px solid $border-gray;
+    box-sizing: border-box;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+
+    button {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    button:only-child {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .btn-icon-close {
+    padding: 20px;
+    position: absolute;
+    top: -48px;
+    right: -12px;
+  }
+
+  .btn-t1,
+  .btn-t2 {
+    height: 45px;
+    line-height: 43px;
+  }
+}
+
+.ly-pop-dim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 30;
+  opacity: 1;
+  transition: all 0.4s;
+  pointer-events: none;
+
+  &.active {
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 1;
+    pointer-events: all;
+  }
+}

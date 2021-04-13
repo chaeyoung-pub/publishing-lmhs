@@ -1,0 +1,268 @@
+@charset "utf-8";
+
+/* 테이블 */
+// 테이블 타이틀
+.tbl-sub {
+  margin-bottom: 16px;
+  font-size: 0;
+  @include clearfix;
+
+  .btn-area:not(:only-child) {
+    margin-top: -30px;
+  }
+
+  .btn-area:only-child {
+    margin-top: 0;
+  }
+
+  [class^="txt-type"] {
+    line-height: 30px;
+  }
+}
+
+// 테이블 공통
+[class^="tbl-type"] {
+  > table {
+    border: 0;
+    table-layout: fixed;
+    width: 100%;
+
+    > caption {
+      width: 0;
+      height: 0;
+      opacity: 0;
+      border: 0;
+    }
+
+    > tbody {
+      border: 0;
+      > tr {
+        border: 0;
+        > th {
+          border: 0;
+        }
+        > td {
+          border: 0;
+          > a {
+            &:hover {
+              text-decoration: underline;
+            }
+
+            &[class^="btn-type"] {
+              padding: 5px 15px;
+              font-size: inherit;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 가로형
+.tbl-type1 {
+  position: relative;
+  border-bottom: 1px solid $tbl-border-bottom;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    border-top: 1px solid $tbl-border-top;
+  }
+
+  > table {
+    width: 100%;
+
+    > tbody {
+      > tr {
+        > th,
+        > td {
+          height: 60px;
+          padding: 10px 10px 9px;
+          vertical-align: middle;
+          text-align: left;
+          box-sizing: border-box;
+
+          &:not(:last-child) {
+            border-right: 1px solid $tbl-border-inner;
+          }
+        }
+
+        > th {
+          text-align: left;
+          font-weight: normal;
+          color: $th-color;
+          background: $tbl-bg;
+        }
+
+        > td {
+          > .text:only-child,
+          > .textarea:only-child {
+            width: 100%;
+            min-width: auto;
+          }
+
+          > .txt-type3 {
+            margin-top: 4px;
+          }
+        }
+
+        + tr {
+          border-top: 1px solid $tbl-border-inner;
+        }
+      }
+    }
+  }
+}
+
+// 세로형
+.tbl-type2 {
+  border-bottom: 1px solid $tbl-border-bottom;
+
+  > table {
+    tr {
+      > th,
+      > td {
+        padding: 10px 16px;
+        text-align: center;
+        vertical-align: middle;
+        font-size: $font-size-default;
+
+        > .chk-label:only-child {
+          text-align: center;
+        }
+      }
+    }
+
+    > thead {
+      > tr {
+        height: 56px;
+
+        > th {
+          background: $th-bg;
+          color: $th-color;
+        }
+      }
+    }
+
+    > tbody,
+    > tfoot {
+      > tr {
+        height: 60px;
+
+        > th {
+          &[rowspan] {
+            padding-top: 20px;
+          }
+        }
+
+        > td {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          color: $gray;
+
+          a {
+            color: $key-color;
+          }
+
+          &:not(:last-child) {
+            border-right: 1px solid $tbl-border-inner;
+          }
+
+          img {
+            max-width: 130px;
+            max-height: 85px;
+          }
+
+          .btn-area {
+            margin: 0;
+          }
+
+          > a:hover {
+            color: $key-color;
+          }
+
+          [class*="btn-type"] {
+            min-width: auto;
+          }
+        }
+
+        + tr {
+          border-top: 1px solid $tbl-border-inner;
+        }
+      }
+    }
+
+    > tfoot {
+      border-top: 1px solid $tbl-border-inner;
+
+      .tbl-bg1 {
+        background: $tbl-bg;
+      }
+
+      .tbl-bg2 {
+        background: rgba($key-color2, 0.1);
+      }
+
+      .tbl-bg3 {
+        background: rgba($key-color, 0.1);
+      }
+    }
+  }
+
+  &.tbl-scroll-y {
+    overflow-y: auto;
+  }
+
+  &.tbl-scroll-x {
+    overflow-x: auto;
+    width: 100%;
+
+    > table {
+      table-layout: auto;
+      white-space: nowrap;
+    }
+  }
+}
+
+// tbody스크롤형
+.tbl-wrap {
+  display: flex;
+
+  &.fd-column {
+  }
+
+  &.fd-row {
+    .tbl-fixed {
+      overflow: hidden;
+
+      > table {
+        width: auto;
+        white-space: nowrap;
+      }
+    }
+
+    .tbl-scroll-x {
+      border-left: 1px solid $tbl-border-inner;
+    }
+  }
+}
+
+// 테이블 간격 - 임시 (상세)
+.btn-area + .tbl-type2,
+.btn-area + .tbl-wrap {
+  margin-top: 30px;
+}
+.tbl-type1:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.btn-area + .tbl-type1 {
+  margin-top: 40px;
+}

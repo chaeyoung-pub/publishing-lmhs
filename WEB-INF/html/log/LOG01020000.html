@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>아이디/비밀번호 찾기</title>
+    <script src="../../../resources/js/include.js"></script>
+  </head>
+
+  <body>
+    <div class="admin-wrap">
+      <header class="admin-header"></header>
+
+      <nav class="admin-lnb"></nav>
+
+      <div class="admin-content">
+        <div class="area-path"></div>
+
+        <h2 class="content-title">팝업</h2>
+
+        <button type="button" class="btn-type1" data-ly-pop-trigger="pop1">
+          아이디/비밀번호 찾기
+        </button>
+      </div>
+
+      <footer class="admin-footer"></footer>
+    </div>
+
+    <div class="ly-pop sm" id="pop1">
+      <div class="ly-pop-header">
+        <strong>아이디/비밀번호 찾기</strong>
+        <button type="button" class="btn-icon-close" data-pop-close>
+          <i>닫기</i>
+        </button>
+      </div>
+
+      <div class="ly-pop-content">
+        <!-- case1 ) 아이디/비밀번호 찾기 전 -->
+        <div class="tbl-type1">
+          <table>
+            <caption>
+              아이디/비밀번호 찾기
+            </caption>
+            <colgroup>
+              <col style="width: 80px" />
+              <col />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">이름</th>
+                <td>
+                  <input type="text" class="text" />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">휴대폰</th>
+                <td>
+                  <div class="input-area">
+                    <div class="input-phone">
+                      <select name="" id="" class="select">
+                        <option value="">010</option>
+                      </select>
+                      <span class="unit">-</span>
+                      <input type="text" class="text" />
+                      <span class="unit">-</span>
+                      <input type="text" class="text" />
+                    </div>
+                    <button class="btn-type3">인증번호 요청</button>
+                  </div>
+                  <div class="input-area">
+                    <div class="input-code">
+                      <input
+                        type="text"
+                        class="text full"
+                        placeholder="인증번호를 입력하세요"
+                      />
+                      <span class="unit">00:00</span>
+                    </div>
+                    <button class="btn-type3 btn-bg3">재 요청</button>
+                  </div>
+
+                  <p class="txt-error">
+                    인증번호가 일치하지 않습니다. 다시 입력해주세요.
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="btn-area ta-right">
+          <button class="btn-type2">찾기</button>
+          <button type="button" class="btn-type2 btn-bg4" data-pop-close>
+            취소
+          </button>
+        </div>
+        <!-- // -->
+
+        <!-- case2 ) 아이디/비밀번호 찾기 후 -->
+        <p class="txt-type1">홍길동님의 아이디는 abc123456입니다.</p>
+        <p class="txt-type2 co-type3">
+          비밀번호를 잃어버리셨다면 아래의 '비밀번호 초기화'버튼을 눌러주세요.
+        </p>
+
+        <div class="btn-area ta-right">
+          <button class="btn-type2 btn-bg2">비밀번호초기화</button>
+          <button type="button" class="btn-type2 btn-bg4" data-pop-close>
+            닫기
+          </button>
+        </div>
+        <!-- // -->
+      </div>
+    </div>
+
+    <script>
+      $("document").ready(function () {
+        $("[data-ly-pop-trigger]").trigger("click");
+      });
+    </script>
+  </body>
+</html>

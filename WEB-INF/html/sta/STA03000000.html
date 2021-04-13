@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>통계관리 - 감정캘린더</title>
+    <script src="../../../resources/js/include.js"></script>
+  </head>
+
+  <body>
+    <div class="admin-wrap">
+      <header class="admin-header"></header>
+
+      <nav class="admin-lnb"></nav>
+
+      <div class="admin-content">
+        <div class="area-path"></div>
+
+        <h2 class="content-title">감정캘린더</h2>
+
+        <div class="box-type1">
+          <ul class="search-area">
+            <li>
+              <label for="">회사</label>
+              <select class="select">
+                <option value="">전체</option>
+              </select>
+            </li>
+            <li>
+              <label for="">구간</label>
+              <select class="select">
+                <option value="">일별 현황</option>
+                <option value="">주별 평균</option>
+                <option value="">월별 평균</option>
+              </select>
+            </li>
+            <li>
+              <label for="">연월</label>
+              <select class="select">
+                <option value="">2020년</option>
+              </select>
+              <select class="select">
+                <option value="">11월</option>
+              </select>
+            </li>
+            <li>
+              <label for="">구분</label>
+              <select class="select">
+                <option value="">작성 현황</option>
+                <option value="">감정 분포</option>
+              </select>
+            </li>
+          </ul>
+          <button class="btn-type4 btn-bg2">검색</button>
+        </div>
+
+        <div class="chart-area">
+          <div class="sort-area">
+            <select class="select">
+              <option value="">전체 성별</option>
+              <option value="">남자</option>
+              <option value="">여자</option>
+            </select>
+            <select class="select">
+              <option value="">전체 연령대</option>
+              <option value="">20대</option>
+              <option value="">30대</option>
+              <option value="">40대</option>
+              <option value="">50대</option>
+              <option value="">60대 이상</option>
+            </select>
+          </div>
+
+          <!-- case1 ) 데이터가 있는 경우 -->
+          <div class="canvas-wrap">
+            <canvas id="canvasMultiBar"></canvas>
+          </div>
+          <!-- // -->
+
+          <!-- case2 ) 데이터가 없는 경우 : 아래 테이블 노출되지않음 -->
+          <div class="nodata">
+            <p>조회된 데이터가 없습니다.</p>
+          </div>
+          <!-- // -->
+        </div>
+
+        <!-- case1-1 ) 데이터가 있는 경우 -->
+        <div class="tbl-sub">
+          <p class="txt-type3">
+            ※ 주/월별 통계는 설정한 조회기간의 평균 수치를 계산하여 제공합니다.
+          </p>
+          <div class="btn-area ta-right">
+            <a href="#" class="btn-type3 btn-bg4" download=""
+              >엑셀 다운로드<i class="icon-excel"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="tbl-wrap fd-row">
+          <div class="tbl-type2 tbl-fixed">
+            <table>
+              <caption>
+                통계 구분
+              </caption>
+              <colgroup>
+                <col style="width: 180px" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">구분</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>전체 회원</td>
+                </tr>
+                <tr>
+                  <td>작성 인원</td>
+                </tr>
+                <tr>
+                  <td>작성률</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-type2 tbl-scroll-x">
+            <table>
+              <caption>
+                통계 (일별)
+              </caption>
+              <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">1일</th>
+                  <th scope="col">2일</th>
+                  <th scope="col">3일</th>
+                  <th scope="col">4일</th>
+                  <th scope="col">5일</th>
+                  <th scope="col">6일</th>
+                  <th scope="col">7일</th>
+                  <th scope="col">8일</th>
+                  <th scope="col">9일</th>
+                  <th scope="col">10일</th>
+                  <th scope="col">11일</th>
+                  <th scope="col">12일</th>
+                  <th scope="col">13일</th>
+                  <th scope="col">14일</th>
+                  <th scope="col">15일</th>
+                  <th scope="col">16일</th>
+                  <th scope="col">17일</th>
+                  <th scope="col">18일</th>
+                  <th scope="col">19일</th>
+                  <th scope="col">20일</th>
+                  <th scope="col">21일</th>
+                  <th scope="col">22일</th>
+                  <th scope="col">23일</th>
+                  <th scope="col">24일</th>
+                  <th scope="col">25일</th>
+                  <th scope="col">26일</th>
+                  <th scope="col">27일</th>
+                  <th scope="col">28일</th>
+                  <th scope="col">29일</th>
+                  <th scope="col">30일</th>
+                  <th scope="col">31일</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="tbl-wrap fd-row">
+          <div class="tbl-type2 tbl-fixed">
+            <table>
+              <caption>
+                통계 구분
+              </caption>
+              <colgroup>
+                <col style="width: 180px" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">구분</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>전체 회원</td>
+                </tr>
+                <tr>
+                  <td>작성 인원</td>
+                </tr>
+                <tr>
+                  <td>작성률</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-type2 tbl-scroll-x">
+            <table>
+              <caption>
+                통계 (월별)
+              </caption>
+              <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">1월</th>
+                  <th scope="col">2월</th>
+                  <th scope="col">3월</th>
+                  <th scope="col">4월</th>
+                  <th scope="col">5월</th>
+                  <th scope="col">6월</th>
+                  <th scope="col">7월</th>
+                  <th scope="col">8월</th>
+                  <th scope="col">9월</th>
+                  <th scope="col">10월</th>
+                  <th scope="col">11월</th>
+                  <th scope="col">12월</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="tbl-wrap fd-row">
+          <div class="tbl-type2 tbl-fixed">
+            <table>
+              <caption>
+                통계 구분
+              </caption>
+              <colgroup>
+                <col style="width: 180px" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">구분</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>전체 회원</td>
+                </tr>
+                <tr>
+                  <td>작성 인원</td>
+                </tr>
+                <tr>
+                  <td>작성률</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-type2 tbl-scroll-x">
+            <table>
+              <caption>
+                통계 (주별)
+              </caption>
+              <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">1주차</th>
+                  <th scope="col">2주차</th>
+                  <th scope="col">3주차</th>
+                  <th scope="col">4주차</th>
+                  <th scope="col">5주차</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- // -->
+
+        <div class="chart-area">
+          <div class="sort-area">
+            <select class="select">
+              <option value="">전체 성별</option>
+              <option value="">남자</option>
+              <option value="">여자</option>
+            </select>
+            <select class="select">
+              <option value="">전체 연령대</option>
+              <option value="">20대</option>
+              <option value="">30대</option>
+              <option value="">40대</option>
+              <option value="">50대</option>
+              <option value="">60대 이상</option>
+            </select>
+          </div>
+
+          <!-- case1 ) 데이터가 있는 경우 -->
+          <div class="canvas-layout">
+            <div class="canvas-wrap">
+              <canvas id="canvasBar"></canvas>
+            </div>
+            <div class="canvas-wrap" id="containerPie">
+              <canvas id="canvasPie"></canvas>
+            </div>
+          </div>
+          <!-- // -->
+
+          <!-- case2 ) 데이터가 없는 경우 : 아래 테이블 노출되지않음 -->
+          <div class="nodata">
+            <p>조회된 데이터가 없습니다.</p>
+          </div>
+          <!-- // -->
+        </div>
+
+        <!-- case1-1 ) 데이터가 있는 경우 -->
+        <div class="tbl-sub">
+          <p class="txt-type3">
+            ※ 주/월별 통계는 설정한 조회기간의 평균 수치를 계산하여 제공합니다.
+          </p>
+          <div class="btn-area ta-right">
+            <a href="#" class="btn-type3 btn-bg4" download=""
+              >엑셀 다운로드<i class="icon-excel"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="tbl-wrap fd-row">
+          <div class="tbl-type2 tbl-fixed">
+            <table>
+              <caption>
+                통계 구분
+              </caption>
+              <colgroup>
+                <col style="width: 180px" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">구분</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>기대돼요</td>
+                </tr>
+                <tr>
+                  <td>뿌듯해요</td>
+                </tr>
+                <tr>
+                  <td>즐거워요</td>
+                </tr>
+                <tr>
+                  <td>편안해요</td>
+                </tr>
+                <tr>
+                  <td>불안해요</td>
+                </tr>
+                <tr>
+                  <td>짜증나요</td>
+                </tr>
+                <tr>
+                  <td>무기력해요</td>
+                </tr>
+                <tr>
+                  <td>공허해요</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-type2 tbl-scroll-x">
+            <table>
+              <caption>
+                통계 (일별)
+              </caption>
+              <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">1일</th>
+                  <th scope="col">2일</th>
+                  <th scope="col">3일</th>
+                  <th scope="col">4일</th>
+                  <th scope="col">5일</th>
+                  <th scope="col">6일</th>
+                  <th scope="col">7일</th>
+                  <th scope="col">8일</th>
+                  <th scope="col">9일</th>
+                  <th scope="col">10일</th>
+                  <th scope="col">11일</th>
+                  <th scope="col">12일</th>
+                  <th scope="col">13일</th>
+                  <th scope="col">14일</th>
+                  <th scope="col">15일</th>
+                  <th scope="col">16일</th>
+                  <th scope="col">17일</th>
+                  <th scope="col">18일</th>
+                  <th scope="col">19일</th>
+                  <th scope="col">20일</th>
+                  <th scope="col">21일</th>
+                  <th scope="col">22일</th>
+                  <th scope="col">23일</th>
+                  <th scope="col">24일</th>
+                  <th scope="col">25일</th>
+                  <th scope="col">26일</th>
+                  <th scope="col">27일</th>
+                  <th scope="col">28일</th>
+                  <th scope="col">29일</th>
+                  <th scope="col">30일</th>
+                  <th scope="col">31일</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="tbl-wrap fd-row">
+          <div class="tbl-type2 tbl-fixed">
+            <table>
+              <caption>
+                통계 구분
+              </caption>
+              <colgroup>
+                <col style="width: 180px" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">구분</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>기대돼요</td>
+                </tr>
+                <tr>
+                  <td>뿌듯해요</td>
+                </tr>
+                <tr>
+                  <td>즐거워요</td>
+                </tr>
+                <tr>
+                  <td>편안해요</td>
+                </tr>
+                <tr>
+                  <td>불안해요</td>
+                </tr>
+                <tr>
+                  <td>짜증나요</td>
+                </tr>
+                <tr>
+                  <td>무기력해요</td>
+                </tr>
+                <tr>
+                  <td>공허해요</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-type2 tbl-scroll-x">
+            <table>
+              <caption>
+                통계 (월별)
+              </caption>
+              <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">1월</th>
+                  <th scope="col">2월</th>
+                  <th scope="col">3월</th>
+                  <th scope="col">4월</th>
+                  <th scope="col">5월</th>
+                  <th scope="col">6월</th>
+                  <th scope="col">7월</th>
+                  <th scope="col">8월</th>
+                  <th scope="col">9월</th>
+                  <th scope="col">10월</th>
+                  <th scope="col">11월</th>
+                  <th scope="col">12월</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="tbl-wrap fd-row">
+          <div class="tbl-type2 tbl-fixed">
+            <table>
+              <caption>
+                통계 구분
+              </caption>
+              <colgroup>
+                <col style="width: 180px" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">구분</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>기대돼요</td>
+                </tr>
+                <tr>
+                  <td>뿌듯해요</td>
+                </tr>
+                <tr>
+                  <td>즐거워요</td>
+                </tr>
+                <tr>
+                  <td>편안해요</td>
+                </tr>
+                <tr>
+                  <td>불안해요</td>
+                </tr>
+                <tr>
+                  <td>짜증나요</td>
+                </tr>
+                <tr>
+                  <td>무기력해요</td>
+                </tr>
+                <tr>
+                  <td>공허해요</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-type2 tbl-scroll-x">
+            <table>
+              <caption>
+                통계 (주별)
+              </caption>
+              <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">1주차</th>
+                  <th scope="col">2주차</th>
+                  <th scope="col">3주차</th>
+                  <th scope="col">4주차</th>
+                  <th scope="col">5주차</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- // -->
+      </div>
+
+      <footer class="admin-footer"></footer>
+    </div>
+
+    <script>
+      // 데이터 임시처리
+      let date = [];
+      for (let i = 0; i < 30; i += 1) {
+        date.push(i + 1);
+      }
+
+      function getRandomArbitrary() {
+        return Math.round(Math.random() * (10000 - 0) + 0);
+      }
+
+      const dataRange = function () {
+        let result = [];
+        for (let i = 0; i < date.length; i += 1) {
+          result.push(getRandomArbitrary());
+        }
+        return result;
+      };
+
+      const dataPercent = function () {
+        function getRandomArbitrary() {
+          return Math.round(Math.random() * (100 - 0) + 0);
+        }
+
+        let result = [];
+        for (let i = 0; i < date.length; i += 1) {
+          result.push(getRandomArbitrary());
+        }
+        return result;
+      };
+
+      // 차트 설정
+      const configMultiBar = {
+        type: "bar",
+        data: {
+          labels: date, //  x 축 레이블: 데이트 1 ~ 30일
+          datasets: [
+            {
+              label: "작성률",
+              type: "line",
+              fill: false,
+              yAxisID: "y-axis-1",
+              backgroundColor: chartColors.red,
+              borderColor: chartColors.red,
+              data: dataPercent(), // y 축 레이블: 0 ~ 100
+              tension: 0.4,
+            },
+            {
+              label: "전체 회원",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.blue,
+              data: dataRange(),
+            },
+            {
+              label: "작성 인원",
+              barPercentage: 0.7,
+              backgroundColor: chartColors.purple,
+              data: dataRange(),
+            },
+          ],
+        },
+        options: {
+          layout: {
+            padding: 0,
+          },
+          legend: {
+            position: "bottom",
+            align: "center",
+          },
+          tooltips: {
+            mode: "index",
+            intersect: false,
+            callbacks: {
+              label: function (tooltipItem, data) {
+                // console.log(data);
+                if (tooltipItem.datasetIndex === 0) {
+                  return (
+                    data.datasets[tooltipItem.datasetIndex].label +
+                    ":" +
+                    tooltipItem.yLabel +
+                    "%"
+                  );
+                } else {
+                  return (
+                    data.datasets[tooltipItem.datasetIndex].label +
+                    ":" +
+                    tooltipItem.yLabel
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                  );
+                }
+              },
+            },
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            xAxes: [
+              {
+                stacked: false,
+              },
+            ],
+            yAxes: [
+              {
+                stacked: false,
+                ticks: {
+                  callback: function (value, index, values) {
+                    return value
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  },
+                },
+              },
+              {
+                display: true,
+                min: 0,
+                max: 100,
+                position: "right",
+                id: "y-axis-1",
+                gridLines: {
+                  drawOnChartArea: false,
+                },
+                ticks: {
+                  callback: function (value, index, values) {
+                    return value + "%";
+                  },
+                },
+              },
+            ],
+          },
+        },
+      };
+
+      const labelName = [
+        "기대돼요",
+        "뿌듯해요",
+        "즐거워요",
+        "편안해요",
+        "불안해요",
+        "짜증나요",
+        "무기력해요",
+        "공허해요",
+      ];
+      const dataBar = {
+        labels: date, //  x 축 레이블: 데이트 1 ~ 30일
+        datasets: [
+          {
+            label: labelName[0],
+            barPercentage: 0.7,
+            backgroundColor: chartColors.red,
+            data: dataPercent(),
+          },
+          {
+            label: labelName[1],
+            barPercentage: 0.7,
+            backgroundColor: chartColors.orange,
+            data: dataPercent(),
+          },
+          {
+            label: labelName[2],
+            barPercentage: 0.7,
+            backgroundColor: chartColors.yellow,
+            data: dataPercent(),
+          },
+          {
+            label: labelName[3],
+            barPercentage: 0.7,
+            backgroundColor: chartColors.green,
+            data: dataPercent(),
+          },
+          {
+            label: labelName[4],
+            barPercentage: 0.7,
+            backgroundColor: chartColors.blue,
+            data: dataPercent(),
+          },
+          {
+            label: labelName[5],
+            barPercentage: 0.7,
+            backgroundColor: chartColors.navy,
+            data: dataPercent(),
+          },
+          {
+            label: labelName[6],
+            barPercentage: 0.7,
+            backgroundColor: chartColors.purple,
+            data: dataPercent(),
+          },
+          {
+            label: labelName[7],
+            barPercentage: 0.7,
+            backgroundColor: chartColors.grey,
+            data: dataPercent(),
+          },
+        ],
+      };
+      const configBar = {
+        type: "bar",
+        data: dataBar,
+        options: {
+          layout: {
+            padding: 0,
+          },
+          legend: {
+            display: true,
+            position: "bottom",
+            align: "center",
+            labels: {
+              boxWidth: 20,
+            },
+          },
+          tooltips: {
+            mode: "index",
+            intersect: false,
+            callbacks: {
+              label: function (tooltipItem, data) {
+                return (
+                  data.datasets[tooltipItem.datasetIndex].label +
+                  ":" +
+                  tooltipItem.yLabel +
+                  "%"
+                );
+              },
+            },
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            xAxes: [
+              {
+                stacked: true,
+              },
+            ],
+            yAxes: [
+              {
+                stacked: true,
+                min: 0,
+                max: 100,
+                ticks: {
+                  callback: function (value, index, values) {
+                    return value + "%";
+                  },
+                },
+              },
+            ],
+          },
+        },
+      };
+
+      window.onload = function () {
+        // 차트 생성
+        const ctx = document.getElementById("canvasMultiBar").getContext("2d");
+        window.myMultiBar = new Chart(ctx, configMultiBar);
+
+        const ctx2 = document.getElementById("canvasBar").getContext("2d");
+        window.myBar = new Chart(ctx2, configBar);
+
+        // 막대 클릭 시 파이차트 생성
+        document.getElementById("canvasBar").onclick = function (evt) {
+          const barContainer = document.getElementById("canvasBar").parentNode;
+          barContainer.classList.remove("active");
+          // 이전 파이차트 삭제
+          const containerPie = document.querySelector("#containerPie");
+          containerPie.innerHTML = '<canvas id="canvasPie"></canvas>';
+
+          // 막대 데이터 가져오기
+          const activePoint = myBar.getElementAtEvent(event);
+          if (activePoint.length > 0) {
+            const clickedDatasetIndex = activePoint[0]._datasetIndex;
+            const clickedElementIndex = activePoint[0]._index;
+            const label = myBar.data.labels[clickedElementIndex];
+            const dataPie = myBar.data.datasets.map(function (bar) {
+              return bar.data[clickedElementIndex];
+            });
+
+            const configPie = {
+              type: "pie",
+              data: {
+                labels: labelName,
+                datasets: [
+                  {
+                    data: dataPie,
+                    backgroundColor: [
+                      chartColors.red,
+                      chartColors.orange,
+                      chartColors.yellow,
+                      chartColors.green,
+                      chartColors.blue,
+                      chartColors.navy,
+                      chartColors.purple,
+                      chartColors.grey,
+                    ],
+                  },
+                ],
+              },
+              options: {
+                layout: {
+                  padding: 0,
+                },
+                title: {
+                  display: true,
+                  text: "일자 별 감정 분포 상세",
+                },
+                legend: {
+                  display: false,
+                  position: "bottom",
+                  align: "start",
+                },
+                tooltips: {
+                  callbacks: {
+                    label: function (tooltipItem, data) {
+                      return (
+                        data.labels[tooltipItem.index] +
+                        ":" +
+                        data.datasets[0].data[tooltipItem.index] +
+                        "%"
+                      );
+                    },
+                  },
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+              },
+            };
+
+            barContainer.classList.add("active");
+
+            const ctx3 = document.getElementById("canvasPie").getContext("2d");
+            window.myPie = new Chart(ctx3, configPie);
+          }
+        };
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LIFEPLUS 마음건강</title>
+    <link
+      rel="stylesheet"
+      href="../../mb_web_resources/css/library/swiper-bundle.css"
+    />
+    <link rel="stylesheet" href="../../mb_web_resources/css/common.css" />
+	<script type="text/javascript" src="../../mb_web_resources/js/jquery-3.4.1.min.js"></script>
+    <script src="../../mb_web_resources/js/library/swiper-bundle.min.js"></script>
+    <script src="../../mb_web_resources/js/common.js"></script>
+	<script type="text/javascript">
+    function andDown(){
+        $('#andLink')[0].click();
+        $.ajax({
+            type: "post",
+            url: "https://manager.lifeplusmentalcare.com:2080/appDownCntUp.do",
+            data: {osDvnm:'AND'},
+            success: function (responseData) {
+                responseData = {};
+            }
+        });
+    }
+	
+	function iosDown(){
+        $('#iosLink')[0].click();
+        $.ajax({
+            type: "post",
+            url: "https://manager.lifeplusmentalcare.com:2080/appDownCntUp.do",
+            data: {osDvnm:'IOS'},
+            success: function (responseData) {
+                responseData = {};
+            }
+        });
+    }
+	</script>
+  </head>
+  <body>
+  <a href="https://maum.lifeplus.co.kr/appDown/lifeplus_maum.apk" download id="andLink"></a>
+  <a href="itms-services://?action=download-manifest&url=https://maum.lifeplus.co.kr/appDown/manifest.plist" download id="iosLink"></a>
+    <div class="wrap">
+      <div class="intro-area">
+        <div class="video-area">
+          <video autoplay loop muted playsinline>
+            <source
+              type="video/mp4"
+              src="../../mb_web_resources/video/video_01.mp4"
+            />
+          </video>
+        </div>
+
+        <div class="text-area">
+          <h1>
+            <img
+              src="../../mb_web_resources/img/common/img_logo.png"
+              alt="LIFEPLUS"
+            />마음건강
+          </h1>
+          <p>
+            바쁜 하루 속<br />
+            온전히 나만을 위한<br />
+            시간을 가져보세요
+          </p>
+        </div>
+
+        <div class="sub">
+          <p>
+            앱 설치하고 <em>굿</em><em>즈</em>도 받아가세요!<br />
+            <span>참여 기간 : 2021.3.2 ~ 2021.3.7</span>
+          </p>
+        </div>
+
+        <div class="btn-area">
+          <button
+            type="button"
+            class="btn-t1"
+            onclick="handleLayerPopup('pop01')"
+          >
+            iOS 설치<i class="icon-ios"></i>
+          </button>
+          <button
+            type="button"
+            class="btn-t1"
+            onclick="handleLayerPopup('pop02')"
+          >
+            Android 설치<i class="icon-android"></i>
+          </button>
+        </div>
+
+        <button type="button" onclick="moveToContents();">
+          서비스 소개<i class="icon-scroll"></i>
+        </button>
+      </div>
+
+      <div class="content-wrap">
+        <h2 class="hide">서비스 소개</h2>
+
+        <section class="service-1" scroll-check>
+          <h3 class="hide">감정캘린더</h3>
+          <p>
+            <strong
+              >오늘을 기록하고<br />
+              숨어 있는 감정을 알아차려요</strong
+            >
+            꾸준히 내 마음을 들여다본 적이 있나요?<br />감정의 패턴을 알면
+            감정에 휘둘리지 않아요
+          </p>
+          <div class="image-area"></div>
+        </section>
+
+        <section class="service-2">
+          <h3 class="hide">마음일기</h3>
+          <p>
+            <strong>구체적인 기록은 변화를 가져와요</strong>
+            그날그날의 감정을 마음일기에 좀 더<br />
+            자세히 기록해보세요. 아주 짧아도 좋아요.<br />나에 대해 조금 더 잘
+            알게 될 거에요
+          </p>
+          <div class="image-area"></div>
+        </section>
+
+        <section class="service-3">
+          <h3 class="hide">간편문진</h3>
+          <p>
+            <strong
+              >우울감과 불안한 마음으로<br />
+              힘들다면 간편문진을 받아보세요</strong
+            >정신건강 전문의와 함께 개발한<br />
+            간편문진으로 병원에 가지 않고도 간편하게<br />
+            우울과 불안 회복력을 진단해 볼 수 있어요
+          </p>
+          <div class="image-area"></div>
+        </section>
+
+        <section class="service-4">
+          <h3 class="hide">마음건강검진</h3>
+          <p>
+            <strong
+              >정신건강 전문의 그룹과<br />
+              함께 개발한 마음건강검진으로<br />마음 건강을 챙겨요</strong
+            >
+            지금 어떤 문제로 마음이 불편한가요?<br />정신건강 전문의와 함께
+            개발한 세심한<br />
+            마음건강검진으로 나를 괴롭히는<br />
+            마음 질환을 검사해 보세요
+          </p>
+          <button
+            type="button"
+            class="btn-t3"
+            onclick="handleLayerPopup('pop03')"
+          >
+            마음건강검진 프로그램이란?
+          </button>
+          <div class="image-area"></div>
+        </section>
+
+        <section class="service-5" scroll-check>
+          <h3 class="hide">클래스</h3>
+          <p>
+            <strong
+              >4인의 전문 코치진과 함께<br />
+              마음의 근육을 키워요</strong
+            >각 분야 전문가인 코치진과 함께<br />
+            요가&amp;명상, 북테라피, 홈트레이닝, 댄스카디오<br />
+            클래스를 즐겨보세요
+          </p>
+          <div class="image-area"></div>
+        </section>
+
+        <section class="service-6">
+          <h3 class="hide">사운드테라피</h3>
+          <p>
+            <strong
+              >사운드테라피로<br />
+              지친 마음을 위로하는<br />
+              시간을 가져보세요</strong
+            >명상 음악과 자연의 소리를<br />
+            함께 믹스해서 들을 수 있어요
+          </p>
+          <div class="image-area"></div>
+        </section>
+
+        <section class="service-7">
+          <h3 class="hide">루틴</h3>
+          <p>
+            <strong>나만의 취향대로, 내 루틴 만들기</strong>루틴이 있는 사람은
+            일상을 지켜낼 수 있어요.<br />나만의 루틴을 통해 균형 있는 하루를
+            가꿔보세요
+          </p>
+          <div class="image-area"></div>
+        </section>
+
+        <section class="service-8">
+          <h3 class="hide">챌린지</h3>
+          <p>
+            <strong
+              >건강한 습관이 되는<br />
+              즐거운 스탬프 채우기</strong
+            >몸과 마음이 건강해지는 다양한 활동들이<br />
+            스탬프가 되어 돌아와요. 스탬프를 차곡차곡<br />
+            모으다 보면 깜짝 선물도 받을 수 있어요
+          </p>
+          <div class="image-area"></div>
+        </section>
+
+        <section class="service-9">
+          <h3 class="hide">청구하기</h3>
+          <p>
+            <strong>걱정 내려놓기, 부담 내려놓기</strong>가장 가까운 위치의
+            병원과 상담센터도 추천받고,<br />
+            진료 후 발생하는 치료비도 보장받을 수 있어요.<br />
+            LIFEPLUS 마음건강이 치료비 부담을 덜어 드릴게요
+          </p>
+          <div class="image-area"></div>
+        </section>
+      </div>
+
+      <div class="bottom-area">
+        <button
+          type="button"
+          class="btn-t1"
+          onclick="handleLayerPopup('pop01')"
+        >
+          iOS 설치<i class="icon-ios"></i>
+        </button>
+        <button
+          type="button"
+          class="btn-t1"
+          onclick="handleLayerPopup('pop02')"
+        >
+          Android 설치<i class="icon-android"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- 팝업 -->
+    <div class="pop-wrap" id="pop01">
+      <div class="pop-tit-area">
+        <h2>iOS APP 다운로드</h2>
+        <button type="btuton" class="btn-icon-close" pop-close>
+          <i>닫기</i>
+        </button>
+      </div>
+      <div class="pop-content-area">
+        <p>
+          [다운로드] 버튼을 누르면<br />
+          설치가 시작됩니다.
+        </p>
+        <div class="btn-area">
+		  <button type="button" class="btn-t2" onclick="iosDown();" id="iosDownload">iOS 다운로드</button>
+        </div>
+
+        <div class="install-guide">
+          <h3>설치 안내</h3>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="text-area">
+                  <p>
+                    '설치 확인 창'에서<br />
+                    [설치]를 눌러주세요
+                  </p>
+                </div>
+                <img
+                  src="../../mb_web_resources/img/content/img_ios_01.png"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <div class="text-area">
+                  <p>
+                    앱 설치가 완료되고, 표시되는 '신뢰할 수 없는 APP'확인창에서
+                    [취소]를 눌러주세요
+                  </p>
+                </div>
+                <img
+                  src="../../mb_web_resources/img/content/img_ios_02.png"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <div class="text-area">
+                  <p>
+                    설정&gt;일반&gt;기기관리&gt;<br />기업용 앱&gt;[신뢰함]을
+                    눌러주세요
+                  </p>
+                </div>
+                <img
+                  src="../../mb_web_resources/img/content/img_ios_03.png"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <div class="text-area">
+                  <p>
+                    [마음건강] 앱을<br />
+                    실행해주세요
+                  </p>
+                </div>
+                <img
+                  src="../../mb_web_resources/img/content/img_ios_04.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- // -->
+
+    <!-- 팝업 -->
+    <div class="pop-wrap" id="pop02">
+      <div class="pop-tit-area">
+        <h2>Android APP 다운로드</h2>
+        <button type="btuton" class="btn-icon-close" pop-close>
+          <i>닫기</i>
+        </button>
+      </div>
+      <div class="pop-content-area">
+        <p>
+          [다운로드] 버튼을 누르면<br />
+          설치가 시작됩니다.
+        </p>
+        <div class="btn-area">
+		  <button type="button" class="btn-t2" onclick="andDown();" id="andDownload">Android 다운로드</button>
+        </div>
+
+        <div class="install-guide">
+          <h3>설치 안내</h3>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="text-area">
+                  <p>
+                    '다운로드 완료' 알림 메시지를 눌러주세요
+                    <span
+                      >※ 또는 '내 파일'앱&gt;내장 메모리&gt;Download 폴더에서
+                      lifeplus_maum.apk 파일을 실행</span
+                    >
+                  </p>
+                </div>
+                <img
+                  src="../../mb_web_resources/img/content/img_android_01.png"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <div class="text-area">
+                  <p>
+                    '내 파일' 확인창에서<br />
+                    [설정]을 눌러주세요
+                  </p>
+                </div>
+                <img
+                  src="../../mb_web_resources/img/content/img_android_02.png"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <div class="text-area">
+                  <p>
+                    '이 출처 허용'을 ON을 눌러 허용 후에<br />
+                    [&lt;] 버튼을 눌러주세요
+                  </p>
+                </div>
+                <img
+                  src="../../mb_web_resources/img/content/img_android_03.png"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <div class="text-area">
+                  <p>
+                    '설치 확인 창'에서<br />
+                    [설치]를 눌러주세요
+                  </p>
+                </div>
+                <img
+                  src="../../mb_web_resources/img/content/img_android_04.png"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <div class="text-area">
+                  <p>
+                    '설치 완료 창'에서<br />
+                    [열기]를 눌러주세요
+                  </p>
+                </div>
+                <img
+                  src="../../mb_web_resources/img/content/img_android_05.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- // -->
+
+    <!-- 팝업 -->
+    <div class="pop-wrap" id="pop03">
+      <div class="pop-tit-area">
+        <h3>마음건강검진 프로그램이란?</h3>
+      </div>
+      <div class="pop-content-area">
+        <p>
+          연세대학교 정신건강 전문의 그룹과 공동 개발한 마음 질환 검진
+          프로그램으로 우울증부터 성인 ADHD까지 현대인에게 빈번하게 발생하는
+          대표적 마음 질환 13가지를 모바일앱으로도 편리하게 자가 검진할 수 있는
+          프로그램입니다.
+        </p>
+      </div>
+      <div class="pop-footer-area">
+        <button type="button" pop-close>확인</button>
+      </div>
+    </div>
+    <!-- // -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 스크롤에 따른 하단영역 고정
+        fixedBottomArea("wrap");
+
+        // 스크롤에 따른 컨텐츠 활성화
+        handleScroll();
+      });
+    </script>
+  </body>
+</html>

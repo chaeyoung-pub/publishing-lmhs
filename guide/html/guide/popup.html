@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>popup</title>
+    <link rel="stylesheet" href="../../css/guide.css" />
+    <link rel="stylesheet" href="../../../resources/css/common.css" />
+    <script src="../../../resources/js/library/jquery-3.4.1.min.js"></script>
+    <script src="../../../resources/js/library/jquery-ui.min.js"></script>
+    <script src="../../../resources/js/common.js"></script>
+    <script src="../../js/guide.js"></script>
+  </head>
+
+  <body>
+    <div class="guide-wrap">
+      <nav class="guide-lnb"></nav>
+
+      <section class="guide">
+        <h1 class="hide">popup</h1>
+        <article>
+          <h2>팝업 공통</h2>
+          <p class="txt-type1">
+            팝업열기버튼 button[data-ly-pop-trigger="popID"]<br />
+            팝업닫기버튼 button[data-pop-close]<br />
+            레이어 팝업 .ly-pop#popID
+          </p>
+        </article>
+        <article>
+          <h2>팝업small<em>.ly-pop.sm (width:480px;)</em></h2>
+          <div>
+            <!-- code -->
+            <button type="button" class="btn-type1" data-ly-pop-trigger="pop1">
+              .ly-pop.sm
+            </button>
+
+            <div class="ly-pop sm" id="pop1">
+              <div class="ly-pop-header">
+                <strong>타이틀</strong>
+                <button type="button" class="btn-icon-close" data-pop-close>
+                  <i>닫기</i>
+                </button>
+              </div>
+
+              <div class="ly-pop-content">
+                내용
+
+                <div class="btn-area ta-right">
+                  <button class="btn-type2">버튼</button>
+                  <button class="btn-type2 btn-bg4" data-pop-close>취소</button>
+                </div>
+              </div>
+            </div>
+            <!-- // code -->
+          </div>
+        </article>
+
+        <article>
+          <h2>팝업middle<em>.ly-pop.md (width:680px;)</em></h2>
+          <div>
+            <!-- code -->
+            <button type="button" class="btn-type1" data-ly-pop-trigger="pop2">
+              .ly-pop.md
+            </button>
+
+            <div class="ly-pop md" id="pop2">
+              <div class="ly-pop-header">
+                <strong>타이틀</strong>
+                <button type="button" class="btn-icon-close" data-pop-close>
+                  <i>닫기</i>
+                </button>
+              </div>
+
+              <div class="ly-pop-content">
+                내용
+
+                <div class="btn-area ta-right">
+                  <button class="btn-type2">버튼</button>
+                  <button class="btn-type2 btn-bg4" data-pop-close>취소</button>
+                </div>
+              </div>
+            </div>
+            <!-- // code -->
+          </div>
+        </article>
+
+        <article>
+          <h2>팝업large<em>.ly-pop.lg (width:880px;)</em></h2>
+          <div>
+            <!-- code -->
+            <button type="button" class="btn-type1" data-ly-pop-trigger="pop3">
+              .ly-pop.lg
+            </button>
+
+            <div class="ly-pop lg" id="pop3">
+              <div class="ly-pop-header">
+                <strong>타이틀</strong>
+                <button type="button" class="btn-icon-close" data-pop-close>
+                  <i>닫기</i>
+                </button>
+              </div>
+
+              <div class="ly-pop-content">
+                내용
+
+                <div class="btn-area ta-right">
+                  <button class="btn-type2">버튼</button>
+                  <button class="btn-type2 btn-bg4" data-pop-close>취소</button>
+                </div>
+              </div>
+            </div>
+            <!-- // code -->
+          </div>
+        </article>
+
+        <article>
+          <h2>팝업xlarge<em>.ly-pop.xl (width:960px)</em></h2>
+          <div>
+            <!-- code -->
+            <button type="button" class="btn-type1" data-ly-pop-trigger="pop4">
+              .ly-pop.xl
+            </button>
+
+            <div class="ly-pop xl" id="pop4">
+              <div class="ly-pop-header">
+                <strong>타이틀</strong>
+                <button type="button" class="btn-icon-close" data-pop-close>
+                  <i>닫기</i>
+                </button>
+              </div>
+
+              <div class="ly-pop-content">
+                내용
+
+                <div class="btn-area ta-right">
+                  <button class="btn-type2">버튼</button>
+                  <button class="btn-type2 btn-bg4" data-pop-close>취소</button>
+                </div>
+              </div>
+            </div>
+            <!-- // code -->
+          </div>
+        </article>
+
+        <article>
+          <h2>
+            윈도우팝업<em
+              >.win-pop (width:480px/680px/880px/960px, height: 880px이하로
+              콘텐츠에 따라 설정)</em
+            >
+          </h2>
+          <div>
+            <!-- code -->
+            <p class="desc">window.open(url, name, option)</p>
+            <a
+              href="javascript:void(0);"
+              class="btn-type1"
+              onclick="window.open('/WebContent/WEB-INF/html/layout/win_popup_sample.html','pop05','top=0, left=0, width=960, height=880, scrollbars=auto, location=no, status=no, menubar=no, toolbar=no, resizable=no')"
+            >
+              .win-pop(option직접설정)
+            </a>
+
+            <p class="desc">winPopup(url, name, width, height)</p>
+            <a
+              href="javascript:void(0);"
+              class="btn-type1"
+              onclick="winPopup('/WebContent/WEB-INF/html/layout/win_popup_sample.html', 'pop05', 960, 880)"
+            >
+              .win-pop(center위치)
+            </a>
+            <!-- // code -->
+          </div>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,485 @@
+@charset "utf-8";
+
+/* 레이아웃 */
+.content-wrap {
+  h1 + .txt-t1 {
+    margin-top: 30px;
+  }
+
+  h1 + .tit-t2 {
+    margin-top: 33px;
+  }
+
+  .txt-t1 + .image-area {
+    margin-top: 30px;
+  }
+
+  .tit-t2 + .tbl-sub {
+    margin-top: 15px;
+  }
+
+  > .image-area {
+    margin-left: -32px;
+    margin-right: -32px;
+    text-align: center;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .image-area + [class^="txt-bul"] {
+    margin-top: 40px;
+  }
+}
+
+/* 약관 */
+.terms-area {
+  padding-bottom: 30px;
+  word-break: normal;
+  font-size: 14px;
+  color: $gray;
+
+  [class^="tit-t"] {
+    color: $black;
+  }
+
+  .txt-t3 {
+    font-size: 16px;
+    line-height: 1.6;
+
+    + .txt-t3 {
+      margin-top: 40px;
+    }
+  }
+
+  [class^="txt-bul"] + p,
+  [class^="txt-num"] + p,
+  p + p {
+    margin-top: 16px;
+  }
+
+  .tit-t2 {
+    margin-top: 32px;
+    margin-bottom: 6px;
+  }
+
+  .tit-t2 + [class*="txt-bul"],
+  .tit-t2 + [class*="txt-num"],
+  p + [class*="txt-bul"],
+  p + [class*="txt-num"] {
+    margin-top: 12px;
+  }
+
+  .txt-bul {
+    > li {
+      [class^="txt-bul"] {
+        margin: 4px 0 10px 0;
+      }
+      [class^="txt-num"] {
+        margin: 3px 0 13px 0;
+
+        > li {
+          position: relative;
+          padding-left: 22px;
+
+          &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .tbl-sub {
+    margin: 14px 0 9px;
+    font-size: 13px;
+  }
+
+  .tbl-t1 > table {
+    &::before {
+      border-color: $border-gray;
+    }
+
+    th,
+    td {
+      font-size: 12px;
+    }
+  }
+
+  em {
+    color: $black;
+  }
+}
+
+/* 마음건강소개안내 */
+.swiper-service {
+  margin: 0 -32px;
+
+  .text-area {
+    margin-top: 68px;
+    height: 140px;
+    text-align: center;
+
+    .txt-t1 {
+      font-family: "LifeplusB";
+    }
+  }
+
+  .image-area {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    + .image-txt-area {
+      margin: -15px auto 0;
+      width: 100%;
+      max-width: 375px;
+      height: auto;
+      max-height: 165px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .swiper-pagination {
+    top: 10px;
+  }
+
+  .swiper-slide {
+    min-height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      background: linear-gradient(
+        to bottom,
+        $white 267px,
+        $white 289px,
+        #f6f7fb,
+        #f6f7fb
+      );
+      z-index: -1;
+    }
+
+    &:nth-child(1) {
+      padding-bottom: 50px;
+
+      .sub {
+        position: relative;
+        margin: -36px auto 0;
+        height: 465px;
+        border-radius: 23px;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 220px;
+        overflow: hidden;
+        z-index: 5;
+        box-shadow: -20px 20px 35px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .main {
+        position: absolute;
+        top: 4px;
+        left: calc(50% - 105px);
+        clear: both;
+        overflow: hidden;
+        width: 700px;
+        z-index: -1;
+
+        .image-wrap {
+          float: left;
+          width: 211px;
+          transform: scale(0.87);
+          border-radius: 15px;
+          overflow: hidden;
+
+          ~ .image-wrap {
+            margin-left: 14px;
+          }
+
+          &:first-child {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+
+    &:not(:first-child) .image-area {
+      position: relative;
+      margin: 7px auto 0;
+      width: 221px;
+      height: 342px;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      box-shadow: -20px 20px 35px 5px rgba(0, 0, 0, 0.1);
+      z-index: -1;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(6),
+    &:nth-child(7) {
+      .image-area {
+        background-repeat: no-repeat, no-repeat;
+        background-position: center 0, 0 0;
+        background-size: 221px auto, auto 342px;
+      }
+    }
+
+    &:nth-child(2) .image-area {
+      background-image: url("../img/content/img_phone_layout_02.png"),
+        url("../img/content/img_service_02.png");
+    }
+
+    &:nth-child(3) .image-area {
+      background-image: url("../img/content/img_phone_layout_02.png"),
+        url("../img/content/img_service_03.png");
+    }
+
+    &:nth-child(4) .image-area {
+      background-image: url("../img/content/img_phone_layout_02.png"),
+        url("../img/content/img_service_04_02.png"),
+        url("../img/content/img_service_04.png");
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-position: center 0, 0 74px, 0 0;
+      background-size: 221px auto, auto 107px, auto 342px;
+    }
+
+    &:nth-child(5) .image-area {
+      background-image: url("../img/content/img_phone_layout_02.png"),
+        url("../img/content/img_service_05_02.png"),
+        url("../img/content/img_service_05.png");
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-position: center 0, 0 -342px, 0 0;
+      background-size: 221px auto, auto 342px, auto 342px;
+    }
+
+    &:nth-child(6) .image-area {
+      background-image: url("../img/content/img_phone_layout_02.png"),
+        url("../img/content/img_service_06.png");
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 221px;
+        height: 342px;
+        background: url("../img/content/img_service_06_02.png");
+        background-size: 100%;
+        opacity: 0;
+      }
+    }
+
+    &:nth-child(7) .image-area {
+      background-image: url("../img/content/img_phone_layout_02.png"),
+        url("../img/content/img_service_07.png");
+    }
+
+    &:nth-child(8) .image-area {
+      background-image: url("../img/content/img_phone_layout_02.png"),
+        url("../img/content/img_service_08.png"),
+        url("../img/content/img_service_08_02.png");
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-position: center 0, 0 0, 0 0;
+      background-size: 221px auto, 221px auto, 221px auto;
+    }
+
+    &:nth-child(9) .image-area {
+      background-image: url("../img/content/img_phone_layout_02.png"),
+        url("../img/content/img_service_09.png"),
+        url("../img/content/img_service_09_02.png");
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-position: center 0, 0 0, 0 0;
+      background-size: 221px auto, 221px auto, 221px auto;
+    }
+
+    &.swiper-slide-active {
+      &:nth-child(1) {
+        .main {
+          animation-name: aniImage1, aniImage1-1;
+          animation-duration: 1s, 1s;
+          animation-delay: 1s, 3s;
+          animation-fill-mode: forwards;
+
+          @keyframes aniImage1 {
+            0% {
+              left: calc(50% - 105px);
+            }
+            100% {
+              left: calc(50% - 330px);
+            }
+          }
+
+          @keyframes aniImage1-1 {
+            0% {
+              left: calc(50% - 330px);
+            }
+            100% {
+              left: calc(50% - 555px);
+            }
+          }
+
+          .image-wrap:nth-child(1) {
+            animation-name: aniReduction;
+            animation-duration: 1s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+          }
+
+          .image-wrap:nth-child(2) {
+            animation-name: aniExpand, aniReduction;
+            animation-duration: 1s, 1s;
+            animation-delay: 1s, 3s;
+            animation-fill-mode: forwards, forwards;
+          }
+
+          .image-wrap:nth-child(3) {
+            animation-name: aniExpand;
+            animation-duration: 1s;
+            animation-delay: 3s;
+            animation-fill-mode: forwards;
+          }
+
+          @keyframes aniExpand {
+            0% {
+              transform: scale(0.87);
+            }
+            100% {
+              transform: scale(1);
+            }
+          }
+
+          @keyframes aniReduction {
+            0% {
+              transform: scale(1);
+              opacity: 1;
+            }
+            100% {
+              transform: scale(0.87);
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        .image-area {
+          animation-name: aniHorizon;
+          animation-duration: 1s;
+          animation-delay: 1s;
+          animation-fill-mode: forwards;
+        }
+      }
+
+      &:nth-child(4) {
+        .image-area {
+          animation-name: aniImage4;
+          animation-duration: 2s;
+          animation-delay: 1s;
+          animation-fill-mode: forwards;
+
+          @keyframes aniImage4 {
+            from {
+              background-position: center 0, 0 74px, 0 0;
+            }
+            to {
+              background-position: center 0, right 74px, 0 0;
+            }
+          }
+        }
+      }
+
+      &:nth-child(5) {
+        .image-area {
+          animation-name: aniOverWrite;
+          animation-duration: 1s;
+          animation-delay: 1s;
+          animation-fill-mode: forwards;
+        }
+      }
+
+      &:nth-child(6) {
+        .image-area {
+          &::before {
+            animation-name: aniOpacity;
+            animation-duration: 1.5s;
+            animation-delay: 0.8s;
+            animation-fill-mode: forwards;
+          }
+        }
+      }
+
+      &:nth-child(8) {
+        .image-area {
+          animation-name: aniScroll;
+          animation-duration: 0.6s;
+          animation-delay: 0.5s;
+          animation-fill-mode: forwards;
+          animation-timing-function: ease-in;
+        }
+      }
+
+      &:nth-child(9) {
+        .image-area {
+          animation-name: aniScroll;
+          animation-duration: 1s;
+          animation-delay: 1s;
+          animation-fill-mode: forwards;
+          animation-timing-function: ease-in;
+        }
+      }
+
+      @keyframes aniScroll {
+        from {
+          background-position: center 0, 0 0, 0 0;
+        }
+        to {
+          background-position: center 0, 0 0, 0 bottom;
+        }
+      }
+
+      @keyframes aniHorizon {
+        from {
+          background-position: center 0, 0 0;
+        }
+        to {
+          background-position: center 0, -210px 0;
+        }
+      }
+
+      @keyframes aniVertical {
+        from {
+          background-position: center 0, 0 0;
+        }
+        to {
+          background-position: center 0, 0 -342px;
+        }
+      }
+
+      @keyframes aniOverWrite {
+        from {
+          background-position: center 0, 0 342px, 0 0;
+        }
+        to {
+          background-position: center 0, 0 0, 0 0;
+        }
+      }
+    }
+  }
+}

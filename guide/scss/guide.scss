@@ -1,0 +1,95 @@
+.guide-wrap {
+  padding: 60px 60px 60px 300px;
+
+  &.mobile {
+    position: relative;
+    min-height: 100vh;
+    padding: 0 32px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    .guide {
+      h1:not([class^="tit-t"]) {
+        font-size: 30px;
+        border: 0;
+        padding: 20px 0;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .guide-lnb {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 85px 30px;
+    width: 240px;
+
+    ul {
+      li {
+        a {
+          display: block;
+          font-size: 32px;
+          border-bottom: 2px solid #000;
+
+          &.active {
+            color: #5367ff;
+            border-color: #5367ff;
+          }
+        }
+
+        + li {
+          margin-top: 24px;
+        }
+      }
+    }
+  }
+
+  .guide {
+    h1:not([class^="tit-t"]) {
+      font-size: 48px;
+      color: #5367ff;
+      margin-bottom: 36px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #333;
+    }
+
+    article {
+      // border: 1px solid #ddd;
+      // border-radius: 12px;
+      // padding: 24px;
+
+      h2:not(.content-title):not([class^="tit-t"]) {
+        font-size: 24px;
+        margin: 60px 0 24px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #999;
+
+        em {
+          position: relative;
+          font-style: normal;
+          font-size: 16px;
+          margin-left: 10px;
+          color: #666;
+        }
+      }
+
+      > div {
+        p.desc {
+          background: #ffdee3;
+          font-size: 12px;
+          color: #666;
+          border: 1px solid #fdc867;
+          border-radius: 6px;
+          padding: 6px;
+          margin: 12px 0;
+        }
+      }
+
+      + article {
+        margin-top: 24px;
+      }
+    }
+  }
+}

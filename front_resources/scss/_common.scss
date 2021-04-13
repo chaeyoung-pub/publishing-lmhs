@@ -1,0 +1,191 @@
+@charset "utf-8";
+
+body {
+  font-size: $font-size-default;
+  font-weight: normal;
+  line-height: $line-height-default;
+  color: $black;
+  white-space: normal;
+  word-break: break-all;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+/* 공통 클래스 */
+.hide {
+  @include hide;
+}
+
+.ps-relative {
+  position: relative !important;
+}
+
+.ps-absolute {
+  position: absolute !important;
+}
+
+.ps-static {
+  position: static !important;
+}
+
+.fl-left {
+  float: left !important;
+}
+
+.fl-right {
+  float: right !important;
+}
+
+.cl-both {
+  clear: both !important;
+}
+
+.ov-hidden {
+  overflow: hidden !important;
+}
+
+.dp-none {
+  display: none !important;
+}
+
+.dp-block {
+  display: block !important;
+}
+
+.dp-inline-block {
+  display: inline-block !important;
+}
+
+.fd-row {
+  flex-direction: row !important;
+}
+
+.fd-column {
+  flex-direction: column !important;
+}
+
+.ta-center {
+  text-align: center !important;
+}
+
+.ta-left {
+  text-align: left !important;
+}
+
+.ta-right {
+  text-align: right !important;
+}
+
+.bd-none {
+  border: 0 !important;
+}
+
+@for $i from 0 to 13 {
+  $value: 5px * $i;
+
+  .mgt-#{$i} {
+    margin-top: $value !important;
+  }
+
+  .mgb-#{$i} {
+    margin-bottom: $value !important;
+  }
+
+  .mgl-#{$i} {
+    margin-left: $value !important;
+  }
+
+  .mgr-#{$i} {
+    margin-right: $value !important;
+  }
+
+  .pdt-#{$i} {
+    padding-top: $value !important;
+  }
+
+  .pdb-#{$i} {
+    padding-bottom: $value !important;
+  }
+
+  .pdl-#{$i} {
+    padding-left: $value !important;
+  }
+
+  .pdr-#{$i} {
+    padding-right: $value !important;
+  }
+}
+
+.fs-12 {
+  font-size: 12px !important;
+}
+
+.fs-11 {
+  font-size: 11px !important;
+}
+
+.fw-bold {
+  font-weight: bold !important;
+}
+
+.wb-normal {
+  word-break: normal !important;
+}
+
+// 컬러
+.co-black {
+  color: $black !important;
+}
+
+.co-blue {
+  color: $blue !important;
+}
+
+.co-gray {
+  color: $dark-gray !important;
+}
+
+.co-light-gray {
+  color: $gray !important;
+}
+
+// 말줄임
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// 로딩
+.loading-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 150;
+  transition: all 0.4s;
+  background-color: rgba(221, 221, 221, 0.7);
+  opacity: 1;
+
+  .loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba($gray, 0.2);
+    border-radius: 50%;
+    border-top-color: $black;
+    animation: spin 1s ease-in-out infinite;
+    z-index: 200;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

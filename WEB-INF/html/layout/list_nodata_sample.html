@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>공통(목록) - 데이터가 없는 경우</title>
+    <script src="../../../resources/js/include.js"></script>
+  </head>
+
+  <body>
+    <div class="admin-wrap">
+      <header class="admin-header"></header>
+
+      <nav class="admin-lnb"></nav>
+
+      <div class="admin-content">
+        <div class="area-path"></div>
+
+        <h2 class="content-title">공통(목록) - 데이터가 없는 경우</h2>
+
+        <div class="tbl-sub">
+          <div class="search-area">
+            <select class="select">
+              <option value="">전체</option>
+            </select>
+            <div class="input-search">
+              <input
+                type="text"
+                class="text"
+                placeholder="검색어를 입력하세요."
+              />
+              <button class="btn-icon-search">
+                <i>검색</i>
+              </button>
+            </div>
+          </div>
+
+          <div class="sort-area">
+            <select class="select">
+              <option value="" hidden>카테고리</option>
+              <option value="">전체</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tbl-type2" data-checkbox-all>
+          <table>
+            <caption>
+              조회 목록
+            </caption>
+            <colgroup>
+              <col style="width: 58px" />
+              <col style="width: 80px" />
+              <col />
+              <col />
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">
+                  <label class="chk-label">
+                    <input
+                      type="checkbox"
+                      name="chkA1"
+                      id="chkA1-1"
+                      data-checkbox-trigger
+                    />
+                    <span></span>
+                  </label>
+                </th>
+                <th scope="col">번호</th>
+                <th scope="col">카테고리</th>
+                <th scope="col">파일명</th>
+                <th scope="col">URL</th>
+                <th scope="col">등록일자</th>
+                <th scope="col">등록자</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- case1 ) 데이터가 있는 경우 -->
+              <!-- <tr>
+                <td>
+                  <label class="chk-label">
+                    <input type="checkbox" name="chkA1" id="chkA1-2" />
+                    <span></span>
+                  </label>
+                </td>
+                <td>1</td>
+                <td>홈트레이닝/댄스카디오/요가&amp;명상/북테라피/사운드테라피</td>
+                <td>파일명</td>
+                <td>url</td>
+                <td>0000-00-00 00:00</td>
+                <td>홍길동</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="chk-label">
+                    <input type="checkbox" name="chkA1" id="chkA1-3" />
+                    <span></span>
+                  </label>
+                </td>
+                <td>2</td>
+                <td>홈트레이닝</td>
+                <td>파일명</td>
+                <td>url</td>
+                <td>0000-00-00 00:00</td>
+                <td>홍길동</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="chk-label">
+                    <input type="checkbox" name="chkA1" id="chkA1-4" />
+                    <span></span>
+                  </label>
+                </td>
+                <td>3</td>
+                <td>홈트레이닝</td>
+                <td>파일명</td>
+                <td>url</td>
+                <td>0000-00-00 00:00</td>
+                <td>홍길동</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="chk-label">
+                    <input type="checkbox" name="chkA1" id="chkA1-5" />
+                    <span></span>
+                  </label>
+                </td>
+                <td>4</td>
+                <td>홈트레이닝</td>
+                <td>파일명</td>
+                <td>url</td>
+                <td>0000-00-00 00:00</td>
+                <td>홍길동</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="chk-label">
+                    <input type="checkbox" name="chkA1" id="chkA1-6" />
+                    <span></span>
+                  </label>
+                </td>
+                <td>5</td>
+                <td>홈트레이닝</td>
+                <td>파일명</td>
+                <td>url</td>
+                <td>0000-00-00 00:00</td>
+                <td>홍길동</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="chk-label">
+                    <input type="checkbox" name="chkA1" id="chkA1-7" />
+                    <span></span>
+                  </label>
+                </td>
+                <td>6</td>
+                <td>댄스카디오</td>
+                <td>파일명</td>
+                <td>url</td>
+                <td>0000-00-00 00:00</td>
+                <td>홍길동</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="chk-label">
+                    <input type="checkbox" name="chkA1" id="chkA1-8" />
+                    <span></span>
+                  </label>
+                </td>
+                <td>7</td>
+                <td>댄스카디오</td>
+                <td>파일명</td>
+                <td>url</td>
+                <td>0000-00-00 00:00</td>
+                <td>홍길동</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="chk-label">
+                    <input type="checkbox" name="chkA1" id="chkA1-9" />
+                    <span></span>
+                  </label>
+                </td>
+                <td>8</td>
+                <td>댄스카디오</td>
+                <td>파일명</td>
+                <td>url</td>
+                <td>0000-00-00 00:00</td>
+                <td>홍길동</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="chk-label">
+                    <input type="checkbox" name="chkA1" id="chkA1-10" />
+                    <span></span>
+                  </label>
+                </td>
+                <td>9</td>
+                <td>댄스카디오</td>
+                <td>파일명</td>
+                <td>url</td>
+                <td>0000-00-00 00:00</td>
+                <td>홍길동</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="chk-label">
+                    <input type="checkbox" name="chkA1" id="chkA1-11" />
+                    <span></span>
+                  </label>
+                </td>
+                <td>10</td>
+                <td>댄스카디오</td>
+                <td>파일명</td>
+                <td>url</td>
+                <td>0000-00-00 00:00</td>
+                <td>홍길동</td>
+              </tr> -->
+              <!-- // -->
+
+              <!-- case2 ) 데이터가 없는 경우 -->
+              <tr>
+                <td colspan="7" class="nodata">조회된 데이터가 없습니다.</td>
+              </tr>
+              <!-- // -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- <div class="btn-area">
+          <a href="#" class="btn-type1 btn-bg3">삭제</a>
+        </div>
+
+        <div class="pagination">
+          <a href="#" class="btn-icon-first"><i>처음으로</i></a>
+          <a href="#" class="btn-icon-prev"><i>이전</i></a>
+          <ol class="paging">
+            <li><a href="#">1</a></li>
+            <li><a href="#" class="active">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+          </ol>
+          <a href="#" class="btn-icon-next"><i>다음으로</i></a>
+          <a href="#" class="btn-icon-last"><i>마지막으로</i></a>
+        </div> -->
+
+        <div class="btn-area ta-right">
+          <a href="#" class="btn-type1">등록</a>
+        </div>
+      </div>
+
+      <footer class="admin-footer"></footer>
+    </div>
+  </body>
+</html>

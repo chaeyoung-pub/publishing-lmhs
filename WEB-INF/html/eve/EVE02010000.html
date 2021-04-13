@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>공지/이벤트 - 이벤트 - 목록</title>
+    <script src="../../../resources/js/include.js"></script>
+  </head>
+
+  <body>
+    <div class="admin-wrap">
+      <header class="admin-header"></header>
+
+      <nav class="admin-lnb"></nav>
+
+      <div class="admin-content">
+        <div class="area-path"></div>
+
+        <h2 class="content-title">이벤트</h2>
+
+        <div class="tbl-sub">
+          <div class="search-area">
+            <select class="select">
+              <option value="">전체</option>
+            </select>
+            <div class="input-search">
+              <input
+                type="text"
+                class="text"
+                placeholder="검색어를 입력하세요."
+              />
+              <button class="btn-icon-search">
+                <i>검색</i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tbl-type2">
+          <table>
+            <caption>
+              이벤트 목록
+            </caption>
+            <colgroup>
+              <col style="width: 80px" />
+              <col />
+              <col style="width: 80px" />
+              <col />
+              <col style="width: 110px" />
+              <col style="width: 110px" />
+              <col style="width: 90px" />
+              <col style="width: 80px" />
+              <col style="width: 60px" />
+              <col style="width: 90px" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">제목</th>
+                <th scope="col">관리</th>
+                <th scope="col">회사</th>
+                <th scope="col">등록일자</th>
+                <th scope="col">게시일자</th>
+                <th scope="col">작성자</th>
+                <th scope="col">조회</th>
+                <th scope="col">첨부파일</th>
+                <th scope="col">진행상태</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- case1 ) 데이터가 있는 경우 -->
+              <tr>
+                <td>1</td>
+                <td class="ta-left"><a href="#">제목</a></td>
+                <td>HR/시스템</td>
+                <td class="ta-left">회사명/회사명 외/전체</td>
+                <td>0000-00-00</td>
+                <td>0000-00-00</td>
+                <td>홍길동</td>
+                <td>000</td>
+                <td>Y/N</td>
+                <td>진행중/종료</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td class="ta-left"><a href="#">제목</a></td>
+                <td>HR</td>
+                <td class="ta-left">회사명</td>
+                <td>0000-00-00</td>
+                <td>0000-00-00</td>
+                <td>홍길동</td>
+                <td>000</td>
+                <td>Y</td>
+                <td>진행중</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td class="ta-left"><a href="#">제목</a></td>
+                <td>시스템</td>
+                <td class="ta-left">회사명 외</td>
+                <td>0000-00-00</td>
+                <td>0000-00-00</td>
+                <td>홍길동</td>
+                <td>000</td>
+                <td>N</td>
+                <td>종료</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td class="ta-left"><a href="#">제목</a></td>
+                <td>HR</td>
+                <td class="ta-left">전체</td>
+                <td>0000-00-00</td>
+                <td>0000-00-00</td>
+                <td>홍길동</td>
+                <td>000</td>
+                <td>Y</td>
+                <td>진행중</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td class="ta-left"><a href="#">제목</a></td>
+                <td>시스템</td>
+                <td class="ta-left">회사명</td>
+                <td>0000-00-00</td>
+                <td>0000-00-00</td>
+                <td>홍길동</td>
+                <td>000</td>
+                <td>Y</td>
+                <td>종료</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td class="ta-left"><a href="#">제목</a></td>
+                <td>HR</td>
+                <td class="ta-left">회사명 외</td>
+                <td>0000-00-00</td>
+                <td>0000-00-00</td>
+                <td>홍길동</td>
+                <td>000</td>
+                <td>N</td>
+                <td>진행중</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td class="ta-left"><a href="#">제목</a></td>
+                <td>시스템</td>
+                <td class="ta-left">전체</td>
+                <td>0000-00-00</td>
+                <td>0000-00-00</td>
+                <td>홍길동</td>
+                <td>000</td>
+                <td>Y</td>
+                <td>종료</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td class="ta-left"><a href="#">제목</a></td>
+                <td>HR</td>
+                <td class="ta-left">회사명</td>
+                <td>0000-00-00</td>
+                <td>0000-00-00</td>
+                <td>홍길동</td>
+                <td>000</td>
+                <td>N</td>
+                <td>진행중</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td class="ta-left"><a href="#">제목</a></td>
+                <td>시스템</td>
+                <td class="ta-left">회사명 외</td>
+                <td>0000-00-00</td>
+                <td>0000-00-00</td>
+                <td>홍길동</td>
+                <td>000</td>
+                <td>Y</td>
+                <td>종료</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td class="ta-left"><a href="#">제목</a></td>
+                <td>HR</td>
+                <td class="ta-left">전체</td>
+                <td>0000-00-00</td>
+                <td>0000-00-00</td>
+                <td>홍길동</td>
+                <td>000</td>
+                <td>N</td>
+                <td>진행중</td>
+              </tr>
+              <!-- // -->
+
+              <!-- case2 ) 데이터가 없는 경우 -->
+              <tr>
+                <td colspan="10" class="nodata">조회된 데이터가 없습니다.</td>
+              </tr>
+              <!-- // -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <a href="#" class="btn-icon-first"><i>처음으로</i></a>
+          <a href="#" class="btn-icon-prev"><i>이전</i></a>
+          <ol class="paging">
+            <li><a href="#">1</a></li>
+            <li><a href="#" class="active">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+          </ol>
+          <a href="#" class="btn-icon-next"><i>다음으로</i></a>
+          <a href="#" class="btn-icon-last"><i>마지막으로</i></a>
+        </div>
+
+        <div class="btn-area ta-right">
+          <a href="#" class="btn-type1">작성</a>
+        </div>
+      </div>
+
+      <footer class="admin-footer"></footer>
+    </div>
+  </body>
+</html>

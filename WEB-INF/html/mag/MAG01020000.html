@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>관리자관리 - 상세</title>
+    <script src="../../../resources/js/include.js"></script>
+  </head>
+
+  <body>
+    <div class="admin-wrap">
+      <header class="admin-header"></header>
+
+      <nav class="admin-lnb"></nav>
+
+      <div class="admin-content">
+        <div class="area-path"></div>
+
+        <h2 class="content-title">관리자관리</h2>
+
+        <div class="tbl-type1">
+          <table>
+            <caption>
+              관리자상세
+            </caption>
+            <colgroup>
+              <col style="width: 130px" />
+              <col />
+              <col style="width: 130px" />
+              <col />
+              <col style="width: 130px" />
+              <col />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">아이디</th>
+                <td>abc123456</td>
+                <th scope="row">이름</th>
+                <td>홍길동</td>
+                <th scope="row">이메일</th>
+                <td>abc123456@naver.com</td>
+              </tr>
+              <tr>
+                <th scope="row">휴대폰</th>
+                <td>000-0000-0000</td>
+                <th scope="row">회사</th>
+                <td></td>
+                <th scope="row">신청일자</th>
+                <td>0000-00-00</td>
+              </tr>
+              <tr>
+                <th scope="row">상태</th>
+                <td>승인대기/Super관리자/일반관리자/반려</td>
+                <th scope="row">권한</th>
+                <td>
+                  <select class="select">
+                    <option value="">Super관리자</option>
+                    <option value="">일반관리자</option>
+                  </select>
+                </td>
+                <th scope="row">최종 접속일</th>
+                <td>0000-00-00 00:00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <ul class="txt-bul-type1">
+          <li>
+            Super관리자 : 회원조회, 통계관리, 챌린지, 공지/이벤트, 클래스,
+            루틴관리, 팝업관리, 푸시관리, 관리자관리 메뉴를 사용가능 합니다.
+          </li>
+          <li>
+            일반관리자 : 통계관리, 챌린지, 공지/이벤트, 클래스, 루틴관리,
+            팝업관리, 푸시관리 메뉴를 사용가능 합니다.
+          </li>
+        </ul>
+
+        <div class="btn-area ta-right">
+          <button class="btn-type2">저장</button>
+          <a href="#" class="btn-type2 btn-bg4">목록</a>
+        </div>
+      </div>
+
+      <footer class="admin-footer"></footer>
+    </div>
+  </body>
+</html>

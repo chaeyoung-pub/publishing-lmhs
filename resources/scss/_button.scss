@@ -1,0 +1,375 @@
+@charset "utf-8";
+
+/* 버튼 */
+// 버튼영역
+.btn-area {
+  margin-top: 40px;
+  font-size: 0;
+  @include clearfix;
+
+  + .btn-area {
+    margin-top: 20px;
+  }
+
+  [class^="btn-"] {
+    + [class^="btn-"] {
+      margin-left: 6px;
+    }
+  }
+}
+
+// 기본형
+[class^="btn-type"] {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid $key-color;
+  background: $key-color;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: $white;
+
+  &.btn-bg2 {
+    border: 1px solid $gray;
+    background: $gray;
+  }
+
+  &.btn-bg3 {
+    border: 1px solid $border-gray;
+    background: $bg-gray;
+    color: $black;
+  }
+
+  &.btn-bg4 {
+    border: 1px solid $border-gray;
+    background: $white;
+    color: $black;
+  }
+
+  &.btn-bg5 {
+    border: 1px solid $dark-gray;
+    background: $dark-gray;
+    color: $white;
+  }
+
+  &:disabled,
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  [class^="icon-"] {
+    margin-left: 4px;
+  }
+}
+
+.btn {
+  &-type1,
+  &-type2 {
+    min-width: 100px;
+    padding: 0 15px;
+    height: 40px;
+    line-height: 38px;
+    border-radius: 20px;
+    font-size: 15px;
+  }
+
+  &-type3 {
+    padding: 0 10px;
+    height: 30px;
+    line-height: 28px;
+    border-radius: 14px;
+    font-size: 14px;
+  }
+
+  &-type4 {
+    min-width: 70px;
+    padding: 0 10px;
+    height: 36px;
+    line-height: 34px;
+    border-radius: 4px;
+    font-size: 15px;
+  }
+
+  &-type5 {
+    padding: 0 10px;
+    min-width: 74px;
+    height: 30px;
+    line-height: 28px;
+    border-radius: 2px;
+    font-size: 13px;
+  }
+
+  &-type6 {
+    width: 100%;
+    height: 54px;
+    line-height: 52px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
+
+// 아이콘형
+[class^="btn-icon"] {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+
+  i {
+    position: static;
+    font-size: 0;
+    color: transparent;
+  }
+}
+
+.btn-icon {
+  &-search {
+    width: 40px;
+    height: 40px;
+
+    i {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        right: 14px;
+        width: 10px;
+        height: 10px;
+        border: 2px solid $black;
+        border-radius: 50%;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 14px;
+        right: 13px;
+        width: 5px;
+        height: 2px;
+        background: $black;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &-delete {
+    width: 21px;
+    height: 21px;
+    i {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 14px;
+        height: 2px;
+        background: $black;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+
+  &-delete-type2 {
+    width: 20px;
+    height: 20px;
+    background: url(../img/common/ico_delete.png) no-repeat;
+    vertical-align: middle;
+  }
+
+  &-delete-type3 {
+    width: 18px;
+    height: 18px;
+    background: url(../img/common/ico_delete_02.png) no-repeat;
+    vertical-align: middle;
+  }
+
+  &-close {
+    width: 20px;
+    height: 20px;
+
+    i {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: 9px;
+        width: 3px;
+        height: 21px;
+        background: $black;
+      }
+
+      &::before {
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &-first,
+  &-prev,
+  &-next,
+  &-last {
+    width: 28px;
+    height: 28px;
+
+    i {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 7px;
+        height: 7px;
+        border-left: 2px solid #c2c2c2;
+        border-bottom: 2px solid #c2c2c2;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &-prev i {
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &::after {
+      display: none;
+    }
+  }
+
+  &-first i {
+    &::before {
+      left: calc(50% - 5px);
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &::after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+
+  &-next i {
+    &::before {
+      transform: translate(-50%, -50%) rotate(-135deg);
+    }
+    &::after {
+      display: none;
+    }
+  }
+
+  &-last i {
+    &::before {
+      transform: translate(-50%, -50%) rotate(-135deg);
+    }
+    &::after {
+      left: calc(50% + 5px);
+      transform: translate(-50%, -50%) rotate(-135deg);
+    }
+  }
+
+  &-sort {
+    width: 10px;
+    height: 18px;
+    vertical-align: text-top;
+
+    i {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-bottom: 6px solid #666;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+      }
+
+      &::after {
+        top: auto;
+        bottom: 1px;
+        transform: rotate(180deg);
+      }
+    }
+
+    &.active {
+      &.asc i::before {
+        border-bottom-color: #fff;
+      }
+
+      &.desc i::after {
+        border-bottom-color: #fff;
+      }
+    }
+  }
+}
+
+// 텍스트형
+.btn-txt {
+  display: inline-block;
+  font-size: $font-size-default;
+  color: $key-color;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// 페이징
+.pagination {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0;
+
+  .paging {
+    display: inline-block;
+    margin: 0 14px;
+    vertical-align: top;
+
+    li {
+      display: inline-block;
+      text-align: center;
+
+      ~ li {
+        margin-left: 2px;
+      }
+
+      a {
+        display: block;
+        overflow: hidden;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        border-radius: 4px;
+        white-space: nowrap;
+        font-size: 13px;
+        color: #b2b2b2;
+
+        &.active {
+          background: $black;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  [class^="btn-icon"] + [class^="btn-icon"] {
+    margin-left: 7px;
+  }
+}
+
+.btn-area + .pagination,
+.pagination + .btn-area.ta-right {
+  margin-top: -34px;
+}

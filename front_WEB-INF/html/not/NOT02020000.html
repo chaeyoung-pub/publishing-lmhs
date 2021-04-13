@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>더보기 - 이벤트</title>
+    <script src="../../../front_resources/js/include.js"></script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="content-wrap">
+        <h1 class="hide">이벤트</h1>
+
+        <div class="board-detail">
+          <div class="tit-area">
+            <h2>이벤트이벤트이벤트이벤트이벤트이벤트</h2>
+            <!-- 최근 7일 이내에 등록된 글인 경우 아이콘 추가 -->
+            <i class="icon-new"></i>
+            <!-- // -->
+          </div>
+          <span class="sub">0000.00.00 ~ 0000.00.00</span>
+
+          <article class="content-area">
+            내용 (에디터 작성)<br />내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+            <br /><img
+              src="../../../front_resources/img/temp/img_temp_01.gif"
+              alt=""
+            />
+          </article>
+
+          <!-- 첨부파일이 있을 경우에만 노출 -->
+          <div class="sub-area">
+            <strong>첨부파일</strong>
+            <div class="file-item">
+              <p class="info">
+                <span class="text-ellipsis">filename</span>.docx
+              </p>
+              <a href="#" class="btn-ico-download" download><i>다운로드</i></a>
+            </div>
+          </div>
+          <!-- // -->
+
+          <div class="bottom-area">
+            <span>0</span>
+            <div class="inp-area">
+              <input
+                type="text"
+                class="text"
+                placeholder="댓글을 입력해주세요."
+              />
+              <!-- 입력 시 버튼 활성화 -->
+              <button class="btn-t1" disabled>등록</button>
+            </div>
+
+            <!-- 댓글이 있을 경우 노출 -->
+            <ul class="list-t2">
+              <!-- case1) 작성자가 본인일 경우 -->
+              <li>
+                <span class="co-blue">작성자</span>
+                댓글내용
+                <span class="sub">0000.00.00 오후 00:00</span>
+                <button class="btn-ico-del"><i>삭제</i></button>
+              </li>
+              <!-- // -->
+              <!-- case2) 작성자가 본인이 아닌 경우 -->
+              <li>
+                <span>작성자</span>
+                댓글내용
+                <span class="sub">0000.00.00 오후 00:00</span>
+              </li>
+              <li>
+                <span>작성자</span>
+                댓글내용댓글내용댓글내용댓글내용
+                댓글내용댓글내용댓글내용댓글내용댓글내용
+                <span class="sub">0000.00.00 오후 00:00</span>
+              </li>
+              <!-- // -->
+            </ul>
+            <!-- // -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

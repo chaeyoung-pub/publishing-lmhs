@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+/* 버튼 */
+.btn-area {
+  margin: 50px 0 40px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  [class^="btn-t"] {
+    flex: 1;
+  }
+}
+
+.btn-t1,
+.btn-t2 {
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0 20px;
+  background: $white;
+  font-size: 13px;
+  font-weight: bold;
+  color: $black;
+  text-align: left;
+
+  [class^="icon-"] {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.btn-t2 {
+  background-color: $black;
+  color: $white;
+  text-align: center;
+
+  .icon-ios {
+    background-image: url(../img/common/icon_ios_02.png);
+    z-index: 1;
+  }
+
+  .icon-android {
+    background-image: url(../img/common/icon_android_02.png);
+    z-index: 1;
+  }
+}
+
+.btn-t3 {
+  border: 1px solid $black;
+  border-radius: 25px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  height: 45px;
+  line-height: 45px;
+  color: $black;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+}
+
+// 아이콘형
+.btn-icon-close {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: url(../img/common/icon_close.png) no-repeat;
+  background-size: 15px auto;
+  background-position: center;
+
+  i {
+    font-size: 0;
+    color: transparent;
+  }
+}

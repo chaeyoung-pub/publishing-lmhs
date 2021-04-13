@@ -1,0 +1,117 @@
+@charset "utf-8";
+/* 텍스트 */
+//텍스트
+[class^="tit-type"] {
+  font-family: "LifeplusM";
+
+  + .tit-sub {
+    float: right;
+  }
+}
+
+.tit-type1 {
+  margin: 60px 0 28px;
+  font-size: 20px;
+
+  + .tit-sub {
+    margin-top: -58px;
+  }
+}
+
+.tit-type2 {
+  margin: 30px 0 16px;
+  font-size: 16px;
+
+  + .tit-sub {
+    margin-top: -40px;
+  }
+}
+
+// 텍스트
+[class^="txt-type"] {
+}
+
+.txt-type1 {
+  font-size: 16px;
+
+  + .txt-type2 {
+    margin-top: 12px;
+  }
+}
+
+.txt-type2 {
+  font-size: 14px;
+}
+
+.txt-type3 {
+  font-size: 13px;
+}
+
+// 불릿형
+.txt-bul-type1 {
+  &:not(ul):not(ol):not(dl),
+  > li,
+  > dt,
+  > dd {
+    position: relative;
+    padding-left: 10px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 0;
+      width: 2px;
+      height: 2px;
+      background: $gray;
+    }
+  }
+
+  & ~ &,
+  > li ~ li {
+    margin-top: 10px;
+  }
+}
+
+.txt-bul-type2 {
+  &:not(ul):not(ol):not(dl),
+  > li,
+  > dt,
+  > dd {
+    position: relative;
+    padding-left: 10px;
+
+    &::before {
+      content: "*";
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  & ~ &,
+  > li ~ li {
+    margin-top: 10px;
+  }
+}
+
+/* 필수입력 */
+.required {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  width: 4px;
+  margin-left: 5px;
+  font-style: normal;
+  font-size: 0;
+  color: transparent;
+
+  &::before {
+    content: "*";
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    color: $red;
+  }
+}

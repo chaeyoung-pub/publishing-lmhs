@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>button</title>
+    <link rel="stylesheet" href="../../css/guide.css" />
+    <link rel="stylesheet" href="../../../resources/css/common.css" />
+    <script src="../../../resources/js/library/jquery-3.4.1.min.js"></script>
+    <script src="../../../resources/js/library/jquery-ui.min.js"></script>
+    <script src="../../../resources/js/common.js"></script>
+    <script src="../../js/guide.js"></script>
+  </head>
+
+  <body>
+    <div class="guide-wrap">
+      <nav class="guide-lnb"></nav>
+
+      <section class="guide">
+        <h1 class="hide">button</h1>
+        <article>
+          <h2>
+            버튼색<em>기본 : keycolor 그 외 [class^="btn-bg"]클래스 추가</em>
+          </h2>
+          <!-- 작성/수정/확인 -->
+          <button class="btn-type1">기본</button>
+          <!-- 삭제/다시쓰기/재 요청/초기화 -->
+          <button class="btn-type1 btn-bg2">.btn-bg2</button>
+          <!-- 삭제/종료 -->
+          <button class="btn-type1 btn-bg3">.btn-bg3</button>
+          <!-- 목록/취소/반려 -->
+          <button class="btn-type1 btn-bg4">.btn-bg4</button>
+          <!-- 로그아웃 -->
+          <button class="btn-type1 btn-bg5">.btn-bg5</button>
+
+          <h2>
+            버튼유형1<em>button[class^="btn-type"], a[class^="btn-type"]</em>
+          </h2>
+          <!-- code -->
+          <div>
+            <p class="desc">button.btn-type1 (목록, 팝업)</p>
+            <button class="btn-type1">button.btn-type1</button>
+            <button class="btn-type1 btn-bg2">button.btn-type1</button>
+            <button class="btn-type1 btn-bg3">button.btn-type1</button>
+            <button class="btn-type1 btn-bg4">button.btn-type1</button>
+            <button class="btn-type1 btn-bg5">button.btn-type1</button>
+
+            <p class="desc">button.btn-type1:disabled</p>
+            <button class="btn-type1" disabled>button.btn-type1</button>
+            <button class="btn-type1 btn-bg2" disabled>button.btn-type1</button>
+            <button class="btn-type1 btn-bg3" disabled>button.btn-type1</button>
+            <button class="btn-type1 btn-bg4" disabled>button.btn-type1</button>
+            <button class="btn-type1 btn-bg5" disabled>button.btn-type1</button>
+
+            <p class="desc">a.btn-type1</p>
+            <a href="#" class="btn-type1">a.btn-type1</a>
+            <a href="#" class="btn-type1 btn-bg2"> a.btn-type1</a>
+            <a href="#" class="btn-type1 btn-bg3"> a.btn-type1</a>
+            <a href="#" class="btn-type1 btn-bg4"> a.btn-type1</a>
+            <a href="#" class="btn-type1 btn-bg5"> a.btn-type1</a>
+
+            <p class="desc">a.btn-type1.disabled</p>
+            <a href="#" class="btn-type1 disabled">a.btn-type1</a>
+            <a href="#" class="btn-type1 btn-bg2 disabled"> a.btn-type1 </a>
+            <a href="#" class="btn-type1 btn-bg3 disabled"> a.btn-type1 </a>
+            <a href="#" class="btn-type1 btn-bg4 disabled"> a.btn-type1 </a>
+            <a href="#" class="btn-type1 btn-bg5 disabled"> a.btn-type1 </a>
+
+            <p class="desc">.btn-type2 (상세)</p>
+            <button class="btn-type2">.btn-type2</button>
+            <button class="btn-type2 btn-bg2">.btn-type2</button>
+            <button class="btn-type2 btn-bg3">.btn-type2</button>
+            <button class="btn-type2 btn-bg4">.btn-type2</button>
+            <button class="btn-type2 btn-bg5">.btn-type2</button>
+
+            <!-- <p class="desc">button.btn-type2:disabled</p>
+            <button class="btn-type2" disabled>button.btn-type2</button>
+            <button class="btn-type2 btn-bg2" disabled>button.btn-type2</button>
+            <button class="btn-type2 btn-bg3" disabled>button.btn-type2</button>
+            <button class="btn-type2 btn-bg4" disabled>button.btn-type2</button>
+            <button class="btn-type2 btn-bg5" disabled>button.btn-type2</button>
+
+            <p class="desc">a.btn-type2</p>
+            <a href="#" class="btn-type2">a.btn-type2</a>
+            <a href="#" class="btn-type2 btn-bg2">a.btn-type2</a>
+            <a href="#" class="btn-type2 btn-bg3">a.btn-type2</a>
+            <a href="#" class="btn-type2 btn-bg4">a.btn-type2</a>
+            <a href="#" class="btn-type2 btn-bg5">a.btn-type2</a>
+
+            <p class="desc">a.btn-type2.disabled</p>
+            <a href="#" class="btn-type2 disabled">a.btn-type2</a>
+            <a href="#" class="btn-type2 btn-bg2 disabled">a.btn-type2</a>
+            <a href="#" class="btn-type2 btn-bg3 disabled">a.btn-type2</a>
+            <a href="#" class="btn-type2 btn-bg4 disabled">a.btn-type2</a>
+            <a href="#" class="btn-type2 btn-bg5 disabled">a.btn-type2</a> -->
+
+            <p class="desc">.btn-type3 (input, table)</p>
+            <button class="btn-type3">.btn-type3</button>
+            <button class="btn-type3 btn-bg2">.btn-type3</button>
+            <button class="btn-type3 btn-bg3">.btn-type3</button>
+            <button class="btn-type3 btn-bg4">.btn-type3</button>
+            <button class="btn-type3 btn-bg5">.btn-type3</button>
+
+            <!-- <p class="desc">button.btn-type3:disabled</p>
+            <button class="btn-type3" disabled>button.btn-type3</button>
+            <button class="btn-type3 btn-bg2" disabled>
+              button.btn-type3.btn-bg2
+            </button>
+            <button class="btn-type3 btn-bg3" disabled>
+              button.btn-type3.btn-bg3
+            </button>
+            <button class="btn-type3 btn-bg4" disabled>
+              button.btn-type3.btn-bg4
+            </button>
+            <button class="btn-type3 btn-bg5" disabled>
+              button.btn-type3.btn-bg5
+            </button>
+
+            <p class="desc">a.btn-type3</p>
+            <a href="#" class="btn-type3">a.btn-type3</a>
+            <a href="#" class="btn-type3 btn-bg2">a.btn-type3</a>
+            <a href="#" class="btn-type3 btn-bg3">a.btn-type3</a>
+            <a href="#" class="btn-type3 btn-bg4">a.btn-type3</a>
+            <a href="#" class="btn-type3 btn-bg5">a.btn-type3</a>
+
+            <p class="desc">a.btn-type3.disabled</p>
+            <a href="#" class="btn-type3 disabled">a.btn-type3</a>
+            <a href="#" class="btn-type3 btn-bg2 disabled">a.btn-type3</a>
+            <a href="#" class="btn-type3 btn-bg3 disabled">a.btn-type3</a>
+            <a href="#" class="btn-type3 btn-bg4 disabled">a.btn-type3</a>
+            <a href="#" class="btn-type3 btn-bg5 disabled">a.btn-type3</a> -->
+          </div>
+
+          <h2>
+            버튼유형2<em>button[class^="btn-type"], a[class^="btn-type"]</em>
+          </h2>
+          <!-- code -->
+          <div>
+            <p class="desc">.btn-type4 (search-area)</p>
+            <button class="btn-type4">.btn-type4</button>
+            <button class="btn-type4 btn-bg2">.btn-type4</button>
+            <button class="btn-type4 btn-bg3">.btn-type4</button>
+            <button class="btn-type4 btn-bg4">.btn-type4</button>
+            <button class="btn-type4 btn-bg5">.btn-type4</button>
+
+            <!-- <p class="desc">button.btn-type4:disabled</p>
+            <button class="btn-type4" disabled>button.btn-type4</button>
+            <button class="btn-type4 btn-bg2" disabled>button.btn-type4</button>
+            <button class="btn-type4 btn-bg3" disabled>button.btn-type4</button>
+            <button class="btn-type4 btn-bg4" disabled>button.btn-type4</button>
+            <button class="btn-type4 btn-bg5" disabled>button.btn-type4</button>
+
+            <p class="desc">a.btn-type4</p>
+            <a href="#" class="btn-type4">a.btn-type4</a>
+            <a href="#" class="btn-type4 btn-bg2">a.btn-type4</a>
+            <a href="#" class="btn-type4 btn-bg3">a.btn-type4</a>
+            <a href="#" class="btn-type4 btn-bg4">a.btn-type4</a>
+            <a href="#" class="btn-type4 btn-bg5">a.btn-type4</a>
+
+            <p class="desc">a.btn-type4.disabled</p>
+            <a href="#" class="btn-type4 disabled">a.btn-type4</a>
+            <a href="#" class="btn-type4 btn-bg2 disabled">a.btn-type4</a>
+            <a href="#" class="btn-type4 btn-bg3 disabled">a.btn-type4</a>
+            <a href="#" class="btn-type4 btn-bg4 disabled">a.btn-type4</a>
+            <a href="#" class="btn-type4 btn-bg5 disabled">a.btn-type4</a> -->
+
+            <p class="desc">.btn-type5 (layout)</p>
+            <button class="btn-type5">.btn-type5</button>
+            <button class="btn-type5 btn-bg2">.btn-type5</button>
+            <button class="btn-type5 btn-bg3">.btn-type5</button>
+            <button class="btn-type5 btn-bg4">.btn-type5</button>
+            <button class="btn-type5 btn-bg5">.btn-type5</button>
+
+            <!-- <p class="desc">button.btn-type5:disabled</p>
+            <button class="btn-type5" disabled>button.btn-type5</button>
+            <button class="btn-type5 btn-bg2" disabled>button.btn-type5</button>
+            <button class="btn-type5 btn-bg3" disabled>button.btn-type5</button>
+            <button class="btn-type5 btn-bg4" disabled>button.btn-type5</button>
+            <button class="btn-type5 btn-bg5" disabled>button.btn-type5</button>
+
+            <p class="desc">a.btn-type5</p>
+            <a href="#" class="btn-type5">a.btn-type5</a>
+            <a href="#" class="btn-type5 btn-bg2">a.btn-type5</a>
+            <a href="#" class="btn-type5 btn-bg3">a.btn-type5</a>
+            <a href="#" class="btn-type5 btn-bg4">a.btn-type5</a>
+            <a href="#" class="btn-type5 btn-bg5">a.btn-type5</a>
+
+            <p class="desc">a.btn-type5.disabled</p>
+            <a href="#" class="btn-type5 disabled">a.btn-type5</a>
+            <a href="#" class="btn-type5 btn-bg2 disabled">a.btn-type5</a>
+            <a href="#" class="btn-type5 btn-bg3 disabled">a.btn-type5</a>
+            <a href="#" class="btn-type5 btn-bg4 disabled">a.btn-type5</a>
+            <a href="#" class="btn-type5 btn-bg5 disabled">a.btn-type5</a> -->
+
+            <p class="desc">.btn-type6 (로그인)</p>
+            <button class="btn-type6">.btn-type6</button>
+            <button class="btn-type6 btn-bg2">.btn-type6</button>
+            <button class="btn-type6 btn-bg3">.btn-type6</button>
+            <button class="btn-type6 btn-bg4">.btn-type6</button>
+            <button class="btn-type6 btn-bg5">.btn-type6</button>
+
+            <!-- <p class="desc">button.btn-type6:disabled</p>
+            <button class="btn-type6" disabled>button.btn-type6</button>
+            <button class="btn-type6 btn-bg2" disabled>button.btn-type6</button>
+            <button class="btn-type6 btn-bg3" disabled>button.btn-type6</button>
+            <button class="btn-type6 btn-bg4" disabled>button.btn-type6</button>
+            <button class="btn-type6 btn-bg5" disabled>button.btn-type6</button>
+
+            <p class="desc">a.btn-type6</p>
+            <a href="#" class="btn-type6">a.btn-type6</a>
+            <a href="#" class="btn-type6 btn-bg2">a.btn-type6</a>
+            <a href="#" class="btn-type6 btn-bg3">a.btn-type6</a>
+            <a href="#" class="btn-type6 btn-bg4">a.btn-type6</a>
+            <a href="#" class="btn-type6 btn-bg5">a.btn-type6</a>
+
+            <p class="desc">a.btn-type6.disabled</p>
+            <a href="#" class="btn-type6 disabled">a.btn-type6</a>
+            <a href="#" class="btn-type6 btn-bg2 disabled">a.btn-type6</a>
+            <a href="#" class="btn-type6 btn-bg3 disabled">a.btn-type6</a>
+            <a href="#" class="btn-type6 btn-bg4 disabled">a.btn-type6</a>
+            <a href="#" class="btn-type6 btn-bg5 disabled">a.btn-type6</a> -->
+          </div>
+          <!-- // code -->
+        </article>
+
+        <article>
+          <h2>텍스트형 <em>.btn-txt</em></h2>
+          <!-- code -->
+          <div>
+            <a href="#" class="btn-txt">.btn-txt</a>
+          </div>
+          <!-- // code -->
+        </article>
+
+        <article>
+          <h2>텍스트 + 아이콘형</h2>
+          <!-- code -->
+          <div>
+            <a href="#" class="btn-type3 btn-bg4" download=""
+              >엑셀 다운로드<i class="icon-excel"></i
+            ></a>
+          </div>
+          <!-- // code -->
+        </article>
+
+        <article>
+          <h2>아이콘형<em>[class^="btn-icon"]</em></h2>
+          <!-- code -->
+          <div>
+            <p class="desc">.btn-icon-delete</p>
+            <button class="btn-icon-delete"><i>삭제</i></button>
+
+            <p class="desc">.btn-icon-delete-type2</p>
+            <button class="btn-icon-delete-type2"><i>삭제</i></button>
+
+            <p class="desc">.btn-icon-close</p>
+            <button class="btn-icon-close"><i>닫기</i></button>
+
+            <p class="desc">.btn-icon-search</p>
+            <button class="btn-icon-search">
+              <i>검색</i>
+            </button>
+
+            <p class="desc">.btn-icon-sort</p>
+            <button type="button" class="btn-icon-sort asc">
+              <i></i>
+            </button>
+
+            <button type="button" class="btn-icon-sort asc active">
+              <i></i>
+            </button>
+
+            <button type="button" class="btn-icon-sort desc active">
+              <i></i>
+            </button>
+
+            <p class="desc">.btn-icon-first</p>
+            <a href="#" class="btn-icon-first"><i>처음으로</i></a>
+
+            <p class="desc">.btn-icon-prev</p>
+            <a href="#" class="btn-icon-prev"><i>이전</i></a>
+
+            <p class="desc">.btn-icon-next</p>
+            <a href="#" class="btn-icon-next"><i>다음으로</i></a>
+
+            <p class="desc">.btn-icon-last</p>
+            <a href="#" class="btn-icon-last"><i>마지막으로</i></a>
+          </div>
+          <!-- // code -->
+        </article>
+
+        <article>
+          <h2>버튼영역<em>.btn-area</em></h2>
+          <!-- code -->
+          <div>
+            <p class="desc">.btn-area</p>
+            <div class="btn-area">
+              <button class="btn-type1">버튼</button>
+              <button class="btn-type1">버튼</button>
+              <button class="btn-type1 fl-right">.right</button>
+            </div>
+
+            <p class="desc">.btn-area.center</p>
+            <div class="btn-area ta-center">
+              <button class="btn-type1">버튼</button>
+              <button class="btn-type1">버튼</button>
+              <button class="btn-type1 fl-left">.left</button>
+              <button class="btn-type1 fl-right">.right</button>
+            </div>
+
+            <p class="desc">.btn-area.right</p>
+            <div class="btn-area ta-right">
+              <button class="btn-type1">버튼</button>
+              <button class="btn-type1">버튼</button>
+              <button class="btn-type1 fl-left">.left</button>
+            </div>
+          </div>
+          <!-- // code -->
+        </article>
+
+        <article>
+          <h2>페이징 <em>.pagination</em></h2>
+          <div>
+            <!-- code -->
+            <div class="pagination">
+              <a href="#" class="btn-icon-first"><i>처음으로</i></a>
+              <a href="#" class="btn-icon-prev"><i>이전</i></a>
+              <ol class="paging">
+                <li><a href="#">1</a></li>
+                <li><a href="#" class="active">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#">7</a></li>
+                <li><a href="#">8</a></li>
+                <li><a href="#">9</a></li>
+                <li><a href="#">10</a></li>
+              </ol>
+              <a href="#" class="btn-icon-next"><i>다음으로</i></a>
+              <a href="#" class="btn-icon-last"><i>마지막으로</i></a>
+            </div>
+            <!-- // code -->
+          </div>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>

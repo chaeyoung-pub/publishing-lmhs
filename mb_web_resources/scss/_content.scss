@@ -1,0 +1,431 @@
+@charset "utf-8";
+
+/* 컨텐츠 */
+.wrap {
+  > .bottom-area {
+    &.fixed {
+      background: $white;
+      position: fixed;
+      left: 0;
+      z-index: 10;
+      box-shadow: 0 2px 7px 7px rgba(0, 0, 0, 0.05);
+      animation-name: moveTop;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+
+      @keyframes moveTop {
+        from {
+          bottom: -82px;
+        }
+        to {
+          bottom: 0;
+        }
+      }
+
+      .btn-t1 {
+        background-color: $black;
+        color: $white;
+
+        .icon-ios {
+          background-image: url(../img/common/icon_ios_02.png);
+        }
+
+        .icon-android {
+          background-image: url(../img/common/icon_android_02.png);
+        }
+      }
+    }
+  }
+}
+// 인트로
+.intro-area {
+  position: relative;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  color: $white;
+  text-align: center;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  .video-area {
+    height: 100%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url(../img/content/img_intro.jpg);
+      background-size: cover;
+      z-index: -1;
+    }
+
+    video {
+      width: 100vw;
+    }
+
+    @media screen and(max-aspect-ratio:1200/2000) {
+      video {
+        width: auto;
+        height: 100%;
+      }
+    }
+  }
+
+  .text-area {
+    width: 100%;
+    position: absolute;
+    top: 15.2%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "LifeplusM";
+
+    h1 {
+      font-size: 34px;
+      line-height: 1;
+
+      img {
+        width: 64px;
+        vertical-align: middle;
+        margin-right: 15px;
+      }
+    }
+
+    p {
+      margin-top: 55px;
+      font-size: 24px;
+    }
+  }
+
+  .sub {
+    width: 100%;
+    position: absolute;
+    bottom: 187px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    color: $white;
+    font-weight: bold;
+    opacity: 0;
+    animation-name: aniShow;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+
+    @keyframes aniShow {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    span {
+      margin-top: 10px;
+      display: inline-block;
+      box-sizing: border-box;
+      height: 25px;
+      line-height: 24px;
+      padding: 0 16px;
+      font-size: 11px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 12px;
+    }
+  }
+
+  .btn-area {
+    margin: 0;
+    position: absolute;
+    bottom: 94px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    margin-left: -2px;
+
+    [class^="btn-t"] {
+      flex: 1;
+      margin-left: 2px;
+    }
+
+    .btn-t1 {
+      flex: 1;
+    }
+
+    + button {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: $white;
+      padding-bottom: 20px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: bold;
+
+      .icon-scroll {
+        display: inline-block;
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 17px;
+        height: 12px;
+        background: url(../img/common/icon_scroll.png) no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+}
+
+.bottom-area {
+  position: fixed;
+  bottom: -100px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  margin-left: -2px;
+
+  [class^="btn-t"] {
+    flex: 1;
+    margin-left: 2px;
+  }
+
+  .btn-t1 {
+    flex: 1;
+  }
+
+  + button {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $white;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+
+    .icon-scroll {
+      display: inline-block;
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 17px;
+      height: 12px;
+      background: url(../img/common/icon_scroll.png) no-repeat;
+      background-size: 100%;
+    }
+  }
+}
+
+// 서비스소개
+.content-wrap {
+  min-height: 100vh;
+
+  > [class^="service-"] {
+    overflow: hidden;
+    padding-top: 80px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 14px;
+    color: $gray;
+
+    &:nth-child(odd) {
+      background: $bg-gray;
+    }
+
+    &.active {
+      .image-area {
+        transition: 1s;
+      }
+
+      &.service-1 {
+        .image-area {
+          background-position: center 0, right 4px;
+        }
+      }
+
+      &.service-5 {
+        .image-area {
+          background-position: center 0, right 76px, 0 4px;
+        }
+      }
+    }
+
+    strong {
+      display: block;
+      font-size: 23px;
+      font-family: "LifeplusB";
+      color: $black;
+      margin-bottom: 13px;
+    }
+
+    p + p {
+      margin-top: 10px;
+      font-size: 11px;
+      color: $gray2;
+    }
+
+    .btn-t3 {
+      margin-top: 25px;
+
+      + .image-area {
+        margin-top: 50px;
+      }
+    }
+
+    .image-area {
+      margin: 45px auto 0;
+      width: 221px;
+      height: 340px;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      box-shadow: -20px 20px 35px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    @for $i from 1 to 10 {
+      &.service-#{$i} {
+        .image-area {
+          background-image: url("../img/content/img_service_0#{$i}.png");
+          background-repeat: no-repeat;
+          background-size: 221px auto;
+          background-position: center 0;
+        }
+      }
+    }
+
+    &.service-1 {
+      .image-area {
+        height: 465px;
+        border-radius: 25px;
+        width: 221px;
+        margin: 46px auto 43px;
+        overflow: hidden;
+        background-image: url("../img/content/img_phone_layout.png"),
+          url("../img/content/img_service_01.png");
+        background-repeat: no-repeat, no-repeat;
+        background-position: center 0, 0 4px;
+        background-size: 221px auto, auto 460px;
+        box-shadow: -20px 20px 35px 5px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    &.service-5 {
+      .image-area {
+        height: 340px;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        width: 221px;
+        overflow: hidden;
+        background-image: url("../img/content/img_phone_layout_02.png"),
+          url("../img/content/img_service_05_02.png"),
+          url("../img/content/img_service_05.png");
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background-position: center 0, 0 76px, 0 4px;
+        background-size: 221px auto, auto 107px, auto 340px;
+      }
+    }
+
+    &.service-9 {
+      padding-bottom: 82px;
+    }
+  }
+}
+
+// 설치안내
+.install-guide {
+  padding: 20px 30px 40px;
+  background: $bg-gray;
+  box-sizing: border-box;
+  margin: 0 -30px;
+
+  h3 {
+    font-weight: bold;
+    font-size: 15px;
+    color: #999;
+    margin-bottom: 12px;
+  }
+
+  .swiper-container {
+    max-width: 750px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  .swiper-slide {
+    color: $black;
+    font-size: 13px;
+
+    .text-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+
+      p span {
+        display: block;
+        margin-top: 4px;
+        font-size: 11px;
+        color: $gray;
+      }
+    }
+
+    img {
+      margin-top: 18px;
+      width: 100%;
+    }
+  }
+
+  .swiper-pagination {
+    bottom: 0;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: #ddd;
+    opacity: 1;
+    width: 6px;
+    height: 6px;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $black;
+  }
+
+  .swiper-container-horizontal
+    > .swiper-pagination-bullets
+    .swiper-pagination-bullet {
+    margin: 0 3px;
+  }
+}
+
+#pop02 {
+  .install-guide .swiper-slide .text-area {
+    min-height: 55px;
+  }
+}

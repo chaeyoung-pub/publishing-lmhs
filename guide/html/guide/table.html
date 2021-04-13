@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table</title>
+    <link rel="stylesheet" href="../../css/guide.css" />
+    <link rel="stylesheet" href="../../../resources/css/common.css" />
+    <script src="../../../resources/js/library/jquery-3.4.1.min.js"></script>
+    <script src="../../../resources/js/library/jquery-ui.min.js"></script>
+    <script src="../../../resources/js/common.js"></script>
+    <script src="../../js/guide.js"></script>
+  </head>
+
+  <body>
+    <div class="guide-wrap">
+      <nav class="guide-lnb"></nav>
+
+      <section class="guide">
+        <h1 class="hide">table</h1>
+
+        <article>
+          <h2>테이블 타이틀<em>.tbl-sub</em></h2>
+          <div>
+            <!-- code -->
+            <div class="tbl-sub">
+              <div class="search-area">
+                <select class="select">
+                  <option value="">전체</option>
+                </select>
+                <div class="input-search">
+                  <input
+                    type="text"
+                    class="text"
+                    placeholder="검색어를 입력하세요."
+                  />
+                  <button class="btn-icon-search">
+                    <i>검색</i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="sort-area">
+                <select class="select">
+                  <option value="">전체 태그</option>
+                  <option value="">태그1</option>
+                  <option value="">태그2</option>
+                </select>
+              </div>
+            </div>
+            <!-- // code -->
+          </div>
+        </article>
+
+        <article>
+          <h2>가로형 테이블<em>.tbl-type1</em></h2>
+          <div>
+            <!-- code -->
+            <div class="tbl-type1">
+              <table>
+                <caption>
+                  가로형 테이블
+                </caption>
+                <colgroup>
+                  <col style="width: 130px" />
+                  <col />
+                  <col style="width: 130px" />
+                  <col />
+                  <col style="width: 130px" />
+                  <col />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      제목<span class="required">필수입력</span>
+                    </th>
+                    <td>내용</td>
+                    <th scope="row">제목</th>
+                    <td>내용</td>
+                    <th scope="row">제목</th>
+                    <td>내용</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">제목</th>
+                    <td class="ta-left">td.ta-left</td>
+                    <th scope="row">제목</th>
+                    <td class="ta-center">td.ta-center</td>
+                    <th scope="row">제목</th>
+                    <td class="ta-right">td.ta-right</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" rowspan="2">제목</th>
+                    <td colspan="5">내용</td>
+                  </tr>
+                  <tr>
+                    <td colspan="5">내용</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- // code -->
+          </div>
+        </article>
+
+        <article>
+          <h2>세로형 테이블<em>.tbl-type2</em></h2>
+          <div>
+            <!-- code -->
+            <div class="tbl-type2">
+              <table>
+                <caption>
+                  세로형 테이블
+                </caption>
+                <colgroup>
+                  <col style="width: 80px" />
+                  <col style="width: 120px" />
+                  <col style="width: 100px" />
+                  <col />
+                  <col style="width: 110px" />
+                  <col style="width: 90px" />
+                  <col style="width: 80px" />
+                  <col style="width: 60px" />
+                  <col style="width: 90px" />
+                  <col style="width: 100px" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">번호</th>
+                    <th scope="col">카테고리</th>
+                    <th scope="col">썸네일</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">등록일자</th>
+                    <th scope="col">작성자</th>
+                    <th scope="col">관리</th>
+                    <th scope="col">첨부<br />파일</th>
+                    <th scope="col">노출여부</th>
+                    <th scope="col">
+                      조회수
+                      <button type="button" class="btn-icon-sort asc">
+                        <i>오름차순</i>
+                      </button>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>사운드테라피</td>
+                    <td>
+                      <img
+                        src="../../../resources/img/temp/img_temp_01.jpg"
+                        alt=""
+                      />
+                    </td>
+                    <td><a href="#">td > a 상세화면이동</a></td>
+                    <td>0000-00-00</td>
+                    <td>홍길동동</td>
+                    <td>시스템</td>
+                    <td>Y</td>
+                    <td>비노출</td>
+                    <td>0000</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td></td>
+                    <td></td>
+                    <td class="ta-left">td.ta-left</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                    <td class="ta-right">td.ta-right</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td></td>
+                    <td></td>
+                    <td class="ta-center">td.ta-center</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- // code -->
+          </div>
+        </article>
+
+        <article>
+          <h2>가로스크롤 테이블</h2>
+          <div>
+            <!-- code -->
+            <p class="desc">.tbl-scroll-x (전체스크롤)</p>
+            <div class="tbl-type2 tbl-scroll-x">
+              <table>
+                <caption>
+                  통계
+                </caption>
+                <colgroup>
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">구분</th>
+                    <th scope="col">1</th>
+                    <th scope="col">2</th>
+                    <th scope="col">3</th>
+                    <th scope="col">4</th>
+                    <th scope="col">5</th>
+                    <th scope="col">6</th>
+                    <th scope="col">7</th>
+                    <th scope="col">8</th>
+                    <th scope="col">9</th>
+                    <th scope="col">10</th>
+                    <th scope="col">11</th>
+                    <th scope="col">12</th>
+                    <th scope="col">13</th>
+                    <th scope="col">14</th>
+                    <th scope="col">15</th>
+                    <th scope="col">16</th>
+                    <th scope="col">17</th>
+                    <th scope="col">18</th>
+                    <th scope="col">19</th>
+                    <th scope="col">20</th>
+                    <th scope="col">21</th>
+                    <th scope="col">22</th>
+                    <th scope="col">23</th>
+                    <th scope="col">24</th>
+                    <th scope="col">25</th>
+                    <th scope="col">26</th>
+                    <th scope="col">27</th>
+                    <th scope="col">28</th>
+                    <th scope="col">29</th>
+                    <th scope="col">30</th>
+                    <th scope="col">31</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>제목</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>제목</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="desc">
+              .tbl-wrap.fd-row > .tbl-fixed + .tbl-scroll-x (고정형)
+            </p>
+            <div class="tbl-wrap fd-row">
+              <div class="tbl-type2 tbl-fixed">
+                <table>
+                  <caption>
+                    통계 구분
+                  </caption>
+                  <colgroup>
+                    <col style="width: 300px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">구분</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>제목</td>
+                    </tr>
+                    <tr>
+                      <td>제목</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td class="tbl-bg1">.tbl-bg1</td>
+                    </tr>
+                    <tr>
+                      <td class="tbl-bg2">.tbl-bg2</td>
+                    </tr>
+                    <tr>
+                      <td class="tbl-bg3">.tbl-bg3</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <div class="tbl-type2 tbl-scroll-x">
+                <table>
+                  <caption>
+                    통계 (일별)
+                  </caption>
+                  <colgroup>
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">1</th>
+                      <th scope="col">2</th>
+                      <th scope="col">3</th>
+                      <th scope="col">4</th>
+                      <th scope="col">5</th>
+                      <th scope="col">6</th>
+                      <th scope="col">7</th>
+                      <th scope="col">8</th>
+                      <th scope="col">9</th>
+                      <th scope="col">10</th>
+                      <th scope="col">11</th>
+                      <th scope="col">12</th>
+                      <th scope="col">13</th>
+                      <th scope="col">14</th>
+                      <th scope="col">15</th>
+                      <th scope="col">16</th>
+                      <th scope="col">17</th>
+                      <th scope="col">18</th>
+                      <th scope="col">19</th>
+                      <th scope="col">20</th>
+                      <th scope="col">21</th>
+                      <th scope="col">22</th>
+                      <th scope="col">23</th>
+                      <th scope="col">24</th>
+                      <th scope="col">25</th>
+                      <th scope="col">26</th>
+                      <th scope="col">27</th>
+                      <th scope="col">28</th>
+                      <th scope="col">29</th>
+                      <th scope="col">30</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                      <td class="tbl-bg1"></td>
+                    </tr>
+                    <tr>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                      <td class="tbl-bg2"></td>
+                    </tr>
+                    <tr>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                      <td class="tbl-bg3"></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+            <!-- // code -->
+          </div>
+        </article>
+
+        <article>
+          <h2>세로스크롤 테이블</h2>
+          <div>
+            <!-- code -->
+            <p class="desc">.tbl-scroll-y (전체스크롤)</p>
+            <div
+              class="tbl-type2 tbl-scroll-y"
+              style="max-height: 300px"
+              data-checkbox-all
+            >
+              <table>
+                <caption>
+                  구분
+                </caption>
+                <colgroup>
+                  <col style="width: 58px" />
+                  <col />
+                  <col />
+                  <col />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      <label class="chk-label">
+                        <input
+                          type="checkbox"
+                          name="chkA1"
+                          id="chkA1-1"
+                          data-checkbox-trigger
+                        />
+                        <span></span>
+                      </label>
+                    </th>
+                    <th scope="col">제목</th>
+                    <th scope="col">카테고리</th>
+                    <th scope="col">URL 정보</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <label class="chk-label">
+                        <input type="checkbox" name="chkA1" id="chkA1-2" />
+                        <span></span>
+                      </label>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="chk-label">
+                        <input type="checkbox" name="chkA1" id="chkA1-3" />
+                        <span></span>
+                      </label>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="chk-label">
+                        <input type="checkbox" name="chkA1" id="chkA1-4" />
+                        <span></span>
+                      </label>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="chk-label">
+                        <input type="checkbox" name="chkA1" id="chkA1-5" />
+                        <span></span>
+                      </label>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="chk-label">
+                        <input type="checkbox" name="chkA1" id="chkA1-6" />
+                        <span></span>
+                      </label>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="chk-label">
+                        <input type="checkbox" name="chkA1" id="chkA1-7" />
+                        <span></span>
+                      </label>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="chk-label">
+                        <input type="checkbox" name="chkA1" id="chkA1-8" />
+                        <span></span>
+                      </label>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="chk-label">
+                        <input type="checkbox" name="chkA1" id="chkA1-9" />
+                        <span></span>
+                      </label>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="desc">
+              .tbl-wrap.fd-column > .tbl-fixed + .tbl-scroll-y (고정형)
+            </p>
+            <div class="tbl-wrap fd-column" data-checkbox-all>
+              <div class="tbl-type2 tbl-fixed">
+                <table>
+                  <caption>
+                    구분
+                  </caption>
+                  <colgroup>
+                    <col style="width: 58px" />
+                    <col style="width: 320px" />
+                    <col style="width: 160px" />
+                    <col />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                        <label class="chk-label">
+                          <input
+                            type="checkbox"
+                            name="chkB1"
+                            id="chkB1-1"
+                            data-checkbox-trigger
+                          />
+                          <span></span>
+                        </label>
+                      </th>
+                      <th scope="col">제목</th>
+                      <th scope="col">카테고리</th>
+                      <th scope="col">URL 정보</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+              <div class="tbl-type2 tbl-scroll-y" style="max-height: 300px">
+                <table>
+                  <caption>
+                    조회 목록
+                  </caption>
+                  <colgroup>
+                    <col style="width: 58px" />
+                    <col style="width: 320px" />
+                    <col style="width: 160px" />
+                    <col />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label class="chk-label">
+                          <input type="checkbox" name="chkB1" id="chkB1-2" />
+                          <span></span>
+                        </label>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="chk-label">
+                          <input type="checkbox" name="chkB1" id="chkB1-3" />
+                          <span></span>
+                        </label>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="chk-label">
+                          <input type="checkbox" name="chkB1" id="chkB1-4" />
+                          <span></span>
+                        </label>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="chk-label">
+                          <input type="checkbox" name="chkB1" id="chkB1-5" />
+                          <span></span>
+                        </label>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="chk-label">
+                          <input type="checkbox" name="chkB1" id="chkB1-6" />
+                          <span></span>
+                        </label>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="chk-label">
+                          <input type="checkbox" name="chkB1" id="chkB1-7" />
+                          <span></span>
+                        </label>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="chk-label">
+                          <input type="checkbox" name="chkB1" id="chkB1-8" />
+                          <span></span>
+                        </label>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="chk-label">
+                          <input type="checkbox" name="chkB1" id="chkB1-9" />
+                          <span></span>
+                        </label>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- // code -->
+          </div>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>

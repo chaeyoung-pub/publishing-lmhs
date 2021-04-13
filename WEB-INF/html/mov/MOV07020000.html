@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>클래스 - 클래스 데이터관리 - 등록</title>
+    <script src="../../../resources/js/include.js"></script>
+  </head>
+
+  <body>
+    <div class="admin-wrap">
+      <header class="admin-header"></header>
+
+      <nav class="admin-lnb"></nav>
+
+      <div class="admin-content">
+        <div class="area-path"></div>
+
+        <h2 class="content-title">클래스 데이터관리</h2>
+
+        <h3 class="tit-type1">영상등록 정보</h3>
+        <div class="tit-sub">
+          <button type="button" class="btn-type1">영상 업로드</button>
+        </div>
+        <div class="tbl-type1">
+          <table>
+            <caption>
+              영상등록 정보
+            </caption>
+            <colgroup>
+              <col style="width: 100px" />
+              <col />
+              <col style="width: 100px" />
+              <col />
+              <col style="width: 100px" />
+              <col style="width: 200px" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">파일명</th>
+                <td>파일명</td>
+                <th scope="row">URL</th>
+                <td>URL</td>
+                <th scope="row">카테고리</th>
+                <td>
+                  <select class="select">
+                    <option value="" hidden>선택하세요</option>
+                    <option value="">북테라피</option>
+                    <option value="">요가&amp;명상</option>
+                    <option value="">홈트레이닝</option>
+                    <option value="">댄스카디오</option>
+                    <option value="">사운드테라피</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="btn-area ta-right">
+          <button class="btn-type2">완료</button>
+          <a href="#" class="btn-type2 btn-bg4">목록</a>
+        </div>
+      </div>
+
+      <footer class="admin-footer"></footer>
+    </div>
+  </body>
+</html>
