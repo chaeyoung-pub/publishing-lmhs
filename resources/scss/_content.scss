@@ -201,6 +201,18 @@
   }
 }
 
+/* 루틴관리 */
+.routine-area{
+  overflow: hidden;
+  margin: 55px 0 28px;
+
+  .tit-type1{
+    float: left;
+    margin: 0 24px 0 0;
+    line-height: 40px;
+  }
+}
+
 /* 간격 */
 .input-search + .collapse,
 .btn-area + .collapse {
